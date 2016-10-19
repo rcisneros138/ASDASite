@@ -1,0 +1,9 @@
+{% extends "ASDAWebApp/Header.html"%}
+
+{% block content %}
+    <h3>{{ object.title }}</h3>
+    <h6>{{ object.date }}</h6>
+   <h6> Author: {{ object.author }}</h6>
+    {{ object.body|safe|linebreaks }}
+
+{% endblock %}
