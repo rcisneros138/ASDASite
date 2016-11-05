@@ -1,8 +1,24 @@
 {% extends "ASDAWebApp/Header.html"%}
 
-{% block content %}
-    {% for post in object_list %}
-        <h5>{{ post.date|date:"Y-m-d" }}<a href="/blog/{{ post.id }}">{{ post.title }}</a> </h5>
 
-    {% endfor %}
-{% endblock %}
+    {% block content %}
+        {% for post in object_list %}
+
+                <div class="post-preview">
+                  <a href="/blog/{{post.id}}">
+                    <h2 class="post-title">
+                      {{post.title}}
+                    </h2>
+                    <h3 class="post-subtitle">
+                      Blog Subtitles should appear here
+                    </h3>
+                  </a>
+                  <p class="post-meta">Posted by {{post.author}} on July 8, 2014</p>
+                </div>
+                <hr>
+            {# <h5>{{ post.date|date:"Y-m-d" }}<a href="/blog/{{ post.id }}">{{ post.title }}</a> </h5>#}
+
+        {% endfor %}
+    {% endblock %}
+    </div>
+    
