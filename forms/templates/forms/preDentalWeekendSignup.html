@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css"
+  <head>
+  <body>
+    <h1>Sign up here pre dents</h1>
+   <form method="POST" class="post-form">{% csrf_token %}
+     <p>Your contact info</p>
+       {{ contactForm.as_p }}
+     <p> Emergency contact info</p>
+   </br>
+       {{emergencyContactForm.as_p}}
+       {{ formset.as_p }}
+       {{ formset.management_form }}
+       <button type="submit" class="save btn btn-default">Save</button>
+   </form>
+  </body>
+</html>
