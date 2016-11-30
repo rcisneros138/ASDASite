@@ -1,9 +1,11 @@
 from django.shortcuts import render
+from blog.models import BlogPost
 from django.http import HttpResponse
 
 
 def index(request):
-    return render(request, 'ASDAWebApp/home.html')
+    blogPosts = BlogPost.objects.all().order_by('-date')
+    return render(request, 'ASDAWebApp/home.html', {'blogPosts': blogPosts})
 
 
 def contact(request):

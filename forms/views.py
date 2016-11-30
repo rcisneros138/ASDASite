@@ -1,4 +1,4 @@
-from .AsdaForms import signupForm, PreDentalWeekendSignupForm, ContactInformationForm
+from .AsdaForms import signupForm, PreDentalWeekendSignupForm, ContactInformationForm, signupInLineFormSet
 from django.utils import timezone
 from .models import ContactInformation, PreDentalWeekendSignup
 from django.shortcuts import render, redirect
@@ -21,17 +21,11 @@ def signUp(request):
 
 
 def AddPreDentalWeekendSignup(request):
-    contactInfo = ContactInformation()
-    emergencyContactInfo = ContactInformation()
-    contactForm = ContactInformationForm(instance=contactInfo)
-    emergencyContactForm = ContactInformationForm(instance=emergencyContactInfo)
-    signupInLineFormSet = inlineformset_factory(ContactInformation,
-                                                PreDentalWeekendSignup,
-                                                fk_name="applicantContactInfo",
-                                                fields=('school',
-                                                        'needsHotelRoom'),
-                                                extra=1,
-                                                can_delete=False)
+    # contactInfo = ContactInformation()
+    # emergencyContactInfo = ContactInformation()
+    contactForm = ContactInformationForm(instance=ContactInformation())
+    emergencyContactForm = ContactInformationForm(instance=
+                                                  ContactInformation())
     if request.method == "POST":
         contactForm = ContactInformationForm(request.POST)
         emergencyContactForm = ContactInformationForm(request.POST)
@@ -48,14 +42,11 @@ def AddPreDentalWeekendSignup(request):
                 createdContact.save()
                 formset.save()
                 emergencyFormSet.save()
-                # PreDentalWeekendSignup.timeStamp = timezone.localtime(
-                #                                                     timezone.now())
-                # PreDentalWeekendSignup.save()
             return HttpResponseRedirect(createdContact.get_absolute_url())
     else:
-        contactForm = ContactInformationForm(instance=contactInfo)
-        emergencyContactForm = ContactInformationForm(instance=
-                                                      emergencyContactInfo)
+        # contactForm = ContactInformationForm(instance=contactInfo)
+        # emergencyContactForm = ContactInformationForm(instance=
+                                                    #   emergencyContactInfo)
         formset = signupInLineFormSet()
 
     return render(request, 'forms/PreDentalWeekendSignup.html', {

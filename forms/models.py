@@ -31,25 +31,29 @@ class UsLocation(models.Model):
     state = models.CharField("State", max_length=40, blank=True)
     country = models.CharField("Country", max_length=40, blank=False)
 
+    def __str__(self):
+        return self.city
+
 
 class PreDentalWeekendSignup(models.Model):
     applicantContactInfo = models.ForeignKey(
                                             "ContactInformation",
                                             on_delete=models.CASCADE,
                                             related_name='applicantContactInfo'
-                                            , null=True
-                                            )
+                                            , null=True)
+    ApplicantAddress = models.ForeignKey("UsLocation", on_delete=models.CASCADE,
+                                         related_name='ApplicantAddress',
+                                         null=True)
     emergencyContactInfo = models.ForeignKey(
                                             "ContactInformation",
                                             on_delete=models.CASCADE,
                                             related_name='emergencyContactName'
-                                            , null=True
-                                            )
+                                            , null=True)
     school = models.CharField("school", max_length=140, null=True, blank=True)
     needsHotelRoom = models.BooleanField("Needs Hotel", default=False)
     timeStamp = models.DateTimeField(auto_now_add=True, auto_now=False)
 
     def __str__(self):
-        return self.applicantContactInfo
+        return str(self.ApplicantAddress)
 
 #name,emergency contact, need hotel Room, email, home/mailing address, their school,
