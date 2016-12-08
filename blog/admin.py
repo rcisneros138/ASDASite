@@ -10,12 +10,10 @@ class BlogPostAdmin(admin.ModelAdmin):
         )
 
     def get_readonly_fields(self, request, obj=None):
-        if (obj):
-            if not request.user.is_superuser:
-
-                readonly_fields = self.model._meta.get_fields()
-                print(readonly_fields)
-        return self.readonly_fields
+        if obj and not request.user.is_superuser:
+            return ['approved']
+        else:
+            return []
 
     def save_model(self, request, obj, form, change):
         if not change:
