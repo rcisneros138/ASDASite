@@ -1,0 +1,13 @@
+{% block content%}
+  {% for post in blogPosts %}
+    <div class="post-preview">
+        <a href="/blog/{{post.id}}">
+            <h2 class="post-title">
+                {{post.title}}
+            </h2>
+        </a>
+        <p class="post-meta">Posted by {{post.author}} on {{post.date|date:"m-d-y"}}</p>
+    </div>
+        <h5>{{ post.date|date:"Y-m-d" }} <a href="/blog/{{ post.id }}">{{ post.title }}</a> </h5>
+  {% endfor %}
+{% endblock %}

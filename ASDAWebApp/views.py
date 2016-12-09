@@ -4,7 +4,7 @@ from django.http import HttpResponse
 
 
 def index(request):
-    blogPosts = BlogPost.objects.all().order_by('-date')
+    blogPosts = BlogPost.objects.filter(approved=True).order_by('-date')
     return render(request, 'ASDAWebApp/home.html', {'blogPosts': blogPosts})
 
 

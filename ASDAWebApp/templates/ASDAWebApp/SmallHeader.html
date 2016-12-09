@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Marquete ASDA</title>
+	<meta charset="utf-8" />
+	{% load staticfiles %}
+    <link rel="icon" type="image/png" href="{% static 'img/icon.ico' %}"/>
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type = "text/css"/>
+	<link rel="stylesheet" href="{% static 'css/clean-blog.min.css' %}" type="text/css"/>
+	<link rel="stylesheet" href="{% static 'css/site.css' %}" type="text/css"/>
+
+	<!-- these are the import js files from the valet site -->
+	<link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+	<link rel="stylesheet" href="{% static 'css/superfish.css' %}">
+	<link rel="stylesheet" href="{% static 'css/easy-responsive-tabs.css' %}">
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	<!-- this is an import js files from the valet site -->
+	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+	<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+
+
+</head>
+
+		<header id="fh5co-header-section" role="header" class="" >
+				<div class="container">
+
+					<!-- START #fh5co-logo-->
+					<h1 id="fh5co-logo" class="pull-left"><a href="#">MarquetteASDA Logo</a></h1>
+
+					<!-- START #fh5co-menu-wrap -->
+					<nav id="fh5co-menu-wrap" role="navigation">
+						<ul class="sf-menu" id="fh5co-primary-menu">
+							<li class="active">
+								<a href="index.html">Home</a>
+							</li>
+							<li>
+								<a href="#" class="fh5co-sub-ddown">About</a>
+								 <ul class="fh5co-sub-menu">
+								 	<li><a href="#">Mission</a></li>
+								 	<li><a href="#">Cabinet</a></li>
+									<li><a href="#">Committee Chairs</a></li>
+									<li><a href="#">Gold Crowns</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#" class="fh5co-sub-ddown">News</a>
+								 <ul class="fh5co-sub-menu">
+									<li><a href="#">Blog</a></li>
+ 									<li><a href="#">Events Calendar</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#" class="fh5co-sub-ddown">Advocacy</a>
+								 <ul class="fh5co-sub-menu">
+									<li><a href="#">Issues</a></li>
+									<li><a href="#">Events</a></li>
+									<li><a href="#">Advocacy Media</a></li>
+									<li><a href="#">Write to Congress</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#" class="fh5co-sub-ddown">Predental</a>
+								 <ul class="fh5co-sub-menu">
+									<li><a href="#">Membership</a></li>
+									<li><a href="#">Predental Weekend</a></li>
+									<li><a href="#">Resources</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#" class="fh5co-sub-ddown">Media</a>
+								 <ul class="fh5co-sub-menu">
+									<li><a href="#">Videos</a></li>
+ 									<li><a href="#">Vewsletters</a></li>
+ 									<li><a href="#">Marquette ASDA Leader Resources</a></li>
+ 									<li><a href="#">Request Funds Form</a></li>
+ 									<li><a href="#">Event Write Up Form</a></li>
+ 									<li><a href="#">Lunch &amp; Learn</a></li>
+ 									<li><a href="#">ASDA Logo?</a></li>
+ 									<li><a href="#">Plan &amp; Goals</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+
+		<div class="container">
+				<div class="row">
+						<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+					   {% block content %}
+					   {% endblock %}
+				</div>
+			</div>
+		</div>
+
+		<footer role="contentinfo" id="fh5co-footer">
+			<a href="#" class="fh5co-arrow fh5co-gotop footer-box"><i class="ti-angle-up"></i></a>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7 col-sm-12 footer-box">
+						<h3 class="fh5co-footer-heading">FIND US</h3>
+						<a href="http://maps.google.com/?q=1801 W. Wisconsin Ave Milwaukee, WI 53233" target="_blank">
+							<div class="address">
+								<p>Marquette School of Dentistry</p>
+								<p>1801 W. Wisconsin Ave</p>
+								<p>Milwaukee, WI 53233</p>
+							</div>
+						</a>
+						<div class="mapholder">
+							<div id="map"></div>
+						</div>
+					</div>
+					<div class="col-md-5 col-sm-12 footer-box">
+						<h3 class="fh5co-footer-heading">CONTACT</h3>
+						<div>
+							<p><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 414.288.679</p>
+						  <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> MarquetteASDA@gmail.com</p>
+						</div>
+						<div class="form-group row">
+						  <label for="nameInput" class="col-xs-2 col-form-label">Name</label>
+						  <div class="col-xs-10">
+						    <input class="form-control" type="text" placeholder="Your Name" id="nameInput">
+						  </div>
+						</div>
+						<div class="form-group row">
+						  <label for="emailInput" class="col-xs-2 col-form-label">Email</label>
+						  <div class="col-xs-10">
+						    <input class="form-control" type="email" placeholder="email@example.com" id="emailInput">
+						  </div>
+						</div>
+						<div class="form-group row">
+						  <label for="subjectInput" class="col-xs-2 col-form-label">Subject</label>
+						  <div class="col-xs-10">
+						    <input class="form-control" type="text" placeholder="Subject here..." id="subjectInput">
+						  </div>
+						</div>
+						<div class="form-group row">
+						  <label for="messageInput" class="col-xs-2 col-form-label">Message</label>
+						  <div class="col-xs-10">
+						    <textarea class="form-control" type="text" placeholder="Message here..." id="massageInput"></textarea>
+						  </div>
+						</div>
+					</div>
+					<div class="col-md-12 footer-box text-center">
+						<div class="fh5co-copyright">
+						<p class="copyright text-muted">Copyright &copy; Marquette 2016</p>
+						<ul class="fh5co-social-icons">
+
+							<li><a href="#"><i class="ti-google"></i></a></li>
+							<li><a href="#"><i class="ti-twitter-alt"></i></a></li>
+							<li><a href="#"><i class="ti-facebook"></i></a></li>
+							<li><a href="#"><i class="ti-instagram"></i></a></li>
+							<li><a href="#"><i class="ti-dribbble"></i></a></li>
+						</ul>
+					</div>
+					</div>
+
+				</div>
+				<!-- END row
+				this is a spacer that I don't want. Too big
+				<div class="fh5co-spacer fh5co-spacer-md"></div> -->
+			</div>
+		</footer>
+
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/parallax.min.js' %}"></script>
+
+<!-- these are the import js files from the valet site -->
+<script type="text/javascript" src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/hoverIntent.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/superfish.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/easyResponsiveTabs.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/fastclick.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.parallax-scroll.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/parallax.min.js' %}"></script><div id="map"></div>
+<script>
+  var map;
+  function initMap() {
+		var marquette = {lat: 43.038188, lng: -87.936039};
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: marquette,
+      zoom: 14,
+			styles: [
+					  {
+					    "elementType": "geometry",
+					    "stylers": [
+					      {
+					        "color": "#ebe3cd"
+					      }
+					    ]
+					  },
+					  {
+					    "elementType": "labels.text.fill",
+					    "stylers": [
+					      {
+					        "color": "#523735"
+					      }
+					    ]
+					  },
+					  {
+					    "elementType": "labels.text.stroke",
+					    "stylers": [
+					      {
+					        "color": "#f5f1e6"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "administrative",
+					    "elementType": "geometry.stroke",
+					    "stylers": [
+					      {
+					        "color": "#c9b2a6"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "administrative.land_parcel",
+					    "elementType": "geometry.stroke",
+					    "stylers": [
+					      {
+					        "color": "#dcd2be"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "administrative.land_parcel",
+					    "elementType": "labels.text.fill",
+					    "stylers": [
+					      {
+					        "color": "#ae9e90"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "landscape.natural",
+					    "elementType": "geometry",
+					    "stylers": [
+					      {
+					        "color": "#dfd2ae"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "poi",
+					    "elementType": "geometry",
+					    "stylers": [
+					      {
+					        "color": "#dfd2ae"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "poi",
+					    "elementType": "labels.text.fill",
+					    "stylers": [
+					      {
+					        "color": "#93817c"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "poi.business",
+					    "stylers": [
+					      {
+					        "visibility": "off"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "poi.park",
+					    "elementType": "geometry.fill",
+					    "stylers": [
+					      {
+					        "color": "#a5b076"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "poi.park",
+					    "elementType": "labels.text",
+					    "stylers": [
+					      {
+					        "visibility": "off"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "poi.park",
+					    "elementType": "labels.text.fill",
+					    "stylers": [
+					      {
+					        "color": "#447530"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "poi.place_of_worship",
+					    "stylers": [
+					      {
+					        "visibility": "off"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "road",
+					    "elementType": "geometry",
+					    "stylers": [
+					      {
+					        "color": "#f5f1e6"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "road.arterial",
+					    "elementType": "geometry",
+					    "stylers": [
+					      {
+					        "color": "#fdfcf8"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "road.highway",
+					    "elementType": "geometry",
+					    "stylers": [
+					      {
+					        "color": "#f8c967"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "road.highway",
+					    "elementType": "geometry.stroke",
+					    "stylers": [
+					      {
+					        "color": "#e9bc62"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "road.highway.controlled_access",
+					    "elementType": "geometry",
+					    "stylers": [
+					      {
+					        "color": "#e98d58"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "road.highway.controlled_access",
+					    "elementType": "geometry.stroke",
+					    "stylers": [
+					      {
+					        "color": "#db8555"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "road.local",
+					    "elementType": "labels.text.fill",
+					    "stylers": [
+					      {
+					        "color": "#806b63"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "transit.line",
+					    "elementType": "geometry",
+					    "stylers": [
+					      {
+					        "color": "#dfd2ae"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "transit.line",
+					    "elementType": "labels.text.fill",
+					    "stylers": [
+					      {
+					        "color": "#8f7d77"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "transit.line",
+					    "elementType": "labels.text.stroke",
+					    "stylers": [
+					      {
+					        "color": "#ebe3cd"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "transit.station",
+					    "elementType": "geometry",
+					    "stylers": [
+					      {
+					        "color": "#dfd2ae"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "water",
+					    "elementType": "geometry.fill",
+					    "stylers": [
+					      {
+					        "color": "#b9d3c2"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "water",
+					    "elementType": "labels.text.fill",
+					    "stylers": [
+					      {
+					        "color": "#92998d"
+					      }
+					    ]
+					  }
+					]
+    });
+		var image = '{% static 'img/pointer.png' %}';
+    var marker = new google.maps.Marker({
+      position: marquette,
+			title:"Marquette School of Dentistry",
+      map: map,
+			icon: image
+    });
+
+  }
+</script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6kp0RNXLLqTtlZTScexKXQ97PZe8GBv0&callback=initMap" async defer></script>
+
+</html>

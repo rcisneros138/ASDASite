@@ -1,15 +1,12 @@
 {% extends "ASDAWebApp/Header.html"%}
 
-{% block content %}
+{% block blog %}
     {% for post in object_list %}
     <div class="post-preview">
         <a href="/blog/{{post.id}}">
             <h2 class="post-title">
                 {{post.title}}
             </h2>
-            <h3 class="post-subtitle">
-                subTitle goes here if there was one enabled
-            </h3>
         </a>
         <p class="post-meta">Posted by {{post.author}} on {{post.date|date:"m-d-y"}}</p>
     </div>
