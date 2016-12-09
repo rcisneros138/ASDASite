@@ -1,6 +1,6 @@
 {% extends "ASDAWebApp/Header.html"%}
 
-{% block blog %}
+{% block content %}
     {% for post in object_list %}
     <div class="post-preview">
         <a href="/blog/{{post.id}}">
