@@ -49,3 +49,12 @@ a:active {
   resize: vertical;
   height: 6em;
 }
+
+/*FRONT PAGE BLOG*/
+.blogRow{
+  padding: 1.5em;
+}
+.blogBody{
+  min-height: 7em;
+  max-height: 7em;
+}

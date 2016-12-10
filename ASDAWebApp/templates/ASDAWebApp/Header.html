@@ -22,6 +22,7 @@
 
 	<!-- this is an import js files from the valet site -->
 	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/handlers.js' %}"></script>
 	<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -112,11 +113,11 @@
 				</div>
 			</header>
 
-			<div id="fh5co-hero" style="background-image: url({% static 'img/marquettebuilding.jpg' %});">
+			<div id="fh5co-hero" class="container" style="background-image: url({% static 'img/marquettebuilding.jpg' %});">
 				<div class="overlay"></div>
 				<a href="#fh5co-main" class="smoothscroll fh5co-arrow to-animate hero-animate-4"><i class="ti-angle-down"></i></a>
 
-				<div class="container">
+				<div class="row">
 					<div class="col-md-12">
 						<div class="fh5co-hero-wrap">
 							<div class="fh5co-hero-intro">
@@ -130,13 +131,26 @@
 				</div>
 			</div>
 
-		<div class="container">
-				<div class="row">
-						<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-					   {% block blog %}
-					   {% endblock %}
+			<div class="fh5co-cards">
+				<div class="container-fluid">
+					<br>
+					<div class="row">
+					  <div class="col-md-12 heading text-center"><h2>News and Events</h2></div>
+					</div>
+					<div class="row blogRow">
+						 {% block blog %}
+						 {% endblock %}
+					</div>
 				</div>
 			</div>
-		</div>
+
+			<div class="animate-box fh5co-product-2">
+				<div class="fh5co-half img" style="background-image: url({% static 'img/marquetteASDA1.png' %})"></div>
+				<div class="fh5co-half">
+					<h3>This is Symbol</h3>
+					<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. </p>
+					<p><a href="#" class="btn btn-outline btn-md">Get Started</a></p>
+				</div>
+			</div>
 
 {% include "ASDAWebApp/Footer.html" %}
