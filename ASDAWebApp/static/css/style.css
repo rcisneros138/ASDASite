@@ -731,7 +731,6 @@ textarea {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center left;
-  float: left;
   width: 100%;
   height: 300px;
   display: table;

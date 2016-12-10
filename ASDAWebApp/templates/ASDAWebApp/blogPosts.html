@@ -1,0 +1,28 @@
+{% extends "ASDAWebApp/Header.html" %}
+
+{% load staticfiles %}
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/handlers.js' %}"></script>
+
+<h1>News and Events</h1>
+{% block blog %}
+  {% for post in blogPosts %}
+    <div class="col-sm-3">
+        <a href="/blog/{{post.id}}">
+            <h2 class="post-title">
+                {{post.title}}
+            </h2>
+            <span id="{{post.id}}">{{post.body}}</span>
+
+            <p><script>trimInput(document.getElementById("{{post.id}}"));</script></p>
+            <p class="post-meta">Posted by {{post.author}} on {{post.date|date:"m-d-y"}}</p>
+        </a>
+    </div>
+  {% endfor %}
+{% endblock %}
+
+<script>
+  function trimInput(body) {
+    return body.slice(50);
+  }
+</script>
