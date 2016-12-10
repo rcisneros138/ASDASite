@@ -17,3 +17,17 @@ class BlogPost(models.Model):
     def approve(self):
         self.approved = True
         self.save()
+
+
+class Image(models.Model):
+    blogPost = models.ForeignKey(BlogPost)
+    Image = models.ImageField()
+
+    def image_img(self):
+        if self.image:
+            return '<img src="%s" />' % self.image.url
+        else:
+            return '(No image found)'
+
+    image_img.short_description = 'Thumb'
+    image_img.allow_tags = True
