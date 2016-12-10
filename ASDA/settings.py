@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tinymce',
     'ckeditor',
     'ckeditor_uploader',
 
@@ -128,10 +127,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
 
-# kce editor
-MEDIA_ROOT = 'media/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+print(BASE_DIR)
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\', '/')
+print(MEDIA_ROOT)
+MEDIA_URL = '/media/'
 CKEDITOR_JQUERY_URL = 'http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_IMAGE_BACKEND = 'pillow'
@@ -141,6 +145,7 @@ STATICFILES_LOCATION = 'static'
 
 CKEDITOR_CONFIGS = {
     'default': {
+        'skin': 'moono',
         'toolbar': [
             ["Format", "Bold", "Italic", "Underline", "Strike", "SpellChecker"],
             ['NumberedList', 'BulletedList', "Indent", "Outdent", 'JustifyLeft',
