@@ -12,5 +12,3 @@ lib64
 *.pyo
 secrets.py
 db.sqlite3
-*.pyc
-*.pyc
