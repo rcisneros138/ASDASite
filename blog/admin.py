@@ -20,14 +20,11 @@ class BlogPostAdmin(admin.ModelAdmin):
             obj.author = request.user
         obj.save()
 
-    # def image_img(self):
-    #     if self.image:
-    #         return '<img src="%s" />' % self.image.url
-    #     else:
-    #         return '(No image found)'
-    #
-    # image_img.short_description = 'Thumb'
-    # image_img.allow_tags = True
+    def get_queryset(self, request):
+        return super(BlogPostAdmin, self).get_queryset(request).prefetch_related('tags')
+
+    def tag_list(self, obj):
+        return u", ".join(o.name for o in obj.tags.all())
 
 
 admin.site.register(BlogPost, BlogPostAdmin)

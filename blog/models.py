@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
+from taggit.managers import TaggableManager
 
 
 class BlogPost(models.Model):
@@ -10,6 +11,7 @@ class BlogPost(models.Model):
     date = models.DateTimeField()
     author = models.ForeignKey(User, null=True, blank=True)
     approved = models.BooleanField(default=False)
+    tags = TaggableManager()
 
     def __str__(self):
         return self.title
