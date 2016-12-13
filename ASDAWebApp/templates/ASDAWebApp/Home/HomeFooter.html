@@ -86,7 +86,7 @@
 <script type="text/javascript" src="{% static 'js/jquery.parallax-scroll.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/jquery.waypoints.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/parallax.min.js' %}"></script><div id="map"></div>
+<div id="map"></div>
 <script>
   var map;
   function initMap() {
@@ -347,7 +347,8 @@
 </script>
    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6kp0RNXLLqTtlZTScexKXQ97PZe8GBv0&callback=initMap" async defer></script>
 <script>
-	$('.parallax-window').parallax({imageSrc: "{% static 'img/marquettebuilding.jpg' %}"});
-	window.scrollBy(0,5);
+$('.bg-holder').parallaxScroll({
+  friction: 0.5
+});
 </script>
 </html>

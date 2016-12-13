@@ -5,7 +5,7 @@ from django.http import HttpResponse
 
 def index(request):
     blogPosts = BlogPost.objects.filter(approved=True).order_by('-date')[:4]
-    return render(request, 'ASDAWebApp/blogPosts.html', {'blogPosts': blogPosts})
+    return render(request, 'ASDAWebApp/Home/Index.html', {'blogPosts': blogPosts})
 
 
 def contact(request):

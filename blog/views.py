@@ -18,7 +18,7 @@ class blogPostList(ListView):
 
 
 class blogTagQueryList(ListView):
-    template_name = "blog/blog.html"
+    template_name = "blog/blogQuery.html"
     paginate_by = 3
 
     def get_context_data(self, **kwargs):

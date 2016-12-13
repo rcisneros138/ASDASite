@@ -1,0 +1,42 @@
+{% extends "ASDAWebApp/Home/HomeHeader.html"%}
+{% load staticfiles %}
+{% block content %}
+  <div class="fh5co-cards" >
+    <div class="container-fluid">
+      <br>
+      <div class="row">
+        <div class="col-md-12 heading text-center"><h2>News and Events</h2></div>
+      </div>
+
+      <!-- blog cards -->
+      <div class="row blogRow">
+        {% for post in blogPosts %}
+          <div class="col-md-3 animate-box">
+              <a class="fh5co-card" href="/blog/{{post.id}}">
+                 <img src="{% static 'img/marquetteASDA1.png' %}" class="img-responsive">
+                 <!-- <img src="{{post.imagePath}}" class="img-responsive"> -->
+                  <div class="fh5co-card-body">
+                    <h3 class="post-title">{{post.title}}</h3>
+                    <div class="blogBody">
+                      <span id="{{post.id}}">{{post.body|safe}}</span>
+                    </div>
+                      <p><script>trimInput(document.getElementById("{{post.id}}"));</script></p>
+                    <p class="post-meta">Posted by {{post.author}} on {{post.date|date:"m-d-y"}}</p>
+                  </div>
+              </a>
+          </div>
+        {% endfor %}
+      </div>
+
+
+    </div>
+  </div>
+  <div class="animate-box fh5co-product-2">
+    <div class="fh5co-half img" style="background-image: url({% static 'img/marquetteASDA1.png' %})"></div>
+    <div class="fh5co-half">
+      <h3>This is Symbol</h3>
+      <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. </p>
+      <p><a href="#" class="btn btn-outline btn-md">Get Started</a></p>
+    </div>
+  </div>
+{% endblock %}

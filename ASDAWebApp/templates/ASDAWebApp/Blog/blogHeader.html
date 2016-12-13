@@ -113,9 +113,9 @@
 				</div>
 			</header>
 
-			<div id="fh5co-hero" class="container" style="background-image: url({% static 'img/marquettebuilding.jpg' %});">
+			<div id="fh5co-hero"  class="container"  style="background-image: url({% static 'img/marquettebuilding.jpg' %});">
 				<div class="overlay"></div>
-				<a href="#fh5co-main" class="smoothscroll fh5co-arrow to-animate hero-animate-4"><i class="ti-angle-down"></i></a>
+
 
 				<div class="row">
 					<div class="col-md-12">
@@ -131,26 +131,13 @@
 				</div>
 			</div>
 
-			<div class="fh5co-cards">
-				<div class="container-fluid">
-					<br>
-					<div class="row">
-					  <div class="col-md-12 heading text-center"><h2>News and Events</h2></div>
-					</div>
-					<div class="row blogRow">
-						 {% block blog %}
-						 {% endblock %}
-					</div>
-				</div>
-			</div>
+			<div id="fh5co-main">
+		 {% block blog %}
+		 {% endblock %}
 
-			<div class="animate-box fh5co-product-2">
-				<div class="fh5co-half img" style="background-image: url({% static 'img/marquetteASDA1.png' %})"></div>
-				<div class="fh5co-half">
-					<h3>This is Symbol</h3>
-					<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. </p>
-					<p><a href="#" class="btn btn-outline btn-md">Get Started</a></p>
-				</div>
-			</div>
 
-{% include "ASDAWebApp/Footer.html" %}
+
+
+
+{% include "ASDAWebApp/Home/HomeFooter.html" %}
+</div>

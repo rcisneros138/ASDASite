@@ -1,4 +1,4 @@
-{% extends "ASDAWebApp/Blog/blogPostHeader.html"%}
+{% extends "ASDAWebApp/Blog/blogHeader.html"%}
 
 
 {% block blog %}
@@ -21,23 +21,7 @@
 
 					</div>
 
-					<div class="col-md-2 col-md-pull-8 left-sidebar" id="fh5co-sidebar">
-						<div class="sidebar-box animate-box">
-							<h3 class="sidebar-heading"><span class="border"></span>More Subjects</h3>
-							<ul class="sidebar-links">
-                {% for tag in tags %}
-								<li><a href="{{tag}}">{{tag}}</a></li>
-                {% endfor %}
-							</ul>
-						</div>
-					<!--	<div class="sidebar-box animate-box">
-							<h3 class="sidebar-heading"><span class="border"></span>Pargraph</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, aperiam placeat deserunt ullam magnam repudiandae reprehenderit animi aliquid odio ratione.</p>
-							<p><a href="#" class="btn btn-outline btn-sm">Button</a></p>
-						</div>
-					</div> -->
 
-				</div>
 			</div>
       {% if is_paginated %}
       <ul class="pagination col-md-8 col-md-push-4">

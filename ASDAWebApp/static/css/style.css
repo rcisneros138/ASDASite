@@ -731,12 +731,14 @@ textarea {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center left;
+  height: 600px;
   width: 100%;
-  height: 300px;
-  display: table;
-  position: relative;
-  z-index: 20;
-  color: #ffffff;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+z-index: 5;
+
 }
 #fh5co-hero .overlay {
   position: absolute;
@@ -864,10 +866,11 @@ body.inner-page #fh5co-hero .fh5co-hero-wrap {
 }
 
 #fh5co-main {
+  margin-top: 600px;
+
+  z-index: 100;
   position: relative;
-  float: left;
-  width: 100%;
-  clear: both;
+  background: #ffffff;
 }
 
 @media screen and (max-width: 768px) {

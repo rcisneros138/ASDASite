@@ -4,7 +4,7 @@
 <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/handlers.js' %}"></script>
 
-{% block blog %}
+{% block content %}
   {% for post in blogPosts %}
     <div class="col-md-3 animate-box">
         <a class="fh5co-card" href="/blog/{{post.id}}">
@@ -13,7 +13,7 @@
             <div class="fh5co-card-body">
               <h3 class="post-title">{{post.title}}</h3>
               <div class="blogBody">
-                <span id="{{post.id}}">{{post.body}}</span>
+                <span id="{{post.id}}">{{post.body|safe}}</span>
               </div>
                 <p><script>trimInput(document.getElementById("{{post.id}}"));</script></p>
               <p class="post-meta">Posted by {{post.author}} on {{post.date|date:"m-d-y"}}</p>
