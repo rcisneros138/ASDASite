@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
+from django.template.context import RequestContext
 from blog.models import BlogPost
 from taggit.models import Tag
 
@@ -15,6 +16,12 @@ class blogPostList(ListView):
         context = super(blogPostList, self).get_context_data(**kwargs)
         context['tags'] = Tag.objects.all()
         return context
+
+
+class postDetail(DetailView):
+    model = BlogPost
+    template_name = 'blog/post.html'
+
 
 
 class blogTagQueryList(ListView):

@@ -12,6 +12,7 @@ class BlogPost(models.Model):
     author = models.ForeignKey(User, null=True, blank=True)
     approved = models.BooleanField(default=False)
     tags = TaggableManager()
+    headerImage = models.ImageField(null=True, blank=True)
 
     def __str__(self):
         return self.title
@@ -21,8 +22,8 @@ class BlogPost(models.Model):
         self.save()
 
 
-class Image(models.Model):
-    blogPost = models.ForeignKey(BlogPost)
+class BlogImage(models.Model):
+    blogPost = models.ForeignKey(BlogPost, related_name='blogImages')
     Image = models.ImageField()
 
     def image_img(self):

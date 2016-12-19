@@ -13,24 +13,86 @@
         {% for post in blogPosts %}
           <div class="col-md-3 animate-box">
               <a class="fh5co-card" href="/blog/{{post.id}}">
-                 <img src="{% static 'img/marquetteASDA1.png' %}" class="img-responsive">
+                {% if post.headerImage %}
+                <img src="{{post.headerImage.url}}" class="img-responsive">
+                {% else %}
+                 <img src="{% static 'img/dentistmeetup.jpg' %}" class="img-responsive">
+                 {% endif %}
                  <!-- <img src="{{post.imagePath}}" class="img-responsive"> -->
                   <div class="fh5co-card-body">
                     <h3 class="post-title">{{post.title}}</h3>
                     <div class="blogBody">
-                      <span id="{{post.id}}">{{post.body|safe}}</span>
+                      <span>{{post.body|safe|truncatewords:15}}</span>
                     </div>
-                      <p><script>trimInput(document.getElementById("{{post.id}}"));</script></p>
+
                     <p class="post-meta">Posted by {{post.author}} on {{post.date|date:"m-d-y"}}</p>
                   </div>
               </a>
           </div>
         {% endfor %}
       </div>
-
-
     </div>
   </div>
+  <!-- icon section -->
+  <div class="container">
+
+  <div class="row text-center" id="fh5co-features">
+    <div class="col-md-12 heading animate-box"><h2>Awesome Features</h2></div>
+    <div class="col-md-4 col-sm-6 text-center fh5co-feature feature-box">
+      <div class="fh5co-feature-icon">
+        <i class="ti-heart"></i>
+      </div>
+      <h3 class="heading">Service</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt porro delectus cum officia magnam.</p>
+    </div>
+    <div class="col-md-4 col-sm-6 text-center fh5co-feature feature-box">
+      <div class="fh5co-feature-icon">
+        <i class="ti-check-box"></i>
+      </div>
+      <h3 class="heading">Advocacy</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt porro delectus cum officia magnam. </p>
+    </div>
+
+    <div class="clearfix visible-sm-block"></div>
+
+    <div class="col-md-4 col-sm-6 text-center fh5co-feature feature-box">
+      <div class="fh5co-feature-icon">
+        <i class="ti-shine"></i>
+      </div>
+      <h3 class="heading">Sustainability</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt porro delectus cum officia magnam.</p>
+    </div>
+
+    <div class="clearfix visible-md-block visible-lg-block"></div>
+
+    <div class="col-md-4 col-sm-6 text-center fh5co-feature feature-box">
+      <div class="fh5co-feature-icon">
+        <i class="ti-home"></i>
+      </div>
+      <h3 class="heading">Community</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt porro delectus cum officia magnam. </p>
+    </div>
+
+    <div class="clearfix visible-sm-block"></div>
+
+    <div class="col-md-4 col-sm-6 text-center fh5co-feature feature-box">
+      <div class="fh5co-feature-icon">
+        <i class="ti-blackboard"></i>
+      </div>
+      <h3 class="heading">Education</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt porro delectus cum officia magnam.</p>
+    </div>
+    <div class="col-md-4 col-sm-6 text-center fh5co-feature feature-box">
+      <div class="fh5co-feature-icon">
+        <i class="ti-briefcase"></i>
+      </div>
+      <h3 class="heading">Representation</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt porro delectus cum officia magnam.</p>
+    </div>
+  </div>
+  <!-- END row -->
+
+</div>
   <div class="animate-box fh5co-product-2">
     <div class="fh5co-half img" style="background-image: url({% static 'img/marquetteASDA1.png' %})"></div>
     <div class="fh5co-half">

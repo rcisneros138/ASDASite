@@ -1,4 +1,4 @@
-{% extends "ASDAWebApp/Blog/blogPostHeader.html"%}
+{% extends "ASDAWebApp/Blog/blogHeader.html"%}
 
 
 {% block blog %}
@@ -13,8 +13,9 @@
   						<div class="content-box animate-box">
                 <h2>{{post.title}}</h2>
                 <h4>{{post.date.date}}</h4>
-  							{{post.body|safe|linebreaks|truncatewords:100}}
+  							{{post.body|safe|truncatewords:100}}
                 <a href="/blog/{{post.id}}"> <p>Continue Reading</p></a>
+                <span class="border"></span>
   						</div>
             </br>
             {% endfor %}
@@ -30,35 +31,38 @@
                 {% endfor %}
 							</ul>
 						</div>
-					<!--	<div class="sidebar-box animate-box">
+            <div class="sidebar-box animate-box">
 							<h3 class="sidebar-heading"><span class="border"></span>Pargraph</h3>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, aperiam placeat deserunt ullam magnam repudiandae reprehenderit animi aliquid odio ratione.</p>
 							<p><a href="#" class="btn btn-outline btn-sm">Button</a></p>
 						</div>
-					</div> -->
+					</div>
 
 				</div>
-			</div>
-      {% if is_paginated %}
-      <ul class="pagination col-md-8 col-md-push-4">
-        {% if page_obj.has_previous %}
-        <li><a href="?page={{page_obj.previous_page_number}}">&laquo;</a> </li>
-        {% else %}
-        <li class="disabled"><span>&laquo;</span></li>
-        {% endif %}
-        {% for pageNumber in paginator.page_range %}
-          {% if page_obj.number == pageNumber %}
-            <li class="active"><span> {{ pageNumber }} <span class="sr-only">(current)</span></span></li>
+        <div>
+        {% if is_paginated %}
+        <ul class="pagination col-md-8 col-md-push-4">
+          {% if page_obj.has_previous %}
+          <li><a href="?page={{page_obj.previous_page_number}}">&laquo;</a> </li>
           {% else %}
-            <li><a href="?page={{ pageNumber }}"> {{ pageNumber }}</a></li>
+          <li class="disabled"><span>&laquo;</span></li>
           {% endif %}
-        {% endfor %}
-        {% if page_obj.has_next %}
-          <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
-        {% else %}
-          <li class="disabled"><span>&raquo;</span></li>
+          {% for pageNumber in paginator.page_range %}
+            {% if page_obj.number == pageNumber %}
+              <li class="active"><span> {{ pageNumber }} <span class="sr-only">(current)</span></span></li>
+            {% else %}
+              <li><a href="?page={{ pageNumber }}"> {{ pageNumber }}</a></li>
+            {% endif %}
+          {% endfor %}
+          {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+          {% else %}
+            <li class="disabled"><span>&raquo;</span></li>
+          {% endif %}
+        </ul>
         {% endif %}
-      </ul>
-      {% endif %}
+      </div>
+			</div>
+
 		</div>
 {% endblock %}

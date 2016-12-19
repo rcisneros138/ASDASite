@@ -272,7 +272,7 @@ textarea {
 
 .sf-menu a {
   color: rgba(0, 0, 0, 0.8);
-  color: #2d9c9b;
+  color: #FFC539;
   padding: .75em 1em;
   font-weight: normal;
   border-left: none;
@@ -1008,6 +1008,7 @@ body.fh5co-mobile-menu-visible #fh5co-mobile-menu {
   background: #f3f8f9;
   float: left;
   width: 100%;
+  z-index: 3
 }
 #fh5co-footer .fh5co-arrow {
   position: absolute;

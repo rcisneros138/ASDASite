@@ -59,7 +59,7 @@ a {
   -ms-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
-  color: #57cecd;
+  color: #FFB400;
 }
 a:hover, a:focus, a:active {
   color: #31a8a7;
@@ -167,7 +167,7 @@ textarea {
   top: 0;
   left: 0 !important;
   right: 0;
-  z-index: 100;
+  z-index: 103;
 }
 /*
 
@@ -213,14 +213,14 @@ textarea {
 }
 #fh5co-logo a:hover {
   opacity: .7;
-}
+}*/
 @media screen and (max-width: 768px) {
   #fh5co-logo {
     text-align: center;
     margin: 0px 0 0 0;
     float: none !important;
   }
-}*/
+}
 #fh5co-header-section.fh5co-scrolled {
   padding: 0px 0;
   background: rgba(0, 0, 0, 0.8);
@@ -240,14 +240,14 @@ textarea {
   border:none;
 }
 #fh5co-header-section.fh5co-scrolled #fh5co-menu-wrap .sf-menu a {
-  color: #2e2e2e;
+  color: black;
   border-bottom: none !important;
 }
 #fh5co-header-section.fh5co-scrolled #fh5co-menu-wrap .sf-menu a:hover {
   color: #28bbf8 !important;
 }
 #fh5co-header-section.fh5co-scrolled #fh5co-menu-wrap .sf-menu li.active > a {
-  color: #28bbf8 !important;
+  color: #FFB400 !important;
 }
 #fh5co-header-section.fh5co-scrolled #fh5co-menu-wrap > .sf-menu > li > a {
   padding-top: 1em;
@@ -272,7 +272,7 @@ textarea {
 
 .sf-menu a {
   color: rgba(0, 0, 0, 0.8);
-  color: #2d9c9b;
+  color: #57CECD;
   padding: .75em 1em;
   font-weight: normal;
   border-left: none;
@@ -373,7 +373,7 @@ textarea {
   font-size: 14px;
   width: 100%;
   content: "\e64b";
-  color: #2b9493;
+  color: #4DBABB;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -ms-transition: all 0.2s ease;
@@ -1009,6 +1009,7 @@ body.fh5co-mobile-menu-visible #fh5co-mobile-menu {
   background: #f3f8f9;
   float: left;
   width: 100%;
+  z-index: 100;
 }
 #fh5co-footer .fh5co-arrow {
   position: absolute;
@@ -1022,7 +1023,7 @@ body.fh5co-mobile-menu-visible #fh5co-mobile-menu {
   text-decoration: none;
   width: 60px;
   height: 60px;
-  background: #f86942;
+  background: #FFB400;
   border-bottom: none !important;
   text-align: center;
   -webkit-border-radius: 50%;
@@ -1391,7 +1392,7 @@ Components
 #fh5co-features .fh5co-feature-icon i {
   vertical-align: middle;
   font-size: 50px;
-  color: #57cecd;
+  color: #FFB400;
 }
 
 /* Header */

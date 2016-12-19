@@ -1,14 +1,14 @@
 from django.contrib import admin
-from blog.models import BlogPost, Image
+from blog.models import BlogPost, BlogImage
 
 
 class InlineImage(admin.TabularInline):
-    model = Image
+    model = BlogImage
 
 
 class BlogPostAdmin(admin.ModelAdmin):
     inlines = [InlineImage]
-
+    
     def get_readonly_fields(self, request, obj=None):
         if obj and not request.user.is_superuser:
             return ['approved']
