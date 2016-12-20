@@ -2,6 +2,16 @@ from django.db import models
 from django.utils.encoding import smart_text
 
 
+class contactUs(models.Model):
+    name = models.CharField(max_length=140, null=True, blank=True)
+    email = models.EmailField()
+    subject = models.CharField(max_length=140, null=True, blank=True)
+    message = models.TextField()
+
+    def __str__(self):
+        return smart_text(self.email)
+
+
 class Signup(models.Model):
     firstName = models.CharField(max_length=140, null=True, blank=True)
     lastName = models.CharField(max_length=120, null=True, blank=True)
@@ -55,5 +65,3 @@ class PreDentalWeekendSignup(models.Model):
 
     def __str__(self):
         return str(self.ApplicantAddress)
-
-#name,emergency contact, need hotel Room, email, home/mailing address, their school,
