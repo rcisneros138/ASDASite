@@ -1,7 +1,8 @@
 from django.conf.urls import url
-from . import views
+from django.conf.urls.static import static
+from ASDA import settings
+from ASDAWebApp.views import Index
 
 urlpatterns = [
-    url(r'^$', views.index, name='Index'),
-    url(r'^contact/', views.contact, name='contact')
-]
+    url(r'^$', Index.as_view(), name='Index'),
+]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

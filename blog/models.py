@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
+from taggit.managers import TaggableManager
 
 
 class BlogPost(models.Model):
@@ -10,6 +11,8 @@ class BlogPost(models.Model):
     date = models.DateTimeField()
     author = models.ForeignKey(User, null=True, blank=True)
     approved = models.BooleanField(default=False)
+    tags = TaggableManager()
+    headerImage = models.ImageField(null=True, blank=True)
 
     def __str__(self):
         return self.title
@@ -17,3 +20,17 @@ class BlogPost(models.Model):
     def approve(self):
         self.approved = True
         self.save()
+
+
+class BlogImage(models.Model):
+    blogPost = models.ForeignKey(BlogPost, related_name='blogImages')
+    Image = models.ImageField()
+
+    def image_img(self):
+        if self.image:
+            return '<img src="%s" />' % self.image.url
+        else:
+            return '(No image found)'
+
+    image_img.short_description = 'Thumb'
+    image_img.allow_tags = True

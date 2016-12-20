@@ -1,11 +1,9 @@
-.parallax-mirror {
-    z-index:1;
-}
-.parallax-window {
-    min-height: 700px;
-    background: transparent;
+.bg-holder{
     width: 100%;
-    height: 7em;
+    height: 100%;
+}
+#pic1 {
+  background-image: url("../img/marquettebuilding.jpg");
 }
 
 a:link {
@@ -48,4 +46,13 @@ a:active {
 #bodyInput{
   resize: vertical;
   height: 6em;
+}
+
+/*FRONT PAGE BLOG*/
+.blogRow{
+  padding: 1.5em;
+}
+.blogBody{
+  min-height: 7em;
+  max-height: 7em;
 }

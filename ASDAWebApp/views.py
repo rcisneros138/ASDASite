@@ -1,13 +1,15 @@
 from django.shortcuts import render
 from blog.models import BlogPost
 from django.http import HttpResponse
+from django.views.generic import DetailView, ListView
 
 
-def index(request):
-    blogPosts = BlogPost.objects.filter(approved=True).order_by('-date')
-    return render(request, 'ASDAWebApp/home.html', {'blogPosts': blogPosts})
+class Index(ListView):
+    model = BlogPost
+    queryset = BlogPost.objects.filter(approved=True).order_by('-date')[:4]
+    template_name = 'ASDAWebApp/Home/Index.html'
 
 
-def contact(request):
-    return render(request, 'ASDAWebApp/basic.html', {'content': ['if you want to contact, email me at',
-                                                                 'rcisneros138@gmail.com']})
+# def index(request):
+#     blogPosts = BlogPost.objects.filter(approved=True).order_by('-date')[:4]
+#     return render(request, 'ASDAWebApp/Home/Index.html', {'blogPosts': blogPosts})

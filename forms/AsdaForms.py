@@ -1,7 +1,13 @@
 from django import forms
 from django.forms import TextInput
 from django.forms import inlineformset_factory
-from .models import Signup, PreDentalWeekendSignup, ContactInformation
+from .models import Signup, PreDentalWeekendSignup, ContactInformation, contactUs
+
+
+class ContactUsForm(forms.ModelForm):
+    class Meta:
+        model = contactUs
+        fields = ('name', 'email', 'subject', 'message')
 
 
 class signupForm(forms.ModelForm):
