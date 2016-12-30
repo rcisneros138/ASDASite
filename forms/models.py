@@ -8,8 +8,12 @@ class contactUs(models.Model):
     subject = models.CharField(max_length=140, null=True, blank=True)
     message = models.TextField()
 
+    class Meta:
+        verbose_name = 'Contact Request'
+        verbose_name_plural = 'Contact Requests'
+
     def __str__(self):
-        return smart_text(self.email)
+        return self.email
 
 
 class Signup(models.Model):

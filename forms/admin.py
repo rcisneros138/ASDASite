@@ -1,5 +1,5 @@
 from django.contrib import admin
-from forms.models import Signup, PreDentalWeekendSignup, ContactInformation, UsLocation
+from forms.models import Signup, PreDentalWeekendSignup, ContactInformation, UsLocation, contactUs
 
 
 class HiddenModelAdmin(admin.ModelAdmin):
@@ -9,6 +9,10 @@ class HiddenModelAdmin(admin.ModelAdmin):
 
 class SignupAdmin(admin.ModelAdmin):
     list_display = ('firstName', 'email', 'timeStamp')
+
+
+class ContactUsAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'subject')
 
 
 class PreDentalWeekendSignupAdmin(admin.ModelAdmin):
@@ -40,3 +44,4 @@ admin.site.register(Signup, SignupAdmin)
 admin.site.register(PreDentalWeekendSignup, PreDentalWeekendSignupAdmin)
 admin.site.register(ContactInformation, ContactInformationAdmin)
 admin.site.register(UsLocation, UsLocationAdmin)
+admin.site.register(contactUs, ContactUsAdmin)

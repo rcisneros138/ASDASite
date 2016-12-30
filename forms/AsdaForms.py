@@ -7,6 +7,9 @@ from .models import Signup, PreDentalWeekendSignup, ContactInformation, contactU
 class ContactUsForm(forms.ModelForm):
     class Meta:
         model = contactUs
+        widgets = {
+          'message': forms.Textarea(attrs={'rows':4, 'cols':15}),
+        }
         fields = ('name', 'email', 'subject', 'message')
 
 

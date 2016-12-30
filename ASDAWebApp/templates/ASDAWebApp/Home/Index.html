@@ -10,7 +10,7 @@
 
       <!-- blog cards -->
       <div class="row blogRow">
-        {% for post in object_list %}
+        {% for post in  recentPosts %}
           <div class="col-md-3 animate-box">
               <a class="fh5co-card" href="/blog/{{post.id}}">
                 {% if post.headerImage %}
