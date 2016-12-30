@@ -22,8 +22,8 @@ class Index(CreateView):
         return super(Index, self).form_valid(form)
 
 
-
-
-# def index(request):
-#     blogPosts = BlogPost.objects.filter(approved=True).order_by('-date')[:4]
-#     return render(request, 'ASDAWebApp/Home/Index.html', {'blogPosts': blogPosts})
+class BookClubView(ListView):
+    model = BlogPost
+    template_name = "ASDAWebApp/Committees/BookClub.html"
+    queryset = BlogPost.objects.filter(tags__name='BookClub',
+                                       approved=True).order_by("-date")[:10]

@@ -914,6 +914,7 @@ body.fh5co-mobile-menu-visible #fh5co-mobile-menu {
   flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
   -moz-flex-wrap: wrap;
+
 }
 .fh5co-product-2 .img {
   background-color: #57cecd;
@@ -1099,12 +1100,24 @@ body.fh5co-mobile-menu-visible #fh5co-mobile-menu {
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  height: :250px; /* or whatever width you want. */
+  max-height: :250px; /* or whatever width you want. */
+
 }
 .fh5co-cards .fh5co-card img {
   z-index: -1;
+  height: 350px;
+  max-width: 350px;
+  max-height: 350px;
+  margin: auto;
 }
 .fh5co-cards .fh5co-card .fh5co-card-body {
   padding: 30px;
+  height: :350px; /* or whatever width you want. */
+  max-height: :350px; /* or whatever width you want. */
+
+
+
 }
 .fh5co-cards .fh5co-card .fh5co-card-body h3 {
   font-size: 20px;
