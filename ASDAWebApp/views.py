@@ -3,29 +3,7 @@ from blog.models import BlogPost
 from forms.models import contactUs
 from django.http import HttpResponse
 from django.views.generic import ListView, CreateView
-from django.views.generic.edit import FormMixin
 from forms.AsdaForms import ContactUsForm
-
-
-# class FormListView(ListView, FormMixin):
-#     def get(self, request, *args, **kwargs):
-#         form_class = self.get_form_class
-#         self.form = self.get_form(form_class)
-#
-#         self.object_list = self.get_queryset()
-#         context = self.get_context_data(object_list=self.object_list,
-#                                         form=self.form)
-#         return self.render_to_response(context)
-#
-#     def post(self, request, *args, **kwargs):
-#         return self.get(request, *args, **kwargs)
-#
-#
-# class Index(FormListView):
-#     model = BlogPost
-#     form_class = ContactUsForm
-#     queryset = BlogPost.objects.filter(approved=True).order_by('-date')[:4]
-#     template_name = 'ASDAWebApp/Home/Index.html'
 
 
 class Index(CreateView):
