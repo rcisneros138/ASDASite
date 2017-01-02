@@ -26,4 +26,39 @@ class BookClubView(ListView):
     model = BlogPost
     template_name = "ASDAWebApp/Committees/BookClub.html"
     queryset = BlogPost.objects.filter(tags__name='BookClub',
-                                       approved=True).order_by("-date")[:10]
+                                       approved=True).order_by("-date")[:4]
+
+
+class CommunityServiceView(ListView):
+    model = BlogPost
+    template_name = "ASDAWebApp/Committees/CommunityService.html"
+    queryset = BlogPost.objects.filter(tags__name='CommunityService',
+                                       approved=True).order_by("-date")[:4]
+
+
+class HealthView(ListView):
+    model = BlogPost
+    template_name = "ASDAWebApp/Committees/Health.html"
+    queryset = BlogPost.objects.filter(tags__name='HealthAndWellness',
+                                       approved=True).order_by("-date")[:4]
+
+
+class FundraisingView(ListView):
+    model = BlogPost
+    template_name = "ASDAWebApp/Committees/FundraisingCommittee.html"
+    queryset = BlogPost.objects.filter(tags__name='Fundraising',
+                                       approved=True).order_by("-date")[:4]
+
+
+class PrediatricView(ListView):
+    model = BlogPost
+    template_name = "ASDAWebApp/Committees/PediatricCommittee.html"
+    queryset = BlogPost.objects.filter(tags__name='Pediatrics',
+                                       approved=True).order_by("-date")[:4]
+
+
+class SocialView(ListView):
+    model = BlogPost
+    template_name = "ASDAWebApp/Committees/SocialCommittee.html"
+    queryset = BlogPost.objects.filter(tags__name='Social',
+                                       approved=True).order_by("-date")[:4]

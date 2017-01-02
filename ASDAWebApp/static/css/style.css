@@ -304,7 +304,7 @@ textarea {
 .sf-menu ul li:hover a,
 .sf-menu ul li.sfHover a,
 .sf-menu li.active a {
-  color: #ffffff;
+  color: #FFB400;
 }
 
 .sf-menu ul li:hover,
@@ -1106,10 +1106,11 @@ body.fh5co-mobile-menu-visible #fh5co-mobile-menu {
 }
 .fh5co-cards .fh5co-card img {
   z-index: -1;
-  height: 350px;
-  max-width: 350px;
-  max-height: 350px;
+  height: 300px;
+  max-width: 400px;
+  max-height: 300px;
   margin: auto;
+
 }
 .fh5co-cards .fh5co-card .fh5co-card-body {
   padding: 30px;
@@ -1436,7 +1437,7 @@ Components
 }
 
 .resp-tab-active {
-  color: #57cecd;
+  color: #FFB400;
 }
 
 .resp-content-active, .resp-accordion-active {
