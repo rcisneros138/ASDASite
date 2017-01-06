@@ -10,7 +10,7 @@ urlpatterns = [
         template_name='ASDAWebApp/Committees/Committees.html'),
         name='Committees'),
     url(r'^calendar/$', TemplateView.as_view(
-        template_name='ASDAWebApp/calendar.html'),
+        template_name='ASDAWebApp/Calendar/calendar.html'),
         name='calendar'),
     url(r'^committees/bookclub/$', BookClubView.as_view(),
         name='BookClubView'),

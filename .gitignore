@@ -13,3 +13,4 @@ lib64
 secrets.py
 db.sqlite3
 .vscode/*
+ApiKeys.json
