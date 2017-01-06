@@ -62,3 +62,17 @@ class SocialView(ListView):
     template_name = "ASDAWebApp/Committees/SocialCommittee.html"
     queryset = BlogPost.objects.filter(tags__name='Social',
                                        approved=True).order_by("-date")[:4]
+
+
+class LunchView(ListView):
+    model = BlogPost
+    template_name = "ASDAWebApp/Committees/LunchClub.html"
+    queryset = BlogPost.objects.filter(tags__name='Lunch',
+                                       approved=True).order_by("-date")[:4]
+
+
+class SustainabilityView(ListView):
+    model = BlogPost
+    template_name = "ASDAWebApp/Committees/SustainabilityCommittee.html"
+    queryset = BlogPost.objects.filter(tags__name='Sustainability',
+                                       approved=True).order_by("-date")[:4]

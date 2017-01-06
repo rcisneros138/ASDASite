@@ -121,6 +121,7 @@
 <div id="fh5co-main">
 
 <div class="fh5co-cards" >
+	{% if object_list.count > 1 %}
   <div class="container-fluid">
     <br>
     <div class="row">
@@ -152,6 +153,7 @@
       {% endfor %}
     </div>
   </div>
+	{% endif %}
 </div>
 <div class="animate-box fh5co-product-2">
   <div class="fh5co-half img" style="background-image: url({% static 'img/FundraisingChairs.jpeg' %});"></div>

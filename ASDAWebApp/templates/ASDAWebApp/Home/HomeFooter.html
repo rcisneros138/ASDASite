@@ -28,7 +28,7 @@
 							{% csrf_token %}
 							{% for field in form %}
 							  <div class="form-group row">
-									<label for="{{form.name.id_for_label}}" class="col-xs-2 col-form-label">{{field.label}}</label>
+
 									<div class="col-xs-10">
 										{{field|addclass:'col-xs-10 form-control'}}
 								    {{field.errors}}

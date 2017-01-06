@@ -1169,7 +1169,7 @@ body.fh5co-mobile-menu-visible #fh5co-mobile-menu {
 /* Spacer */
 .fh5co-spacer {
   clear: both;
-  position: relative;
+  position: fixed;
   border: none;
   padding: 0;
   margin: 0;
@@ -1365,7 +1365,7 @@ Components
 .form-control:hover, .form-control:focus, .form-control:active {
   outline: none;
   box-shadow: none !important;
-  border: 2px solid #57cecd;
+  border: 2px solid #FFB400;
 }
 
 .js .to-animate,
@@ -1636,8 +1636,8 @@ Components
   border-radius: 50%;
 }
 .fh5co-social-icons li a:hover {
-  background: #f86942;
-  border: 1px solid #f86942 !important;
+  background: #FFB400;
+  border: 1px solid #FFB400 !important;
   color: #ffffff !important;
 }
 .fh5co-social-icons li i {
