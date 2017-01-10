@@ -43,22 +43,16 @@
 								<a href="/">Home</a>
 							</li>
 							<li>
-								<a href="#" class="fh5co-sub-ddown">About</a>
-								 <ul class="fh5co-sub-menu">
-								 	<li><a href="#">Mission</a></li>
-								 	<li><a href="#">Cabinet</a></li>
-									<li><a href="#">Committee Chairs</a></li>
-									<li><a href="#">Gold Crowns</a></li>
-								</ul>
+								<a href="{% url 'Committees' %}">Committees</a>
 							</li>
 							<li>
-								<a href="#" class="fh5co-sub-ddown">News</a>
-								 <ul class="fh5co-sub-menu">
-									<li><a href="/blog">Blog</a></li>
- 									<li><a href="#">Events Calendar</a></li>
-								</ul>
+								<a href="{% url 'blogPostList' %}">Blog</a>
 							</li>
 							<li>
+								<a href="{% url 'Calendar' %}">Calendar</a>
+							</li>
+
+						<!--	<li>
 								<a href="#" class="fh5co-sub-ddown">Advocacy</a>
 								 <ul class="fh5co-sub-menu">
 									<li><a href="#">Issues</a></li>
@@ -87,7 +81,7 @@
  									<li><a href="#">ASDA Logo?</a></li>
  									<li><a href="#">Plan &amp; Goals</a></li>
 								</ul>
-							</li>
+							</li> -->
 							<!-- </li>
 							<li>
 								<a href="#" class="fh5co-sub-ddown">Dropdown</a>
@@ -115,7 +109,7 @@
 
 			<div id="fh5co-hero"  class="container"  style="background-image: url({% static 'img/marquettebuilding.jpg' %});">
 				<div class="overlay"></div>
-				
+
 
 				<div class="row">
 					<div class="col-md-12">

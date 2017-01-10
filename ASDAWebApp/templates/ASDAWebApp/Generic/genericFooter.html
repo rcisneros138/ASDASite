@@ -1,4 +1,7 @@
+
 {% load staticfiles %}
+<hr class="fh5co-spacer fh5co-spacer-sm">
+<hr class="fh5co-spacer fh5co-spacer-sm">
 <footer role="contentinfo" id="fh5co-footer">
   <a href="#" class="fh5co-arrow fh5co-gotop footer-box"><i class="ti-angle-up"></i></a>
   <div class="container">
@@ -27,13 +30,13 @@
           <li><a href="https://twitter.com/marquetteasda"><i class="ti-twitter-alt"></i></a></li>
           <li><a href="https://www.facebook.com/MarquetteASDA"><i class="ti-facebook"></i></a></li>
           <li><a href="https://www.instagram.com/marquetteasda/"><i class="ti-instagram"></i></a></li>
-          <li><a href="https://www.instagram.com/marquetteasda/"><i class="ti-youtube"></i></a></li>
+          <li><a href="https://www.youtube.com/user/marquetteasda"><i class="ti-youtube"></i></a></li>
         </ul>
         </ul>
       </div>
       <div class="col-md-12 footer-box">
         <div class="fh5co-copyright">
-        <p>&copy; 2015 Free Valet. All Rights Reserved. <br>Designed by <a href="http://freehtml5.co" target="_blank">FREEHTML5.co</a> Images by: <a href="http://unsplash.com">Unsplash</a></p>
+        <p>&copy; Marquette 2016 <br>Designed by Raymond Cisneros &amp; Keith Hetzel</p>
         </div>
       </div>
 
@@ -59,3 +62,10 @@
 <script type="text/javascript" src="{% static 'js/jquery.parallax-scroll.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/jquery.waypoints.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+<script>
+$("button").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".second").offset().top},
+        'slow');
+});
+</script>

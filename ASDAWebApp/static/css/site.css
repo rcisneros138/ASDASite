@@ -6,6 +6,12 @@
   background-image: url("../img/marquettebuilding.jpg");
 }
 
+.img-preview-fixed{
+  max-width: 350px;
+  max-height: 350px;
+  margin: auto;
+}
+
 a:link {
     text-decoration: none;
 }

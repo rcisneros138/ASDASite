@@ -1,0 +1,128 @@
+{% extends "ASDAWebApp/Generic/navBar.html" %}
+{% load staticfiles %}
+{% block body %}
+
+			<div id="fh5co-hero"  class="container"  style="background-image: url({% static 'img/SocialEvent.jpeg' %});">
+				<div class="overlay"></div>
+
+
+				<div class="row">
+					<div class="col-md-12">
+						<div class="fh5co-hero-wrap">
+							<div class="fh5co-hero-intro">
+								<h1 class="to-animate hero-animate-1">Marquette <span class="gold bold">ASDA</span></h1>
+								<p class="to-animate hero-animate-2">Social Committee</p>
+                <p class="to-animate hero-animate-3"><button href="#" type="button" class="btn btn-outline btn-md">About Us</button></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+<div id="fh5co-main">
+{% if object_list.count > 1 %}
+<div class="fh5co-cards" >
+  <div class="container-fluid">
+    <br>
+    <div class="row">
+
+      <h2 class="fh5co-uppercase-heading-sm text-center">Latest With Us</h2>
+    </div>
+
+
+    <div class="row blogRow">
+      {% for post in  object_list %}
+        <div class="col-md-3 animate-box">
+            <a class="fh5co-card" href="/blog/{{post.id}}">
+              {% if post.headerImage %}
+              <img src="{{post.headerImage.url}}" class="img-responsive">
+              {% else %}
+               <img src="{% static 'img/dentistmeetup.jpg' %}" class="img-responsive">
+               {% endif %}
+
+                <div class="fh5co-card-body">
+                  <h3 class="post-title">{{post.title|truncatewords:9}}</h3>
+                  <div class="blogBody">
+                    <span>{{post.body|safe|truncatewords:10}}</span>
+                  </div>
+									{{post.date.date}}
+
+                </div>
+            </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}
+<div class="animate-box fh5co-product-2">
+  <div class="fh5co-half img" style="background-image: url({% static 'img/SocialChairs.jpeg' %});"></div>
+  <div class="fh5co-half">
+    <h3>Eric Basta (D4) | Hanna Cho (D2)</h3>
+    <p>The Social Committee organizes events and activities throughout the year that both raise money for ASDA and provide a great outlet from classes! Many new ideas will be coming to life this year and may include a Flag Football Tournament, Wine and Cheese Tasting, and Group Trivia Nights. Currently the Social Committee organizes holiday parties, sporting event tailgates, the Thriller at Miller Bags Tournament, a Rock Paper Scissors Tournament, and many others! This is the committee for anyone who likes to have an awesome time and help plan big group get-togethers! </p>
+  </div>
+</div>
+  <hr class="fh5co-spacer fh5co-spacer-sm">
+</br>
+<div class="container second">
+  <div class="col-md-12 animate-box">
+						<h2 class="fh5co-uppercase-heading-sm text-center">About Social Committee</h2>
+
+						<div class="fh5co-spacer fh5co-spacer-sm"></div>
+
+						<div id="fh5co-tab-feature-center" class="fh5co-tab text-center">
+							<ul class="resp-tabs-list hor_1">
+								<li><i class="fh5co-tab-menu-icon ti-comments"></i>Meet Up</li>
+								<li><i class="fh5co-tab-menu-icon ti-announcement"></i> What We Do</li>
+								<li><i class="fh5co-tab-menu-icon ti-thumb-up"></i>Get Involved</li>
+							</ul>
+							<div class="resp-tabs-container hor_1">
+								<div>
+									<div class="row">
+										<div class="col-md-12">
+											<h2 class="h3">Lets Get Together</h2>
+										</div>
+										<div class="col-md-6">
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda quis deserunt dolorem, debitis cupiditate nihil velit dolores, inventore voluptatem delectus quos atque similique natus eaque qui, nisi repudiandae dolore sit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum aut maxime eius magnam. Ipsa qui consequatur laborum culpa recusandae ullam repellendus, quod cum nemo consequuntur quidem labore minima dignissimos, eum!</p>
+										</div>
+										<div class="col-md-6">
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio voluptatem, vitae nesciunt ad hic quam quisquam sit possimus officia ratione. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, ex. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex fuga illum necessitatibus consequuntur aspernatur omnis quidem ut, similique esse assumenda.</p>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="row">
+										<div class="col-md-12">
+											<h2 class="h3">Marquette Social</h2>
+										</div>
+										<div class="col-md-6">
+											<p>Nam tristique porttitor neque, sit amet aliquet metus ultricies non. Vestibulum lacinia ante sit amet enim iaculis tempus. Nulla aliquam tincidunt leo, et consequat justo viverra id. Maecenas lacinia libero vel iaculis tincidunt. Quisque luctus massa eu sodales vehicula. Duis gravida at nunc sit amet sagittis. Fusce pulvinar scelerisque enim, vel interdum erat ullamcorper a. Cras elementum mauris justo, quis lacinia erat mollis sed. Donec malesuada odio eu metus consequat interdum. </p>
+										</div>
+										<div class="col-md-6">
+											<p>In varius, ex ut tincidunt tempor, nunc nisi commodo quam, vel volutpat ex eros id tellus. Morbi cursus libero mi. In condimentum leo in libero volutpat rutrum. Ut pellentesque finibus lacus, sed imperdiet ex tincidunt vel. Proin et blandit nisl, dapibus faucibus urna. Praesent et nisi dictum, placerat purus eget, varius est. Suspendisse potenti. Curabitur blandit faucibus auctor.</p>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="row">
+										<div class="col-md-12">
+											<h2 class="h3">We Love Suggestions</h2>
+										</div>
+										<div class="col-md-6">
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda quis deserunt dolorem, debitis cupiditate nihil velit dolores, inventore voluptatem delectus quos atque similique natus eaque qui, nisi repudiandae dolore sit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum aut maxime eius magnam.</p>
+										</div>
+										<div class="col-md-6">
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio voluptatem, vitae nesciunt ad hic quam quisquam sit possimus officia ratione. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, ex. Lorem ipsum dolor sit amet.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+</div>
+<hr class="fh5co-spacer fh5co-spacer-sm">
+<hr class="fh5co-spacer fh5co-spacer-sm">
+{% include "ASDAWebApp/Generic/genericFooter.html" %}
+</div>
+{% endblock %}

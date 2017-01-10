@@ -1,6 +1,6 @@
 
 {% load staticfiles %}
-
+{% load formFilters %}
 		<footer role="contentinfo" id="fh5co-footer">
 			<a href="#" class="fh5co-arrow fh5co-gotop footer-box"><i class="ti-angle-up"></i></a>
 			<div class="container">
@@ -21,18 +21,28 @@
 					<div class="col-md-5 col-sm-12 footer-box">
 						<h3 class="fh5co-footer-heading">CONTACT</h3>
 						<div>
-							<p><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 414.288.679</p>
+							<p><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 414.288.6790</p>
 						  <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> MarquetteASDA@gmail.com</p>
 						</div>
-						<div class="form-group row">
-						  <label for="nameInput" class="col-xs-2 col-form-label">Name</label>
-						  <div class="col-xs-10">
-						    <input class="form-control" type="text" placeholder="Your Name" id="nameInput">
-						  </div>
-						</div>
-						<div class="form-group row">
+						<form method=POST>
+							{% csrf_token %}
+							{% for field in form %}
+							  <div class="form-group row">
+
+									<div class="col-xs-10">
+										{{field|addclass:'col-xs-10 form-control'}}
+								    {{field.errors}}
+									</div>
+							  </div>
+							{% endfor %}
+							<input value="Submit" type="submit" class="btn btn-outline btn-md"/>
+						</form>
+
+
+					<!--	<div class="form-group row">
 						  <label for="emailInput" class="col-xs-2 col-form-label">Email</label>
 						  <div class="col-xs-10">
+								{{form.email}}
 						    <input class="form-control" type="email" placeholder="email@example.com" id="emailInput">
 						  </div>
 						</div>
@@ -48,7 +58,7 @@
 						    <textarea class="form-control" type="text" placeholder="Message here..." id="massageInput"></textarea>
 						  </div>
 						</div>
-					</div>
+					</div> -->
 					<div class="col-md-12 footer-box text-center">
 						<div class="fh5co-copyright">
 						<p class="copyright text-muted">Copyright &copy; Marquette 2016</p>

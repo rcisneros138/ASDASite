@@ -26,11 +26,4 @@ class BlogImage(models.Model):
     blogPost = models.ForeignKey(BlogPost, related_name='blogImages')
     Image = models.ImageField()
 
-    def image_img(self):
-        if self.image:
-            return '<img src="%s" />' % self.image.url
-        else:
-            return '(No image found)'
 
-    image_img.short_description = 'Thumb'
-    image_img.allow_tags = True
