@@ -31,6 +31,11 @@ class postDetail(DetailView):
     model = BlogPost
     template_name = 'blog/post.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(postDetail, self).get_context_data(**kwargs)
+        context['relatedPosts'] = self.object.tags.similar_objects()
+        return context
+
 
 class blogTagQueryList(ListView):
     template_name = "blog/blogQuery.html"

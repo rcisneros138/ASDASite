@@ -25,5 +25,3 @@ class BlogPost(models.Model):
 class BlogImage(models.Model):
     blogPost = models.ForeignKey(BlogPost, related_name='blogImages')
     Image = models.ImageField()
-
-

@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% block body %}
 
-				</div>
+
 			</header>
 			{% if object.headerImage %}
 				<div id="fh5co-hero"  class="container"  style="background-image: url({{object.headerImage.url}});">
@@ -27,6 +27,7 @@
 </br>
 {% block blog %}
 <body>
+
 <div class="container">
 <div class="row">
 	<!-- Start Slider -->
@@ -69,19 +70,37 @@
 </div>
     <div class="container">
       <div class="row">
-              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                {{ object.body|safe|linebreaks }}
+              <div class="col-md-8 col-md-push-4" id="fh5co-content">
+								<div class="content-box animate-box">
+									<h2>{{object.title|striptags}}</h2>
+                	{{ object.body|safe|linebreaks }}
                 <a> Subjects:
                   {% for tag in object.tags.all %}
                   <a href="{{tag}}">{{tag}}</a>
                   {% endfor %}
                 </a>
-
+							</div>
             </div>
+						<div class="col-md-2 col-md-pull-8 left-sidebar" id="fh5co-sidebar">
+							<div class="sidebar-box animate-box">
+								<h3 class="sidebar-heading"><span class="border"></span>Simmilar Posts</h3>
+								<ul class="sidebar-links">
+	                {% for post in relatedPosts %}
+									<li><a href="/blog/{{post.id}}">{{post.title}}</a></li>
+	                {% endfor %}
+								</ul>
+							</div>
+	            <div class="sidebar-box animate-box">
+								<h3 class="sidebar-heading"><span class="border"></span>Pargraph</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, aperiam placeat deserunt ullam magnam repudiandae reprehenderit animi aliquid odio ratione.</p>
+								<p><a href="#" class="btn btn-outline btn-sm">Button</a></p>
+							</div>
+						</div>
       </div>
     </div>
-	{% endblock %}
 
+	{% endblock %}
+</div>
 </div>
 </body>
 {% include "ASDAWebApp/Generic/genericFooter.html" %}
