@@ -304,7 +304,7 @@ textarea {
 .sf-menu ul li:hover a,
 .sf-menu ul li.sfHover a,
 .sf-menu li.active a {
-  color: #ffffff;
+  color: #FFB400;
 }
 
 .sf-menu ul li:hover,
@@ -914,6 +914,7 @@ body.fh5co-mobile-menu-visible #fh5co-mobile-menu {
   flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
   -moz-flex-wrap: wrap;
+
 }
 .fh5co-product-2 .img {
   background-color: #57cecd;
@@ -1099,12 +1100,25 @@ body.fh5co-mobile-menu-visible #fh5co-mobile-menu {
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  height: :250px; /* or whatever width you want. */
+  max-height: :250px; /* or whatever width you want. */
+
 }
 .fh5co-cards .fh5co-card img {
   z-index: -1;
+  height: 300px;
+  max-width: 400px;
+  max-height: 300px;
+  margin: auto;
+
 }
 .fh5co-cards .fh5co-card .fh5co-card-body {
   padding: 30px;
+  height: :350px; /* or whatever width you want. */
+  max-height: :350px; /* or whatever width you want. */
+
+
+
 }
 .fh5co-cards .fh5co-card .fh5co-card-body h3 {
   font-size: 20px;
@@ -1155,7 +1169,7 @@ body.fh5co-mobile-menu-visible #fh5co-mobile-menu {
 /* Spacer */
 .fh5co-spacer {
   clear: both;
-  position: relative;
+  position: fixed;
   border: none;
   padding: 0;
   margin: 0;
@@ -1351,7 +1365,7 @@ Components
 .form-control:hover, .form-control:focus, .form-control:active {
   outline: none;
   box-shadow: none !important;
-  border: 2px solid #57cecd;
+  border: 2px solid #FFB400;
 }
 
 .js .to-animate,
@@ -1423,7 +1437,7 @@ Components
 }
 
 .resp-tab-active {
-  color: #57cecd;
+  color: #FFB400;
 }
 
 .resp-content-active, .resp-accordion-active {
@@ -1622,8 +1636,8 @@ Components
   border-radius: 50%;
 }
 .fh5co-social-icons li a:hover {
-  background: #f86942;
-  border: 1px solid #f86942 !important;
+  background: #FFB400;
+  border: 1px solid #FFB400 !important;
   color: #ffffff !important;
 }
 .fh5co-social-icons li i {

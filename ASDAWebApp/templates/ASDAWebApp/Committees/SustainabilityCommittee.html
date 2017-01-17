@@ -1,0 +1,130 @@
+{% extends "ASDAWebApp/Generic/navBar.html" %}
+{% load staticfiles %}
+{% block body %}
+
+			<div id="fh5co-hero"  class="container"  style="background-image: url({% static 'img/view.jpeg' %});">
+				<div class="overlay"></div>
+
+
+				<div class="row">
+					<div class="col-md-12">
+						<div class="fh5co-hero-wrap">
+							<div class="fh5co-hero-intro">
+								<h1 class="to-animate hero-animate-1">Marquette <span class="gold bold">ASDA</span></h1>
+								<p class="to-animate hero-animate-2">Sustainability Committee</p>
+                <p class="to-animate hero-animate-3"><button href="#" type="button" class="btn btn-outline btn-md">About Us</button></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+<div id="fh5co-main">
+{% if object_list.count > 1 %}
+<div class="fh5co-cards" >
+  <div class="container-fluid">
+    <br>
+    <div class="row">
+
+      <h2 class="fh5co-uppercase-heading-sm text-center">Latest With Us</h2>
+    </div>
+
+
+    <div class="row blogRow">
+      {% for post in  object_list %}
+        <div class="col-md-3 animate-box">
+            <a class="fh5co-card" href="/blog/{{post.id}}">
+              {% if post.headerImage %}
+              <img src="{{post.headerImage.url}}" class="img-responsive">
+              {% else %}
+               <img src="{% static 'img/dentistmeetup.jpg' %}" class="img-responsive">
+               {% endif %}
+
+                <div class="fh5co-card-body">
+                  <h3 class="post-title">{{post.title|truncatewords:9}}</h3>
+                  <div class="blogBody">
+                    <span>{{post.body|safe|truncatewords:10}}</span>
+                  </div>
+									{{post.date.date}}
+
+                </div>
+            </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}
+<div class="animate-box fh5co-product-2">
+  <div class="fh5co-half img" style="background-image: url({% static 'img/sustainChair.jpeg' %});"></div>
+  <div class="fh5co-half">
+    <h3>Autumn Gray (D2) | Kricket Koehn (D2-Not pictured)</h3>
+    <p>The #marquetteasda Sustainability Committee is driven to find the most advantageous ways to make our dental community as efficient and environmentally conscious as possible. Not only that, but we strive to promote health and wellness of the student body as well - the best example of which is our annual sustainability fair, which happens around Earth Day. All in all, we strive for sustainable dentistry, conscious of the health of both dental professionals and the environment. </p>
+  </div>
+</div>
+  <hr class="fh5co-spacer fh5co-spacer-sm">
+</br>
+<div class="container second">
+  <div class="col-md-12 animate-box">
+						<h2 class="fh5co-uppercase-heading-sm text-center">About Sustainability Committee</h2>
+
+						<div class="fh5co-spacer fh5co-spacer-sm"></div>
+
+						<div id="fh5co-tab-feature-center" class="fh5co-tab text-center">
+							<ul class="resp-tabs-list hor_1">
+								<li><i class="fh5co-tab-menu-icon ti-comments"></i>Meet Up</li>
+								<li><i class="fh5co-tab-menu-icon ti-shine"></i> What We Do</li>
+								<li><i class="fh5co-tab-menu-icon ti-thumb-up"></i>Get Involved</li>
+							</ul>
+							<div class="resp-tabs-container hor_1">
+								<div>
+									<div class="row">
+										<div class="col-md-12">
+											<h2 class="h3">Lets Get Together</h2>
+										</div>
+										<div class="col-md-6">
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda quis deserunt dolorem, debitis cupiditate nihil velit dolores, inventore voluptatem delectus quos atque similique natus eaque qui, nisi repudiandae dolore sit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum aut maxime eius magnam. Ipsa qui consequatur laborum culpa recusandae ullam repellendus, quod cum nemo consequuntur quidem labore minima dignissimos, eum!</p>
+										</div>
+										<div class="col-md-6">
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio voluptatem, vitae nesciunt ad hic quam quisquam sit possimus officia ratione. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, ex. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex fuga illum necessitatibus consequuntur aspernatur omnis quidem ut, similique esse assumenda.</p>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="row">
+										<div class="col-md-12">
+											<h2 class="h3">Let's Cook</h2>
+										</div>
+										<div class="col-md-6">
+											<p>1. What a better way to start your week than not having to cook! Lunch Club happens on Mondays. If there is no school on a Monday, "Lunch" will happen on Tuesday that week only. </br> 2. You cook lunch once every 6-7 weeks or so for our group of about 10 people and then enjoy lunch on your off weeks!</p>
+										</div>
+										<div class="col-md-6">
+											<p>3. Food will be set up in the student lounge during the lunch hour so you can serve yourself! </br> 4. Don't worry if you aren't a gourmet chef! Slow cooker dishes and salads are quick, easy and work great!</p>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="row">
+										<div class="col-md-12">
+											<h2 class="h3">We Love Suggestions</h2>
+										</div>
+										<div class="col-md-6">
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda quis deserunt dolorem, debitis cupiditate nihil velit dolores, inventore voluptatem delectus quos atque similique natus eaque qui, nisi repudiandae dolore sit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum aut maxime eius magnam.</p>
+										</div>
+										<div class="col-md-6">
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio voluptatem, vitae nesciunt ad hic quam quisquam sit possimus officia ratione. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, ex. Lorem ipsum dolor sit amet.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+</div>
+<hr class="fh5co-spacer fh5co-spacer-sm">
+<hr class="fh5co-spacer fh5co-spacer-sm">
+{% include "ASDAWebApp/Generic/genericFooter.html" %}
+</div>
+
+
+{% endblock %}

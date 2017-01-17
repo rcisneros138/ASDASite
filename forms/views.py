@@ -1,9 +1,20 @@
-from .AsdaForms import signupForm, PreDentalWeekendSignupForm, ContactInformationForm, signupInLineFormSet
+from .AsdaForms import signupForm, PreDentalWeekendSignupForm, ContactInformationForm, signupInLineFormSet, ContactUsForm
 from django.utils import timezone
 from .models import ContactInformation, PreDentalWeekendSignup
 from django.shortcuts import render, redirect
 from django.forms import inlineformset_factory
 from django.http import HttpResponseRedirect
+from django.views.generic import FormView, CreateView
+
+
+class contactUsView(CreateView):
+    form_class = ContactUsForm
+    success_url = '/'
+    template_name = "ASDAWebApp/Home/HomeFooter.html"
+
+    def form_valid(self, form):
+
+        return super(ContactUsForm, self).form_valid(form)
 
 
 def signUp(request):
