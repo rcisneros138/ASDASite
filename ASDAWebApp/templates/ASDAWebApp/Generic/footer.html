@@ -91,7 +91,13 @@
 <script type="text/javascript" src="{% static 'js/jquery.parallax-scroll.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/jquery.waypoints.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
-<div id="map"></div>
+
+<script>
+  //this is for when the page loads, it will scroll up 10px so the navBar loads
+  $(document).ready(function() {
+    $(window).scrollTop(($(window).scrollTop())-10);
+  });
+</script>
 <script>
   var map;
   function initMap() {

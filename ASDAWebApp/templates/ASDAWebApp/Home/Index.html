@@ -1,102 +1,123 @@
-{% extends "ASDAWebApp/Home/HomeHeader.html"%}
+{% extends "ASDAWebApp/Generic/navBar.html" %}
 {% load staticfiles %}
 {% block content %}
-  <div class="fh5co-cards" >
-    <div class="container-fluid">
-      <br>
-      <div class="row">
-        <div class="col-md-12 heading text-center"><h2>News and Events</h2></div>
-      </div>
 
-      <!-- blog cards -->
-      <div class="row blogRow">
-        {% for post in  recentPosts %}
-          <div class="col-md-3 animate-box">
-              <a class="fh5co-card" href="/blog/{{post.id}}">
-                {% if post.headerImage %}
-                <img src="{{post.headerImage.url}}" class="img-responsive">
-                {% else %}
-                 <img src="{% static 'img/dentistmeetup.jpg' %}" class="img-responsive">
-                 {% endif %}
-                 <!-- <img src="{{post.imagePath}}" class="img-responsive"> -->
-                  <div class="fh5co-card-body">
-                    <h3 class="post-title">{{post.title|truncatewords:9}}</h3>
-                    <div class="blogBody">
-                      <span>{{post.body|safe|truncatewords:10}}</span>
-                    </div>
-                  </div>
-              </a>
-          </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-  <!-- icon section -->
-  <div class="container">
-
-  <div class="row text-center" id="fh5co-features">
-    <div class="col-md-12 heading animate-box"><h2>What We're All About</h2></div>
-    <div class="col-md-4 col-sm-6 text-center fh5co-feature feature-box">
-      <div class="fh5co-feature-icon">
-        <i class="ti-heart"></i>
-      </div>
-      <h3 class="heading">Service</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt porro delectus cum officia magnam.</p>
-    </div>
-    <div class="col-md-4 col-sm-6 text-center fh5co-feature feature-box">
-      <div class="fh5co-feature-icon">
-        <i class="ti-check-box"></i>
-      </div>
-      <h3 class="heading">Advocacy</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt porro delectus cum officia magnam. </p>
-    </div>
-
-    <div class="clearfix visible-sm-block"></div>
-
-    <div class="col-md-4 col-sm-6 text-center fh5co-feature feature-box">
-      <div class="fh5co-feature-icon">
-        <i class="ti-shine"></i>
-      </div>
-      <h3 class="heading">Sustainability</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt porro delectus cum officia magnam.</p>
-    </div>
-
-    <div class="clearfix visible-md-block visible-lg-block"></div>
-
-    <div class="col-md-4 col-sm-6 text-center fh5co-feature feature-box">
-      <div class="fh5co-feature-icon">
-        <i class="ti-home"></i>
-      </div>
-      <h3 class="heading">Community</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt porro delectus cum officia magnam. </p>
-    </div>
-
-    <div class="clearfix visible-sm-block"></div>
-
-    <div class="col-md-4 col-sm-6 text-center fh5co-feature feature-box">
-      <div class="fh5co-feature-icon">
-        <i class="ti-blackboard"></i>
-      </div>
-      <h3 class="heading">Education</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt porro delectus cum officia magnam.</p>
-    </div>
-    <div class="col-md-4 col-sm-6 text-center fh5co-feature feature-box">
-      <div class="fh5co-feature-icon">
-        <i class="ti-briefcase"></i>
-      </div>
-      <h3 class="heading">Representation</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt porro delectus cum officia magnam.</p>
-    </div>
-  </div>
-  <!-- END row -->
-
+<div id="fh5co-hero"  class="container"  style="background-image: url({% static 'img/marquettebuilding.jpg' %});">
+	<div class="overlay"></div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="fh5co-hero-wrap">
+				<div class="fh5co-hero-intro">
+					<h1 class="to-animate hero-animate-1">WE ARE <span class="gold bold">#MARQUETTEASDA</span></h1>
+					<p class="to-animate hero-animate-2">Marquette University School of Dentistry</p>
+					<p class="to-animate hero-animate-3"><a href="#" class="btn btn-outline btn-md">What is Asda?</a></p>
+					<p class="to-animate hero-animate-3"><a href="#" class="btn btn-outline btn-md">Get Involved</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-  <div class="animate-box fh5co-product-2">
-    <div class="fh5co-half img" style="background-image: url({% static 'img/marquetteASDA1.png' %})"></div>
-    <div class="fh5co-half" style="background-color: #F5F5F5;">
-      <h3>Who Is Marquette ASDA</h3>
-      <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. </p>
-      <p><a href="{% url 'Committees' %}" class="btn btn-outline btn-md">What We Do</a></p>
-    </div>
-  </div>
+
+<div id="fh5co-main">
+	<div id="fh5co-main-height600" class="hidden-xs"><!--This is necessary for mobile.-Keith --></div>
+	<div class="fh5co-cards">
+	  <div class="container-fluid">
+	    <br>
+	    <div class="row">
+	      <div class="col-md-12 heading text-center"><h2>News and Events</h2></div>
+	    </div>
+	    <!-- blog cards -->
+	    <div class="row blogRow">
+	      {% for post in  recentPosts %}
+	        <div class="col-md-3 animate-box">
+	            <a class="fh5co-card" href="/blog/{{post.id}}">
+	              {% if post.headerImage %}
+	              <img src="{{post.headerImage.url}}" class="img-responsive">
+	              {% else %}
+	               <img src="{% static 'img/dentistmeetup.jpg' %}" class="img-responsive">
+	               {% endif %}
+	               <!-- <img src="{{post.imagePath}}" class="img-responsive"> -->
+	                <div class="fh5co-card-body">
+	                  <h3 class="post-title">{{post.title|truncatewords:9}}</h3>
+	                  <div class="blogBody">
+	                    <span>{{post.body|safe|truncatewords:10}}</span>
+	                  </div>
+	                </div>
+	            </a>
+	        </div>
+	      {% endfor %}
+	    </div>
+	  </div>
+	</div>
+	  <!-- icon section -->
+	<div class="container-fluid white-background">
+	  <div class="row text-center" id="fh5co-features">
+	    <div class="col-md-12 heading animate-box"><h2>What We're All About</h2></div>
+	    <div class="col-md-4 col-sm-6 text-center fh5co-feature feature-box">
+	      <div class="fh5co-feature-icon">
+	        <i class="ti-heart"></i>
+	      </div>
+	      <h3 class="heading">Service</h3>
+	      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt porro delectus cum officia magnam.</p>
+	    </div>
+	    <div class="col-md-4 col-sm-6 text-center fh5co-feature feature-box">
+	      <div class="fh5co-feature-icon">
+	        <i class="ti-check-box"></i>
+	      </div>
+	      <h3 class="heading">Advocacy</h3>
+	      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt porro delectus cum officia magnam. </p>
+	    </div>
+
+	    <div class="clearfix visible-sm-block"></div>
+
+	    <div class="col-md-4 col-sm-6 text-center fh5co-feature feature-box">
+	      <div class="fh5co-feature-icon">
+	        <i class="ti-shine"></i>
+	      </div>
+	      <h3 class="heading">Sustainability</h3>
+	      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt porro delectus cum officia magnam.</p>
+	    </div>
+
+	    <div class="clearfix visible-md-block visible-lg-block"></div>
+
+	    <div class="col-md-4 col-sm-6 text-center fh5co-feature feature-box">
+	      <div class="fh5co-feature-icon">
+	        <i class="ti-home"></i>
+	      </div>
+	      <h3 class="heading">Community</h3>
+	      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt porro delectus cum officia magnam. </p>
+	    </div>
+
+	    <div class="clearfix visible-sm-block"></div>
+
+	    <div class="col-md-4 col-sm-6 text-center fh5co-feature feature-box">
+	      <div class="fh5co-feature-icon">
+	        <i class="ti-blackboard"></i>
+	      </div>
+	      <h3 class="heading">Education</h3>
+	      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt porro delectus cum officia magnam.</p>
+	    </div>
+	    <div class="col-md-4 col-sm-6 text-center fh5co-feature feature-box">
+	      <div class="fh5co-feature-icon">
+	        <i class="ti-briefcase"></i>
+	      </div>
+	      <h3 class="heading">Representation</h3>
+	      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt porro delectus cum officia magnam.</p>
+	    </div>
+	  </div>
+	  <!-- END row -->
+
+	</div>
+	<div class=" white-background">
+	  <div class="animate-box fh5co-product-2">
+	    <div class="fh5co-half img" style="background-image: url({% static 'img/marquetteASDA1.png' %})"></div>
+	    <div class="fh5co-half" style="background-color: #F5F5F5;">
+	      <h3>Who Is Marquette ASDA</h3>
+	      <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. </p>
+	      <p><a href="{% url 'Committees' %}" class="btn btn-outline btn-md">What We Do</a></p>
+	    </div>
+	  </div>
+	</div>
+</div>
+{% include "ASDAWebApp/Generic/footer.html" %}
 {% endblock %}

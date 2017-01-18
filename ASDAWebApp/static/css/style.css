@@ -14,7 +14,7 @@ DESIGNED & DEVELOPED by FREEHTML5.CO
   font-style: normal;
 }
 html.fh5co-overflow, body.fh5co-overflow {
-  overflow-x: auto;
+  overflow-x: hidden;
 }
 html.fh5co-overflow #fh5co-header-section, html.fh5co-overflow #fh5co-main, html.fh5co-overflow #fh5co-hero, html.fh5co-overflow #fh5co-mobile-menu, html.fh5co-overflow #fh5co-footer, body.fh5co-overflow #fh5co-header-section, body.fh5co-overflow #fh5co-main, body.fh5co-overflow #fh5co-hero, body.fh5co-overflow #fh5co-mobile-menu, body.fh5co-overflow #fh5co-footer {
   -webkit-transition: all 0.3s ease;
@@ -198,10 +198,10 @@ textarea {
 #fh5co-quick-contacts a:hover {
   color: white;
 }
-
+*/
 #fh5co-logo {
   font-size: 20px;
-  margin: .9em 0 0 0;
+  margin: 1em 0 0 0;
   padding: 0;
   font-weight: 700;
 }
@@ -213,7 +213,7 @@ textarea {
 }
 #fh5co-logo a:hover {
   opacity: .7;
-}*/
+}
 @media screen and (max-width: 768px) {
   #fh5co-logo {
     text-align: center;
@@ -230,6 +230,11 @@ textarea {
   -ms-box-shadow: 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.125);
   -o-box-shadow: 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.125);
   box-shadow: 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.125);
+}
+#fh5co-header-section.fh5co-scrolled #fh5co-logo {
+  margin-top: .5em;
+  color: #2e2e2e;
+  border:none;
 }
 #fh5co-header-section.fh5co-scrolled #fh5co-logo a {
   color: #2e2e2e;
@@ -251,7 +256,7 @@ textarea {
 }
 #fh5co-header-section.fh5co-scrolled #fh5co-menu-wrap > .sf-menu > li > a {
   padding-top: 1em;
-  padding-bottom: 2em;
+  padding-bottom: 1em;
 }
 
 /* Superfish Override Menu */
@@ -555,7 +560,7 @@ textarea {
   display: block;
   margin: 0 auto;
   display: none;
-  background: #f86942;
+  background: #FFB400;
   height: 44px;
   width: 44px;
   border-bottom: none !important;
@@ -591,14 +596,13 @@ textarea {
   list-style: none;
 }
 #fh5co-mobile-menu #fh5co-mobile-menu-ul li.active > a {
-  color: #ffffff;
+  color: #FFB400;
 }
 #fh5co-mobile-menu #fh5co-mobile-menu-ul a {
   border-bottom: none !important;
   padding: 7px 0;
   display: block;
-  color: #ccc;
-  color: rgba(255, 255, 255, 0.5);
+  color: #57CECD;
 }
 #fh5co-mobile-menu #fh5co-mobile-menu-ul a:hover {
   color: #ffffff;
@@ -733,12 +737,11 @@ textarea {
   background-position: center left;
   height: 600px;
   width: 100%;
-position: fixed;
-top: 0;
-left: 0;
-right: 0;
-z-index: 5;
-
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
 }
 #fh5co-hero .overlay {
   position: absolute;
@@ -866,11 +869,17 @@ body.inner-page #fh5co-hero .fh5co-hero-wrap {
 }
 
 #fh5co-main {
-  margin-top: 600px;
-
   z-index: 100;
   position: relative;
-  background: #ffffff;
+}
+
+#fh5co-main-height600 {
+  height: 600px;
+  z-index-500;
+}
+
+.fh5co-main-height50 {
+  height: 50px;
 }
 
 @media screen and (max-width: 768px) {
