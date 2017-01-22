@@ -976,9 +976,11 @@ body.fh5co-mobile-menu-visible #fh5co-mobile-menu {
 }
 #fh5co-works .fh5co-work-item figure img{
   width: auto;
-  min-width: 300px;
-  height: 300px;
+  align-content: center;
+  max-height: 200px;
+  position: relative;
   overflow: hidden;
+  display: inline-block;
 }
 
 #fh5co-works .fh5co-work-item .heading {

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'taggit',
+    'taggit_labels',
 
 ]
 
@@ -127,16 +128,16 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-print(STATIC_URL)
+
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-print(BASE_DIR)
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace('\\', '/')
-print(MEDIA_ROOT)
+
 MEDIA_URL = '/media/'
 
 CKEDITOR_JQUERY_URL = 'http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
