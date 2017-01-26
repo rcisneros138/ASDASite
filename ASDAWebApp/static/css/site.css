@@ -61,12 +61,23 @@ a:active {
   min-height: 7em;
   max-height: 7em;
 }
+.subBlogBody{
+  margin:0;
+}
+.subBlogAuthor{
+  color: black;
+  margin:5px 0;
+  font-size: 16px;
+}
 .white-background{
   background:white;
 }
-.pad30{
+.marginBottom30{
   margin-bottom: 30px;
 }
 #calendar{
   min-height: 500px;
+}
+.paddingBottom30{
+  padding-bottom:30px;
 }
