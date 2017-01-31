@@ -20,7 +20,7 @@
                  {% endif %}
                  <!-- <img src="{{post.imagePath}}" class="img-responsive"> -->
                   <div class="fh5co-card-body">
-                    <h3 class="post-title">{{post.title|truncatewords:9}}</h3>
+                    <h3 class="post-title">{{post.title|truncatewords:5}}</h3>
                     <div class="blogBody">
                       <span>{{post.body|safe|truncatewords:10}}</span>
                     </div>
@@ -95,8 +95,8 @@
     <div class="fh5co-half img" style="background-image: url({% static 'img/marquetteASDA1.png' %})"></div>
     <div class="fh5co-half" style="background-color: #F5F5F5;">
       <h3>Who Is Marquette ASDA</h3>
-      <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. </p>
-      <p><a href="{% url 'Committees' %}" class="btn btn-outline btn-md">What We Do</a></p>
+      <p>A story to unfold. Each year we welcome new ASDA members into our chapter at Marquette and continually add to our legacy of highly qualified dental professionals. We educate the importance of student leadership and involvement. We stand out as a chapter with drive and excellence in representation of our traditions and values as a dental organization. As strong as the bonds we form, our chapter is quintessentially a model organization comprised of members who are genuinely concerned with not only the dental sphere we live in, but also the constituents and communities in which we serve. WE ARE #MARQUETTEASDA!</p>
+      <p><a href="/blog" class="btn btn-outline btn-md">What we're up to</a></p>
     </div>
   </div>
 {% endblock %}

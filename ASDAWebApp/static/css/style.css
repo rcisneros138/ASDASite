@@ -974,6 +974,15 @@ body.fh5co-mobile-menu-visible #fh5co-mobile-menu {
   float: left;
   width: 100%;
 }
+#fh5co-works .fh5co-work-item figure img{
+  width: auto;
+  align-content: center;
+  max-height: 200px;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
 #fh5co-works .fh5co-work-item .heading {
   font-size: 17px;
   margin-bottom: 40px;
