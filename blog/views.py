@@ -47,5 +47,6 @@ class blogTagQueryList(ListView):
         return context
 
     def get_queryset(self):
+        print("HERE:  ==== " + self.kwargs['tag'])
         return BlogPost.objects.filter(tags__name=self.kwargs['tag'],
                                        approved=True).order_by("-date")[:10]

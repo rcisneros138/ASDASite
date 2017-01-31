@@ -6,7 +6,7 @@ from blog.views import blogPostList, blogTagQueryList, postDetail
 
 urlpatterns = [url(r'^$', blogPostList.as_view(), name="blogPostList"),
                url(r'^(?P<pk>\d+$)', postDetail.as_view()),
-               url(r'^(?P<tag>\w+)/$', blogTagQueryList.as_view(),
+               url(r'^tags/(?P<tag>\w+)/$', blogTagQueryList.as_view(),
                    name="blogTagQueryList")]
 
 
