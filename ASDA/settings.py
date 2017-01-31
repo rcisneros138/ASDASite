@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+STATIC_ROOT = "C:/Users/hetze/Documents/GitHub/ASDASite/"
 # Application definition
 
 INSTALLED_APPS = [

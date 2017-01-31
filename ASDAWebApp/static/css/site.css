@@ -72,6 +72,9 @@ a:active {
 .white-background{
   background:white;
 }
+.gray-background{
+  background: #f3f8f9;
+}
 .marginBottom30{
   margin-bottom: 30px;
 }
@@ -80,4 +83,23 @@ a:active {
 }
 .paddingBottom30{
   padding-bottom:30px;
+}
+
+/* masonry */
+.grid-sizer,
+.grid-item {
+  width: 25%;
+}
+.grid-item-2 {
+  width: 50%;
+}
+.grid-item img {
+  display: block;
+  min-width: 100%;
+  max-width: 100%;
+}
+.grid-item-2 img {
+  display: block;
+  min-width: 100%;
+  max-width: 100%;
 }
