@@ -8,7 +8,8 @@ class InlineImage(admin.TabularInline):
 
 class BlogPostAdmin(admin.ModelAdmin):
     inlines = [InlineImage]
-    
+    list_display = ['title', 'date', 'tag_list', 'approved']
+
     def get_readonly_fields(self, request, obj=None):
         if obj and not request.user.is_superuser:
             return ['approved']
