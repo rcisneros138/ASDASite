@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'forms',
     'ASDAWebApp',
+    'taggit',
     'blog',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,10 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'ckeditor',
     'ckeditor_uploader',
-    'taggit',
-
 ]
 
 MIDDLEWARE_CLASSES = [
