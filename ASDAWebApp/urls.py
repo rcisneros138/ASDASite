@@ -2,7 +2,7 @@ from django.conf.urls import url
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
 from ASDA import settings
-from ASDAWebApp.views import Index, BookClubView, CommunityServiceView, HealthView, FundraisingView, PrediatricView, SocialView, LunchView, SustainabilityView
+from ASDAWebApp.views import Index, BookClubView, CommunityServiceView, HealthView, FundraisingView, PrediatricView, SocialView, LunchView, SustainabilityView, GalleryView
 
 urlpatterns = [
     url(r'^$', Index.as_view(), name='Index'),
@@ -12,8 +12,7 @@ urlpatterns = [
     url(r'^calendar/$', TemplateView.as_view(
         template_name='ASDAWebApp/Calendar/calendar.html'),
         name='Calendar'),
-    url(r'^pictures/$', TemplateView.as_view(
-        template_name='ASDAWebApp/Pictures.html'),
+    url(r'^pictures/$', GalleryView.as_view(),
         name='Pictures'),
     url(r'^committees/bookclub/$', BookClubView.as_view(),
         name='BookClubView'),

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from blog.models import BlogPost
+from blog.models import BlogPost, BlogImage
 from forms.models import contactUs
 from django.http import HttpResponse
 from django.views.generic import ListView, CreateView
@@ -27,6 +27,12 @@ class BookClubView(ListView):
     template_name = "ASDAWebApp/Committees/BookClub.html"
     queryset = BlogPost.objects.filter(tags__name='BookClub',
                                        approved=True).order_by("-date")[:4]
+
+
+class GalleryView(ListView):
+    model = BlogImage
+    template_name = "ASDAWebApp/Pictures.html"
+    queryset = BlogImage.objects.filter(blogPost__approved=True)
 
 
 class CommunityServiceView(ListView):
