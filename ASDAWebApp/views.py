@@ -42,6 +42,13 @@ class CommunityServiceView(ListView):
                                        approved=True).order_by("-date")[:4]
 
 
+class VendorRelationsView(ListView):
+    model = BlogPost
+    template_name = "ASDAWebApp/Committees/VendorRelations.html"
+    queryset = BlogPost.objects.filter(tags__name='VendorRelations',
+                                       approved=True).order_by("-date")[:4]
+
+
 class HealthView(ListView):
     model = BlogPost
     template_name = "ASDAWebApp/Committees/Health.html"
