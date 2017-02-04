@@ -1,27 +1,27 @@
 {% extends "ASDAWebApp/Generic/navBar.html" %}
 {% load staticfiles %}
-{% block body %}
-			<div id="fh5co-hero"  class="container"  style="background-image: url({% static 'img/BookEats.jpeg' %});">
-				<div class="overlay"></div>
+{% block content %}
 
-
-				<div class="row">
-					<div class="col-md-12">
-						<div class="fh5co-hero-wrap">
-							<div class="fh5co-hero-intro">
-								<h1 class="to-animate hero-animate-1">Marquette <span class="gold bold">ASDA</span></h1>
-								<p class="to-animate hero-animate-2">Book Club</p>
-                <p class="to-animate hero-animate-3"><button href="#" type="button" class="btn btn-outline btn-md">Read With Us</button></p>
-							</div>
-						</div>
-					</div>
+<div id="fh5co-hero"  class="container"  style="background-image: url({% static 'img/BookEats.jpeg' %});">
+	<div class="overlay"></div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="fh5co-hero-wrap">
+				<div class="fh5co-hero-intro">
+					<h1 class="to-animate hero-animate-1">Marquette <span class="gold bold">ASDA</span></h1>
+					<p class="to-animate hero-animate-2">Book Club</p>
+          <p class="to-animate hero-animate-3"><button href="#" type="button" class="btn btn-outline btn-md">Read With Us</button></p>
 				</div>
 			</div>
+		</div>
+	</div>
+</div>
 
 <div id="fh5co-main">
+  <div id="fh5co-main-height600" class="hidden-xs"><!--This is necessary for mobile.-Keith --></div>
+	  <div class="container-fluid white-background">
 {% if object_list.count > 1 %}
 <div class="fh5co-cards" >
-  <div class="container-fluid">
     <br>
     <div class="row">
 

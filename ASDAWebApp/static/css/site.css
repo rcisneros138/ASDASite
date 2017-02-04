@@ -88,10 +88,10 @@ a:active {
 /* masonry */
 .grid-sizer,
 .grid-item {
-  width: 25%;
+  width: 33.333%;
 }
 .grid-item-2 {
-  width: 50%;
+  width: 66.666%;
 }
 .grid-item img {
   display: block;

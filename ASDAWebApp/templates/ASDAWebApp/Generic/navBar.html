@@ -3,7 +3,9 @@
 
 <head>
 	<title>Marquete ASDA</title>
-	<meta charset="utf-8" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 	{% load staticfiles %}
     <link rel="icon" type="image/png" href="{% static 'img/icon.ico' %}"/>
 	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type = "text/css"/>
@@ -24,7 +26,22 @@
 	<script type="text/javascript" src="{% static 'js/handlers.js' %}"></script>
 	<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
+	<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script  type="text/javascript">
+$( document ).ready(function() {
+		pathname = window.location.pathname;
+		pathname = pathname.split("/")
+		if(pathname[1]){
+			$("#" + pathname[1] + "link").addClass("active");
+		}
+		else{
+			$("#homelink").addClass("active");
+		}
+		if(pathname[2]){
+			$("#" + pathname[2] + "link").addClass("active");
+		}
+	});
+</script>
 
 </head>
 <header id="fh5co-header-section" role="header" class="" >
@@ -36,19 +53,29 @@
 		<!-- START #fh5co-menu-wrap -->
 		<nav id="fh5co-menu-wrap" role="navigation">
 			<ul class="sf-menu" id="fh5co-primary-menu">
-				<li class="active">
+				<li id="homelink">
 					<a href="/">Home</a>
 				</li>
-				<li>
+				<li id="committeeslink">
 					<a href="{% url 'Committees' %}">Committees</a>
+							 <ul class="fh5co-sub-menu">
+								<li id="bookclublink"><a href="{% url 'BookClubView' %}">Book Club</a></li>
+ 								<li id="communityservicelink"><a href="{% url 'CommunityServiceView' %}">Community Service</a></li>
+ 								<li id="fundraisinglink"><a href="{% url 'FundraisingView' %}">Fundraising Committee</a></li>
+ 								<li id="healthlink"><a href="{% url 'HealthView' %}">Health Club</a></li>
+ 								<li id="lunchlink"><a href="{% url 'LunchView' %}">Lunch Club</a></li>
+ 								<li id="pediatriclink"><a href="{% url 'PrediatricView' %}">Pediatric Committee</a></li>
+ 								<li id="sociallink"><a href="{% url 'SocialView' %}">Social Committee</a></li>
+ 								<li id="sustainabilitylink"><a href="{% url 'SustainabilityView' %}">Sustainability Committee</a></li>
+							</ul>
 				</li>
-				<li>
+				<li id="bloglink">
 					<a href="{% url 'blogPostList' %}">Blog</a>
 				</li>
-				<li>
+				<li id="calendarlink">
 					<a href="{% url 'Calendar' %}">Calendar</a>
 				</li>
-				<li>
+				<li id="pictureslink">
 					<a href="{% url 'Pictures' %}">Pictures</a>
 				</li>
 
