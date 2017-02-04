@@ -32,12 +32,11 @@
                    <div class="col-md-8 col-md-push-4">
                       {% for post in object_list %}
                        <div class="content-box animate-box">
-                          <h2>{{post.title}}</h2>
-                          <h4>{{post.date.date}}</h4>
-                         {{post.body|safe|truncatewords:100}}
-                          <span class="subBlogAuthor">Written by: {{post.author}}</span>
-                          <a href="/blog/{{post.id}}"> <p>Continue Reading</p></a>
-                          <span class="border"></span>
+												<h2>{{post.title}}</h2>
+												<h4>{{post.date.date}} <span class="subBlogAuthor"> author: {{post.author}}</span></h4>
+												{{post.body|safe|truncatewords:100}}
+												<a href="/blog/{{post.id}}"> <p>Continue Reading</p></a>
+												<span class="border"></span>
                        </div>
                       </br>
                       {% endfor %}
@@ -91,5 +90,5 @@
 
 
 
-{% include "ASDAWebApp/Generic/footer.html" %}
+{% include "ASDAWebApp/Generic/smallFooter.html" %}
 {% endblock %}
