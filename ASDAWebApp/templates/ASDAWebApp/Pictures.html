@@ -1,0 +1,124 @@
+{% extends "ASDAWebApp/Generic/navBar.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<div id="fh5co-hero"  class="container"  style="background-image: url({% static 'img/marquettebuilding.jpg' %});">
+	<div class="overlay"></div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="fh5co-hero-wrap">
+				<div class="fh5co-hero-intro">
+					<h1 class="to-animate hero-animate-1">WE ARE <span class="gold bold">#MARQUETTEASDA</span></h1>
+					<p class="to-animate hero-animate-2">Marquette University School of Dentistry</p>
+					<p class="to-animate hero-animate-3"><a href="#" class="btn btn-outline btn-md">What is Asda?</a></p>
+					<p class="to-animate hero-animate-3"><a href="#" class="btn btn-outline btn-md">Get Involved</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="fh5co-main">
+	<div id="fh5co-main-height600" class="hidden-xs"><!--This is necessary for mobile.-Keith --></div>
+
+  <div class="container-fluid gray-background">
+		<div class="row">
+			<br>
+			<div class="col-sm-12 heading text-center"><h2>ASDA Pictures</h2></div>
+		</div>
+<!--
+    <div class="grid firstGrid">
+      <div class="grid-sizer"></div>
+      {% for file in files %}
+          <div class="grid-item">
+              <img src={% static file %}>
+          </div>
+      {% endfor %}
+    </div>-->
+		<div class="row">
+      <div class="grid">
+	        <div class="grid-sizer"></div>
+	      <div class="grid-item-2 animate-box">
+	        <img src={% static 'img/marquettebuilding.jpg' %} />
+	      </div>
+	      <div class="grid-item animate-box">
+	        <img src={% static 'img/Alison.jpeg' %} />
+	      </div>
+	      <div class="grid-item-2 animate-box">
+	        <img src={% static 'img/BookEats.jpeg' %} />
+	      </div>
+	      <div class="grid-item animate-box">
+	        <img src={% static 'img/Brinda.jpeg' %} />
+	      </div>
+	      <div class="grid-item animate-box">
+	        <img src={% static 'img/Fued.jpeg' %} />
+	      </div>
+	      <div class="grid-item animate-box">
+	        <img src={% static 'img/Karin.jpg' %} />
+	      </div>
+	      <div class="grid-item animate-box">
+	        <img src={% static 'img/Emma.jpeg' %} />
+	      </div>
+	      <div class="grid-item animate-box">
+	        <img src={% static 'img/Pinkesh.jpeg' %} />
+	      </div>
+	      <div class="grid-item animate-box">
+	        <img src={% static 'img/Michael.jpeg' %} />
+	      </div>
+	      <div class="grid-item animate-box">
+	        <img src={% static 'img/Sara.jpeg' %} />
+	      </div>
+	      <div class="grid-item animate-box">
+	        <img src={% static 'img/HealthCommittee.jpeg' %} />
+	      </div>
+	      <div class="grid-item animate-box">
+	        <img src={% static 'img/PedoCommittee.jpeg' %} />
+	      </div>
+	      <div class="grid-item animate-box">
+	        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" />
+	      </div>
+	      <div class="grid-item animate-box">
+	        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg" />
+	      </div>
+	      <div class="grid-item animate-box">
+	        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg" />
+	      </div>
+	      <div class="grid-item animate-box">
+	        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg" />
+	      </div>
+	      <div class="grid-item animate-box">
+	        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" />
+	      </div>
+	      <div class="grid-item animate-box">
+	        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" />
+	      </div>
+	      <div class="grid-item animate-box">
+	        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/contrail.jpg" />
+	      </div>
+	      <div class="grid-item animate-box">
+	        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/golden-hour.jpg" />
+	      </div>
+	      <div class="grid-item animate-box">
+	        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/flight-formation.jpg" />
+	      </div>
+	    </div>
+		</div>
+  </div>
+</div>
+
+<script type="text/javascript" src="{% static 'js/masonry.pkgd.js' %}"></script>
+<script>
+	var elem = document.querySelector('.grid');
+	var msnry = new Masonry( elem, {
+	  // options
+	  itemSelector: '.grid-item',
+	  percentPosition: true,
+	  columnWidth: '.grid-sizer'
+	});
+	var msnry = new Masonry( '.grid', {
+	  // options
+	});
+
+</script>
+{% include "ASDAWebApp/Generic/footer.html" %}
+{% endblock %}

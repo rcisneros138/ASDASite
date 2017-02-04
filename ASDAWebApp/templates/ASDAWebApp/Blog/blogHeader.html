@@ -1,7 +1,6 @@
-{% extends "ASDAWebApp/Generic/navBar.html" %}
+{# {% extends "ASDAWebApp/Generic/navBar.html" %}
+{% block content %}
 {% load staticfiles %}
-{% block body %}
-
 			<div id="fh5co-hero"  class="container"  style="background-image: url({% static 'img/dentistmeetup.jpg' %});">
 				<div class="overlay"></div>
 
@@ -17,13 +16,25 @@
 				</div>
 			</div>
 
-<div>
-		 {% block blog %}
-		 {% endblock %}
+<div id="fh5co-main">
+  <div id="fh5co-main-height600" class="hidden-xs"><!--This is necessary for mobile.-Keith --></div>
+  <div class="container-fluid white-background">
+    <br>
+    <div class="row">
+      <div class="col-sm-12 heading text-center"><h2>Blog</h2></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1">
+				<div>
+						 {% block blog %}
+						 {% endblock %}
+				</div>
+			</div>
+    </div>
+  </div>
 </div>
 
 
 
-
-{% include "ASDAWebApp/Generic/genericFooter.html" %}
-{% endblock %}
+{% include "ASDAWebApp/Generic/footer.html" %}
+{% endblock %}#}

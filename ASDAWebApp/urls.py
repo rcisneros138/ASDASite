@@ -3,7 +3,9 @@ from django.conf.urls.static import static
 from django.views.generic import TemplateView
 from ASDA import settings
 from ASDAWebApp.views import Index, BookClubView, CommunityServiceView, HealthView, FundraisingView, PrediatricView, SocialView, LunchView, SustainabilityView
+import os
 
+files = os.listdir("C:/Users/hetze/Documents/GitHub/ASDASite/media")
 urlpatterns = [
     url(r'^$', Index.as_view(), name='Index'),
     url(r'^committees/$', TemplateView.as_view(
@@ -12,6 +14,9 @@ urlpatterns = [
     url(r'^calendar/$', TemplateView.as_view(
         template_name='ASDAWebApp/Calendar/calendar.html'),
         name='Calendar'),
+    url(r'^pictures/$', TemplateView.as_view(
+        template_name='ASDAWebApp/Pictures.html'),
+        name='Pictures'),
     url(r'^committees/bookclub/$', BookClubView.as_view(),
         name='BookClubView'),
     url(r'^committees/communityservice/$', CommunityServiceView.as_view(),

@@ -10,7 +10,7 @@ from django.views.generic import FormView, CreateView
 class contactUsView(CreateView):
     form_class = ContactUsForm
     success_url = '/'
-    template_name = "ASDAWebApp/Home/HomeFooter.html"
+    template_name = "ASDAWebApp/Generic/footer.html"
 
     def form_valid(self, form):
 
