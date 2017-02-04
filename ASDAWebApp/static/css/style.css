@@ -387,6 +387,7 @@ textarea {
 }
 #fh5co-primary-menu > li > .sf-with-ul:hover::after {
   padding-top: 25px;
+  color: #FFB400;
 }
 #fh5co-primary-menu > li > ul li > .sf-with-ul:after {
   border: none !important;
