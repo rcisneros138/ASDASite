@@ -67,7 +67,7 @@ a:active {
 .subBlogAuthor{
   color: black;
   margin:5px 0;
-  font-size: 16px;
+  font-size: 10px;
 }
 .white-background{
   background:white;
@@ -111,4 +111,25 @@ a:active {
   position: relative;
   overflow: hidden;
   display: inline-block;
+}
+
+.designerLinks{
+  margin-top: 32px;
+}
+
+.designerLinks a:link {
+  color:#676e72;
+  text-decoration: none;
+}
+.designerLinks a:visited {
+  color:#676e72;
+  text-decoration: none;
+}
+.designerLinks a:hover {
+  color:#FFB400;
+  text-decoration: none;
+}
+.designerLinks a:active {
+  color:#FFB400;
+  text-decoration: none;
 }
