@@ -1,15 +1,11 @@
-.bg-holder{
+.parallax-mirror {
+    z-index:1;
+}
+.parallax-window {
+    min-height: 700px;
+    background: transparent;
     width: 100%;
-    height: 100%;
-}
-#pic1 {
-  background-image: url("../img/marquettebuilding.jpg");
-}
-
-.img-preview-fixed{
-  max-width: 350px;
-  max-height: 350px;
-  margin: auto;
+    height: 7em;
 }
 
 a:link {
@@ -54,6 +50,9 @@ a:active {
   height: 6em;
 }
 
+.copyrightFooter{
+  margin-top:20px;
+}
 /*FRONT PAGE BLOG*/
 .blogRow{
   padding: 1.5em;
@@ -61,4 +60,55 @@ a:active {
 .blogBody{
   min-height: 7em;
   max-height: 7em;
+}
+.subBlogBody{
+  margin:0;
+}
+.subBlogAuthor{
+  color: black;
+  margin:5px 0;
+  font-size: 16px;
+}
+.white-background{
+  background:white;
+}
+.gray-background{
+  background: #f3f8f9;
+}
+.marginBottom30{
+  margin-bottom: 30px;
+}
+#calendar{
+  min-height: 500px;
+}
+.paddingBottom30{
+  padding-bottom:30px;
+}
+
+/* masonry */
+.grid-sizer,
+.grid-item {
+  width: 33.333%;
+}
+.grid-item-2 {
+  width: 66.666%;
+}
+.grid-item img {
+  display: block;
+  min-width: 100%;
+  max-width: 100%;
+}
+.grid-item-2 img {
+  display: block;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.committee-img{
+  width: auto;
+  align-content: center;
+  max-height: 200px;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
 }

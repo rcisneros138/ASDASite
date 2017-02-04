@@ -1,6 +1,6 @@
 {% extends "ASDAWebApp/Generic/navBar.html" %}
 {% load staticfiles %}
-{% block body %}
+{% block content %}
 
 			<div id="fh5co-hero"  class="container"  style="background-image: url({% static 'img/PediatricsBanner.jpeg' %});">
 				<div class="overlay"></div>
@@ -20,9 +20,10 @@
 			</div>
 
 <div id="fh5co-main">
+  <div id="fh5co-main-height600" class="hidden-xs"><!--This is necessary for mobile.-Keith --></div>
+	  <div class="container-fluid white-background">
 {% if object_list.count > 1 %}
 <div class="fh5co-cards" >
-  <div class="container-fluid">
     <br>
     <div class="row">
 
@@ -123,6 +124,6 @@
 </div>
 <hr class="fh5co-spacer fh5co-spacer-sm">
 <hr class="fh5co-spacer fh5co-spacer-sm">
-{% include "ASDAWebApp/Generic/genericFooter.html" %}
+{% include "ASDAWebApp/Generic/footer.html" %}
 </div>
 {% endblock %}

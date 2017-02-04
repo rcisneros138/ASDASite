@@ -1,68 +1,81 @@
-
 {% load staticfiles %}
 {% load formFilters %}
-		<footer role="contentinfo" id="fh5co-footer">
-			<a href="#" class="fh5co-arrow fh5co-gotop footer-box"><i class="ti-angle-up"></i></a>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-7 col-sm-12 footer-box">
-						<h3 class="fh5co-footer-heading">FIND US</h3>
-						<a href="http://maps.google.com/?q=1801 W. Wisconsin Ave Milwaukee, WI 53233" target="_blank">
-							<div class="address">
-								<p>Marquette School of Dentistry</p>
-								<p>1801 W. Wisconsin Ave</p>
-								<p>Milwaukee, WI 53233</p>
-							</div>
-						</a>
-						<div class="mapholder">
-							<div id="map"></div>
+	<footer role="contentinfo" id="fh5co-footer">
+		<a href="#" class="fh5co-arrow fh5co-gotop footer-box"><i class="ti-angle-up"></i></a>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-7 col-sm-12 footer-box">
+					<h3 class="fh5co-footer-heading">FIND US</h3>
+					<a href="http://maps.google.com/?q=1801 W. Wisconsin Ave Milwaukee, WI 53233" target="_blank">
+						<div class="address">
+							<p>Marquette School of Dentistry</p>
+							<p>1801 W. Wisconsin Ave</p>
+							<p>Milwaukee, WI 53233</p>
 						</div>
-						
+					</a>
+					<div class="mapholder">
+						<div id="map"></div>
 					</div>
-					<div class="col-md-5 col-sm-12 footer-box">
-						<h3 class="fh5co-footer-heading">CONTACT</h3>
-						<div>
-							<p><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 414.288.6790</p>
-						  <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> MarquetteASDA@gmail.com</p>
-						</div>
-						<form method=POST>
-							{% csrf_token %}
-							{% for field in form %}
-							  <div class="form-group row">
-
-									<div class="col-xs-10">
-										{{field|addclass:'col-xs-10 form-control'}}
-								    {{field.errors}}
-									</div>
-							  </div>
-							{% endfor %}
-							<input value="Submit" type="submit" class="btn btn-outline btn-md"/>
-						</form>
-
-
-					<div class="col-md-12 footer-box text-center">
-						<div class="fh5co-copyright">
-						<p class="copyright text-muted">Copyright &copy; Marquette 2016</p>
-						<ul class="fh5co-social-icons">
-
-							<li><a href="https://plus.google.com/u/0/111559584108125364001/posts"><i class="ti-google"></i></a></li>
-							<li><a href="https://twitter.com/marquetteasda"><i class="ti-twitter-alt"></i></a></li>
-							<li><a href="https://www.facebook.com/MarquetteASDA"><i class="ti-facebook"></i></a></li>
-							<li><a href="https://www.instagram.com/marquetteasda/"><i class="ti-instagram"></i></a></li>
-							<li><a href="https://www.instagram.com/marquetteasda/"><i class="ti-youtube"></i></a></li>
-						</ul>
-						<a href="{% url 'admin:index' %}">Log in</a>
-					</div>
-					</div>
-
 				</div>
-				<!-- END row
-				this is a spacer that I don't want. Too big
-				<div class="fh5co-spacer fh5co-spacer-md"></div> -->
-			</div>
-		</footer>
+				<div class="col-md-5 col-sm-12 footer-box">
+				<div class="fh5co-main-height50 visible-xs-block visible-sm-block"><!--This looks nicer for mobile.-Keith Hetzel--></div>
+					<h3 class="fh5co-footer-heading">CONTACT</h3>
+					<div>
+						<p><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> 414.288.6790</p>
+					  <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> MarquetteASDA@gmail.com</p>
+					</div>
+					<!--<form method=POST>
+						{% csrf_token %}
+						{% for field in form %}
+						  <div class="form-group row">
 
-<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+								<div class="col-xs-12">
+									{{field|addclass:'col-xs-12 form-control'}}
+							    {{field.errors}}
+								</div>
+						  </div>
+						{% endfor %}
+						<input value="Submit" type="submit" class="btn btn-outline btn-md"/>
+					</form>-->
+					<form method=POST>
+						{% csrf_token %}
+					  <div class="form-group row">
+							<div class="col-xs-12">
+									<input class="col-xs-12 form-control marginBottom30" id="id_name" maxlength="140" name="name" placeholder="name" type="text">
+									<input class="col-xs-12 form-control marginBottom30" id="id_email" maxlength="140" name="email" placeholder="email" type="text">
+									<input class="col-xs-12 form-control marginBottom30" id="id_subject" maxlength="140" name="subject" placeholder="subject" type="text">
+									<textarea class="col-xs-12 form-control" cols="15" id="id_message" name="message" placeholder="message" rows="4" required=""></textarea>
+							</div>
+					  </div>
+						<input value="Submit" type="submit" class="btn btn-outline btn-md"/>
+					</form>
+
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-7 col-sm-12 footer-box">
+			<div class="fh5co-main-height50 visible-xs-block visible-sm-block"><!--This looks nicer for mobile.-Keith Hetzel--></div>
+				<h3 class="fh5co-footer-heading">Get in touch</h3>
+				<ul class="fh5co-social-icons">
+					<li><a href="https://plus.google.com/u/0/111559584108125364001/posts"><i class="ti-google"></i></a></li>
+					<li><a href="https://twitter.com/marquetteasda"><i class="ti-twitter-alt"></i></a></li>
+					<li><a href="https://www.facebook.com/MarquetteASDA"><i class="ti-facebook"></i></a></li>
+					<li><a href="https://www.instagram.com/marquetteasda/"><i class="ti-instagram"></i></a></li>
+					<li><a href="https://www.youtube.com/user/marquetteasda"><i class="ti-youtube"></i></a></li>
+				</ul>
+			</div>
+
+		  <div class="col-md-5 col-sm-12 footer-box">
+		    <div class"copyrightFooter">
+				<div class="fh5co-main-height50 visible-xs-block visible-sm-block"><!--This looks nicer for mobile.-Keith Hetzel--></div>
+		    <p>Copyright &copy; Marquette 2016<br>Designed by Raymond Cisneros &amp; Keith Hetzel</p>
+		    </div>
+		  </div>
+		</div>
+	</footer>
+</body>
+
 <script type="text/javascript" src="{% static 'js/parallax.min.js' %}"></script>
 
 <!-- these are the import js files from the valet site -->
@@ -78,7 +91,13 @@
 <script type="text/javascript" src="{% static 'js/jquery.parallax-scroll.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/jquery.waypoints.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
-<div id="map"></div>
+
+<script>
+  //this is for when the page loads, it will scroll up 10px so the navBar loads
+  $(document).ready(function() {
+    $(window).scrollTop(($(window).scrollTop())-10);
+  });
+</script>
 <script>
   var map;
   function initMap() {

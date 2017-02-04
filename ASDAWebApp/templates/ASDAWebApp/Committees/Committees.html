@@ -1,128 +1,132 @@
-{% extends "ASDAWebApp/Committees/CommitteeHeader.html"%}
+{% extends "ASDAWebApp/Generic/navBar.html"%}
 {% load staticfiles %}
 {% block content %}
-</br>
-</br>
-<div class="container">
-  <div class="row" id="fh5co-works">
-        <div class="col-md-8 col-md-offset-2 text-center fh5co-section-heading work-box">
-          <h2 class="fh5co-lead">Committee Chairs</h2>
-          <p class="fh5co-sub">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis. Ut, dolores sit amet consectetur adipisicing elit.</p>
-          <div class="fh5co-spacer fh5co-spacer-sm"></div>
-        </div>
-      </br>
-      </br>
-        <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 text-center fh5co-work-item work-box">
-          <figure><a href="#"><img class="img-responsive" src={% static 'img/SarahTyler.jpg' %} alt="Free HTML5 Template"></a></figure>
-          <p class="fh5co-category">President </p>
-          <h3 class="heading">Sarah Fodor</h3>
-        </div>
-        <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 text-center fh5co-work-item work-box">
-          <div>
-            <figure><a href="#"><img class="img-responsive" src={% static 'img/SarahTyler.jpg' %} alt="Free HTML5 Template"></a></figure>
-         </div>
-          <div>
-            <p class="fh5co-category">Vice President </p>
-            <h3 class="heading">Tyler Robers</h3>
-          </div>
-        </div>
 
-        <div class="clearfix visible-sm-block visible-xs-block"></div>
+<div id="fh5co-hero"  class="container"  style="background-image: url({% static 'img/Clue.jpeg' %});">
+	<div class="overlay"></div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="fh5co-hero-wrap">
+				<div class="fh5co-hero-intro">
+					<h1 class="to-animate hero-animate-1"><span class="gold bold">OUR COMMITTEES</span></h1>
+					<p class="to-animate hero-animate-2">Marquette University School of Dentistry</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
-        <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 text-center fh5co-work-item work-box">
-          <figure><a href="#"><img class="img-responsive" src={% static 'img/Pinkesh.jpeg' %}></a></figure>
-          <p class="fh5co-category">Immediate Past President </p>
-          <h3 class="heading">Pinkesh Shah</h3>
-        </div>
-
-        <div class="clearfix visible-md-block visible-lg-block"></div>
-
-        <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 text-center fh5co-work-item work-box">
-          <figure><img class="img-responsive" src={% static 'img/Brinda.jpeg' %}></figure>
-          <p class="fh5co-category">Secretary  </p>
-          <h3 class="heading">Brinda Shah</h3>
-        </div>
-
-        <div class="clearfix visible-sm-block visible-xs-block"></div>
-
-        <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 text-center fh5co-work-item work-box">
-          <figure><a href="#"><img class="img-responsive" src={% static 'img/Michael.jpeg' %} </a></figure>
+<div id="fh5co-main">
+  <div id="fh5co-main-height600" class="hidden-xs"><!--This is necessary for mobile.-Keith --></div>
+  <div class="container-fluid white-background">
+    <br>
+    <div class="row" id="fh5co-works">
+      <div class="col-md-8 col-md-offset-2 text-center fh5co-section-heading work-box">
+        <h2 class="fh5co-lead">Committee Chairs</h2>
+        <p class="fh5co-sub">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis. Ut, dolores sit amet consectetur adipisicing elit.</p>
+        <div class="fh5co-spacer fh5co-spacer-sm"></div>
+      </div>
+    </br><br/>
+      <div class="col-md-4 col-sm-6 col-xs-6 col-xs-12 text-center fh5co-work-item work-box">
+        <a href="#"><img class="img-responsive committee-img" src={% static 'img/SarahTyler.jpg' %}></a>
+        <p class="fh5co-category">President </p>
+        <h3 class="heading">Sarah Fodor</h3>
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-6 col-xs-12 text-center fh5co-work-item work-box">
+        <a href="#"><img class="img-responsive committee-img" src={% static 'img/SarahTyler.jpg' %}></a>
+        <p class="fh5co-category">Vice President </p>
+        <h3 class="heading">Tyler Robers</h3>
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-6 col-xs-12 text-center fh5co-work-item work-box">
+        <a href="#"><img class="img-responsive committee-img" src={% static 'img/Pinkesh.jpeg' %}></a>
+        <p class="fh5co-category">Immediate Past President </p>
+        <h3 class="heading">Pinkesh Shah</h3>
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-6 col-xs-12 text-center fh5co-work-item work-box">
+        <a href="#"><img class="img-responsive committee-img" src={% static 'img/Brinda.jpeg' %}></a>
+        <p class="fh5co-category">Secretary</p>
+        <h3 class="heading">Brinda Shah</h3>
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-6 col-xs-12 text-center fh5co-work-item work-box">
+        <a href="#"><img class="img-responsive committee-img" src={% static 'img/Michael.jpeg' %}></a>
           <p class="fh5co-category">Treasurer </p>
           <h3 class="heading">Michael Smoljan</h3>
-        </div>
-        <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 text-center fh5co-work-item work-box">
-          <figure><a href="#"><img class="img-responsive" src={% static 'img/Emma.jpeg' %}></a></figure>
-          <p class="fh5co-category">Legislative Liaison </p>
-          <h3 class="heading">Emma Roy (D3) </h3>
-        </div>
-
       </div>
+      <div class="col-md-4 col-sm-6 col-xs-6 col-xs-12 text-center fh5co-work-item work-box">
+        <a href="#"><img class="img-responsive committee-img" src={% static 'img/Emma.jpeg' %}></a>
+        <p class="fh5co-category">Legislative Liaison </p>
+        <h3 class="heading">Emma Roy (D3) </h3>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid white-background">
+    <div class="animate-box fh5co-product-2">
+      <div class="fh5co-half img" style="background-image: url({% static 'img/BookClub2.jpeg' %});"></div>
+      <div class="fh5co-half">
+        <h3>Book Club</h3>
+        <p>When you read a book, do you ever imagine YOU are any one of the characters within them? Do you ever ponder how YOU would act in the situations the characters get themselves into? Whether you read it from a paper copy or on your kindle or on your iPad or listen to it on audiotape, come check out our #marquetteasda Book Club. We meet a few times a semester and would love to have YOU join us for our next meeting! </p>
+        <p><a href="{% url 'BookClubView' %}" class="btn btn-outline btn-md">Learn More</a></p>
+      </div>
+    </div>
+    <div class="animate-box fh5co-product-2 fh5co-reverse">
+      <div class="fh5co-half img" style="background-image: url({% static 'img/CommunityService.jpeg' %});"></div>
+      <div class="fh5co-half">
+        <h3>Community Service Committee</h3>
+        <p>We are committed to serving the people in need in the greater Milwaukee area. We collaborate with City on a Hill Health Clinic each month. At this clinic, students teach oral hygiene, answer dental questions and concerns, direct people to dental care facilities and distribute oral hygiene kits at no cost. </p>
+        <p><a href="{% url 'CommunityServiceView' %}" class="btn btn-outline btn-md">Learn More</a></p>
+      </div>
+    </div>
+    <div class="animate-box fh5co-product-2">
+      <div class="fh5co-half img" style="background-image: url({% static 'img/HealthCommittee.jpeg' %});"></div>
+      <div class="fh5co-half">
+        <h3>Health And Wellness</h3>
+        <p>Our committee spreads positive energy, encouragement and ideas to help keep Marquette students at their best! Our hope is to promote the importance of leading a healthy and balanced lifestyle, even in the midst of our stressful and busy lives as dental students and dentists. We begin each new year with our Wellness Week, including yoga, strength training, and mindfulness workshops! Keep an eye out for volleyball tournaments, monthly yoga classes, and ergonomics lunch and learns!</p>
+        <p><a href="{% url 'HealthView' %}" class="btn btn-outline btn-md">Learn More</a></p>
+      </div>
+    </div>
+    <div class="animate-box fh5co-product-2 fh5co-reverse">
+      <div class="fh5co-half img" style="background-image: url({% static 'img/FundRaising.jpeg' %});"></div>
+      <div class="fh5co-half">
+        <h3>Fundraising Committee</h3>
+        <p>From dental school swag to dental beauty pageants, the Fundraising committee raises school spirit while also raising funds for the chapter! We organize clothing sales, professional headshots for students, and the Mr. Molar pageant.</p>
+        <p><a href="{% url 'FundraisingView' %}" class="btn btn-outline btn-md">Learn More</a></p>
+      </div>
+    </div>
+
+    <div class="animate-box fh5co-product-2">
+      <div class="fh5co-half img" style="background-image: url({% static 'img/PedoCommittee.jpeg' %});"></div>
+      <div class="fh5co-half">
+        <h3>Pediatric Committee</h3>
+        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. </p>
+        <p><a href="{% url 'PrediatricView' %}" class="btn btn-outline btn-md">Learn More</a></p>
+      </div>
+    </div>
+
+    <div class="animate-box fh5co-product-2 fh5co-reverse">
+      <div class="fh5co-half img" style="background-image: url({% static 'img/Mustache.jpeg' %});"></div>
+      <div class="fh5co-half">
+        <h3>Social Committee</h3>
+        <p>Come together. Right now. Over unique and entertaining events Marquette ASDA members gather to share the fun and games and create lasting memories! Keep a look out for Movember’s Stache Bash, Family Feud Tournament, Rock Paper Scissors Tournament and so much more!</p>
+        <p><a href="{% url 'SocialView' %}" class="btn btn-outline btn-md">Learn More</a></p>
+      </div>
+    </div>
+    <div class="animate-box fh5co-product-2">
+      <div class="fh5co-half img" style="background-image: url({% static 'img/Salad.jpeg' %});"></div>
+      <div class="fh5co-half">
+        <h3>Lunch Club</h3>
+        <p>Monday’s got you down? Wish you didn’t have to pack those sack lunches? Have no fear… lunch club is here! Every week five of your classmates will bring delicious home cooked meals right to school, all you have to do is return the favor once every few months! Join now for a full belly and full heart as you gather with your fellow classmates for delightful food and conversation!</p>
+        <p><a href="{% url 'LunchView' %}" class="btn btn-outline btn-md">Learn More</a></p>
+      </div>
+    </div>
+    <div class="animate-box fh5co-product-2 fh5co-reverse">
+      <div class="fh5co-half img" style="background-image: url({% static 'img/Sustainability.jpeg' %});"></div>
+      <div class="fh5co-half">
+        <h3>Sustainability Committee</h3>
+        <p>As dental students there is much we can do to make our community more sustainable. This committee worked to create a recycling program at the school for the plastics products that would otherwise find their ways to landfills...</p>
+        <p><a href="{% url 'SustainabilityView' %}" class="btn btn-outline btn-md">Learn More</a></p>
+      </div>
+    </div>
+  </div>
 </div>
-  <div class="animate-box fh5co-product-2">
-    <div class="fh5co-half img" style="background-image: url({% static 'img/BookClub2.jpeg' %});"></div>
-    <div class="fh5co-half">
-      <h3>Book Club</h3>
-      <p>When you read a book, do you ever imagine YOU are any one of the characters within them? Do you ever ponder how YOU would act in the situations the characters get themselves into? Whether you read it from a paper copy or on your kindle or on your iPad or listen to it on audiotape, come check out our #marquetteasda Book Club. We meet a few times a semester and would love to have YOU join us for our next meeting! </p>
-      <p><a href="{% url 'BookClubView' %}" class="btn btn-outline btn-md">Learn More</a></p>
-    </div>
-  </div>
-
-  <div class="animate-box fh5co-product-2 fh5co-reverse">
-    <div class="fh5co-half img" style="background-image: url({% static 'img/CommunityService.jpeg' %});"></div>
-    <div class="fh5co-half">
-      <h3>Community Service Committee</h3>
-      <p>We are committed to serving the people in need in the greater Milwaukee area. We collaborate with City on a Hill Health Clinic each month. At this clinic, students teach oral hygiene, answer dental questions and concerns, direct people to dental care facilities and distribute oral hygiene kits at no cost. </p>
-      <p><a href="{% url 'CommunityServiceView' %}" class="btn btn-outline btn-md">Learn More</a></p>
-    </div>
-  </div>
-  <div class="animate-box fh5co-product-2">
-    <div class="fh5co-half img" style="background-image: url({% static 'img/HealthCommittee.jpeg' %});"></div>
-    <div class="fh5co-half">
-      <h3>Health And Wellness</h3>
-      <p>Our committee spreads positive energy, encouragement and ideas to help keep Marquette students at their best! Our hope is to promote the importance of leading a healthy and balanced lifestyle, even in the midst of our stressful and busy lives as dental students and dentists. We begin each new year with our Wellness Week, including yoga, strength training, and mindfulness workshops! Keep an eye out for volleyball tournaments, monthly yoga classes, and ergonomics lunch and learns!</p>
-      <p><a href="{% url 'HealthView' %}" class="btn btn-outline btn-md">Learn More</a></p>
-    </div>
-  </div>
-
-  <div class="animate-box fh5co-product-2 fh5co-reverse">
-    <div class="fh5co-half img" style="background-image: url({% static 'img/FundRaising.jpeg' %});"></div>
-    <div class="fh5co-half">
-      <h3>Fundraising Committee</h3>
-      <p>From dental school swag to dental beauty pageants, the Fundraising committee raises school spirit while also raising funds for the chapter! We organize clothing sales, professional headshots for students, and the Mr. Molar pageant.</p>
-      <p><a href="{% url 'FundraisingView' %}" class="btn btn-outline btn-md">Learn More</a></p>
-    </div>
-  </div>
-  <div class="animate-box fh5co-product-2">
-    <div class="fh5co-half img" style="background-image: url({% static 'img/PedoCommittee.jpeg' %});"></div>
-    <div class="fh5co-half">
-      <h3>Pediatric Committee</h3>
-      <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. </p>
-      <p><a href="{% url 'PrediatricView' %}" class="btn btn-outline btn-md">Learn More</a></p>
-    </div>
-  </div>
-
-  <div class="animate-box fh5co-product-2 fh5co-reverse">
-    <div class="fh5co-half img" style="background-image: url({% static 'img/Mustache.jpeg' %});"></div>
-    <div class="fh5co-half">
-      <h3>Social Committee</h3>
-      <p>Come together. Right now. Over unique and entertaining events Marquette ASDA members gather to share the fun and games and create lasting memories! Keep a look out for Movember’s Stache Bash, Family Feud Tournament, Rock Paper Scissors Tournament and so much more!</p>
-      <p><a href="{% url 'SocialView' %}" class="btn btn-outline btn-md">Learn More</a></p>
-    </div>
-  </div>
-  <div class="animate-box fh5co-product-2">
-    <div class="fh5co-half img" style="background-image: url({% static 'img/Salad.jpeg' %});"></div>
-    <div class="fh5co-half">
-      <h3>Lunch Club</h3>
-      <p>Monday’s got you down? Wish you didn’t have to pack those sack lunches? Have no fear… lunch club is here! Every week five of your classmates will bring delicious home cooked meals right to school, all you have to do is return the favor once every few months! Join now for a full belly and full heart as you gather with your fellow classmates for delightful food and conversation!</p>
-      <p><a href="{% url 'LunchView' %}" class="btn btn-outline btn-md">Learn More</a></p>
-    </div>
-  </div>
-  <div class="animate-box fh5co-product-2 fh5co-reverse">
-    <div class="fh5co-half img" style="background-image: url({% static 'img/Sustainability.jpeg' %});"></div>
-    <div class="fh5co-half">
-      <h3>Sustainability Committee</h3>
-      <p>As dental students there is much we can do to make our community more sustainable. This committee worked to create a recycling program at the school for the plastics products that would otherwise find their ways to landfills...</p>
-      <p><a href="{% url 'SustainabilityView' %}" class="btn btn-outline btn-md">Learn More</a></p>
-    </div>
-  </div>
+{% include "ASDAWebApp/Generic/footer.html" %}
 {% endblock %}
