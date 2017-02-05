@@ -107,6 +107,24 @@ $("#btn-scroll").click(function() {
 });
 </script>
 <script>
+<script  type="text/javascript">
+	$( document ).ready(function() {
+		//  $("<link rel='stylesheet' href='{% static 'css/fullCalendar.min.css' %}' type='text/css'/>").appendTo("head");
+			pathname = window.location.pathname;
+			pathname = pathname.split("/")
+			if(pathname[1]){
+				$("#" + pathname[1] + "link").addClass("active");
+			}
+			else{
+				$("#homelink").addClass("active");
+			}
+			if(pathname[2]){
+				$("#" + pathname[2] + "link").addClass("active");
+			}
+	});
+</script>
+</script>
+<script>
   var map;
   function initMap() {
 		var marquette = {lat: 43.038188, lng: -87.936039};
