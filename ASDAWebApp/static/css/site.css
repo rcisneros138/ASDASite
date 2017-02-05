@@ -1,3 +1,7 @@
+body{
+    overflow-x: hidden;
+}
+
 .parallax-mirror {
     z-index:1;
 }
@@ -132,4 +136,14 @@ a:active {
 .designerLinks a:active {
   color:#FFB400;
   text-decoration: none;
+}
+
+.container-fluid{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.padded15{
+  padding-left: 15px;
+  padding-right: 15px;
 }
