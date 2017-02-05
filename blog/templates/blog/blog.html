@@ -17,7 +17,6 @@
 </div>
 
 <div id="fh5co-main">
-  <div id="fh5co-main-height600" class="hidden-xs"><!--This is necessary for mobile.-Keith --></div>
   <div class="container-fluid white-background">
     <br>
     <div class="row">
@@ -26,61 +25,59 @@
     <div class="row">
       <div class="col-sm-10 col-sm-offset-1">
 				<div>
-            <div id="fh5co-main">
-              <div class="container-fluid white-background paddingBottom30">
-                 <div class="row">
-                   <div class="col-md-8 col-md-push-4">
-                      {% for post in object_list %}
-                       <div class="content-box animate-box">
-												<h2>{{post.title}}</h2>
-												<h4>{{post.date.date}} <span class="subBlogAuthor"> author: {{post.author}}</span></h4>
-												{{post.body|safe|truncatewords:100}}
-												<a href="/blog/{{post.id}}"> <p>Continue Reading</p></a>
-												<span class="border"></span>
-                       </div>
-                      </br>
-                      {% endfor %}
-                   </div>
-                   <div class="col-md-2 col-md-pull-8 left-sidebar" id="fh5co-sidebar">
-                     <div class="sidebar-box animate-box">
-                       <h3 class="sidebar-heading"><span class="border"></span>More Subjects</h3>
-                       <ul class="sidebar-links">
-                          {% for tag in tags %}
-                         <li><a href="tags/{{tag}}">{{tag}}</a></li>
-                          {% endfor %}
-                       </ul>
+            <div class="container-fluid white-background paddingBottom30">
+               <div class="row">
+                 <div class="col-md-8 col-md-push-4">
+                    {% for post in object_list %}
+                     <div class="content-box animate-box">
+											<h2>{{post.title}}</h2>
+											<h4>{{post.date.date}} <span class="subBlogAuthor"> author: {{post.author}}</span></h4>
+											{{post.body|safe|truncatewords:100}}
+											<a href="/blog/{{post.id}}"> <p>Continue Reading</p></a>
+											<span class="border"></span>
                      </div>
-				             <div class="sidebar-box animate-box">
-					 							<h3 class="sidebar-heading"><span class="border"></span>Stay Tuned!</h3>
-					 							<p>Check out what MarquetteASDA as been up to! This is the prime location to see what awesome things we're going to do, as well as a prime location to checkout what we've done in the past!</p>
-						 						<!--	<p><a href="" class="btn btn-outline btn-sm">Events</a></p> -->
-					 						</div>
-                   </div>
-                 </div>
-                  <div>
-                  {% if is_paginated %}
-                  <ul class="pagination col-md-8 col-md-push-4">
-                    {% if page_obj.has_previous %}
-                    <li><a href="?page={{page_obj.previous_page_number}}">&laquo;</a> </li>
-                    {% else %}
-                    <li class="disabled"><span>&laquo;</span></li>
-                    {% endif %}
-                    {% for pageNumber in paginator.page_range %}
-                      {% if page_obj.number == pageNumber %}
-                        <li class="active"><span> {{ pageNumber }} <span class="sr-only">(current)</span></span></li>
-                      {% else %}
-                        <li><a href="?page={{ pageNumber }}"> {{ pageNumber }}</a></li>
-                      {% endif %}
+                    </br>
                     {% endfor %}
-                    {% if page_obj.has_next %}
-                      <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
-                    {% else %}
-                      <li class="disabled"><span>&raquo;</span></li>
-                    {% endif %}
-                  </ul>
+                 </div>
+                 <div class="col-md-2 col-md-pull-8 left-sidebar" id="fh5co-sidebar">
+                   <div class="sidebar-box animate-box">
+                     <h3 class="sidebar-heading"><span class="border"></span>More Subjects</h3>
+                     <ul class="sidebar-links">
+                        {% for tag in tags %}
+                       <li><a href="tags/{{tag}}">{{tag}}</a></li>
+                        {% endfor %}
+                     </ul>
+                   </div>
+			             <div class="sidebar-box animate-box">
+				 							<h3 class="sidebar-heading"><span class="border"></span>Stay Tuned!</h3>
+				 							<p>Check out what MarquetteASDA as been up to! This is the prime location to see what awesome things we're going to do, as well as a prime location to checkout what we've done in the past!</p>
+					 						<!--	<p><a href="" class="btn btn-outline btn-sm">Events</a></p> -->
+				 						</div>
+                 </div>
+               </div>
+                <div>
+                {% if is_paginated %}
+                <ul class="pagination col-md-8 col-md-push-4">
+                  {% if page_obj.has_previous %}
+                  <li><a href="?page={{page_obj.previous_page_number}}">&laquo;</a> </li>
+                  {% else %}
+                  <li class="disabled"><span>&laquo;</span></li>
                   {% endif %}
-                </div>
-             </div>
+                  {% for pageNumber in paginator.page_range %}
+                    {% if page_obj.number == pageNumber %}
+                      <li class="active"><span> {{ pageNumber }} <span class="sr-only">(current)</span></span></li>
+                    {% else %}
+                      <li><a href="?page={{ pageNumber }}"> {{ pageNumber }}</a></li>
+                    {% endif %}
+                  {% endfor %}
+                  {% if page_obj.has_next %}
+                    <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+                  {% else %}
+                    <li class="disabled"><span>&raquo;</span></li>
+                  {% endif %}
+                </ul>
+                {% endif %}
+              </div>
            </div>
 				</div>
 			</div>

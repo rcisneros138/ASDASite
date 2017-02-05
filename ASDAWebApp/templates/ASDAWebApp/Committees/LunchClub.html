@@ -20,9 +20,9 @@
 			</div>
 
 <div id="fh5co-main">
-  <div id="fh5co-main-height600" class="hidden-xs"><!--This is necessary for mobile.-Keith --></div>
+
 	  <div class="container-fluid white-background">
-{% if object_list.count > 1 %}
+{% if object_list.count > 0 %}
 <div class="fh5co-cards" >
     <br>
     <div class="row">
@@ -54,7 +54,6 @@
       {% endfor %}
     </div>
   </div>
-</div>
 {% endif %}
 <div class="animate-box fh5co-product-2">
   <div class="fh5co-half img" style="background-image: url({% static 'img/Karin2.jpg' %});"></div>
@@ -123,9 +122,10 @@
 						</div>
 					</div>
 
+				</div>
+			</div>
+<hr class="fh5co-spacer fh5co-spacer-sm">
+<hr class="fh5co-spacer fh5co-spacer-sm">
 </div>
-<hr class="fh5co-spacer fh5co-spacer-sm">
-<hr class="fh5co-spacer fh5co-spacer-sm">
 {% include "ASDAWebApp/Generic/smallFooter.html" %}
-</div>
 {% endblock %}

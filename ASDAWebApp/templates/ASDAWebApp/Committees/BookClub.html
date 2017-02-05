@@ -18,17 +18,13 @@
 </div>
 
 <div id="fh5co-main">
-  <div id="fh5co-main-height600" class="hidden-xs"><!--This is necessary for mobile.-Keith --></div>
 	  <div class="container-fluid white-background">
-{% if object_list.count > 1 %}
+{% if object_list.count > 0 %}
 <div class="fh5co-cards" >
     <br>
     <div class="row">
-
       <h2 class="fh5co-uppercase-heading-sm text-center">Book Club Latest</h2>
     </div>
-
-
     <div class="row blogRow">
       {% for post in  object_list %}
         <div class="col-md-3 animate-box">
@@ -52,7 +48,8 @@
       {% endfor %}
     </div>
   </div>
-</div>
+{% else %}
+	<div class="visible-xs-block mobilespacer"></div>
 {% endif %}
 
 <div class="animate-box fh5co-product-2">
@@ -119,10 +116,10 @@
 							</div>
 						</div>
 					</div>
-
-</div>
+				</div>
+			</div>
+		</div>
 <hr class="fh5co-spacer fh5co-spacer-sm">
 <hr class="fh5co-spacer fh5co-spacer-sm">
 {% include "ASDAWebApp/Generic/smallFooter.html" %}
-</div>
 {% endblock %}
