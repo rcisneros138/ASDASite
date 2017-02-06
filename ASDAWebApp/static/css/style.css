@@ -1831,6 +1831,20 @@ Components
 .owl-carousel-fullwidth.fh5co-light-arrow .owl-controls .owl-nav .owl-prev:hover i {
   color: #ffffff;
 }
+.owl-carousel .item{
+  margin: 0px;
+}
+.owl-carousel .item img{
+  height:auto;
+  max-height: 800px;
+  width:100%;
+  max-width: 900px;
+  margin: auto;
+
+}
+.owl-centered{
+  margin: auto;
+}
 
 @media screen and (max-width: 768px) {
   .owl-theme .owl-controls .owl-nav {
@@ -1852,7 +1866,7 @@ Components
 }
 
 .owl-theme .owl-dots {
-  position: absolute;
+  position: relative;;
   bottom: 0;
   width: 100%;
   text-align: center;
