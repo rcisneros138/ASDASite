@@ -1,7 +1,5 @@
 from django import forms
-from django.forms import TextInput
-from django.forms import inlineformset_factory
-from .models import Signup, PreDentalWeekendSignup, ContactInformation, contactUs
+from .models import contactUs
 
 
 class ContactUsForm(forms.ModelForm):
@@ -13,36 +11,13 @@ class ContactUsForm(forms.ModelForm):
         fields = ('name', 'email', 'subject', 'message')
 
 
-class signupForm(forms.ModelForm):
-    class Meta:
-        model = Signup
-        fields = ('firstName', 'lastName', 'email')
-
-
-class ContactInformationForm(forms.ModelForm):
-    class Meta:
-        model = ContactInformation
-        fields = ('firstName', 'lastName', 'contactNumber', 'email')
-        widgets = {
-            'firstName': TextInput(attrs={'placeholder': 'First Name'}),
-            'lastName': TextInput(attrs={'placeholder': 'Last Name'}),
-            'contactNumber': TextInput(attrs={'placeholder': 'Phone'}),
-            'email': TextInput(attrs={'placeholder': 'Email'}),
-        }
-
-
-class PreDentalWeekendSignupForm(forms.ModelForm):
-    class Meta:
-        model = PreDentalWeekendSignup
-        fields = (
-                'school',
-                'needsHotelRoom')
-
-
-signupInLineFormSet = inlineformset_factory(ContactInformation,
-                                            PreDentalWeekendSignup,
-                                            fk_name="applicantContactInfo",
-                                            fields=('school',
-                                                    'needsHotelRoom'),
-                                            extra=1,
-                                            can_delete=False)
+# class PreDentalForm1(forms.Form):
+#     FirstName = forms.CharField(max_length=50)
+#     LastName = forms.CharField(max_length=100)
+#     PhoneNumber = forms.CharField(max_length=50)
+#     BirthDate = forms.DateField(widget=forms.extras.SelectDateWidget)
+#     DietaryRestrictions = forms.CharField(max_length=100)
+#     Address1 = forms.CharField(label='Street Address', max_length=100)
+#     Address2 = forms.CharField(label='apartment/suite', max_length=100)
+#     City = forms.CharField(label='City', max_length=100)
+#     ZipCode = forms.CharField(label='Zip', max_length=100)

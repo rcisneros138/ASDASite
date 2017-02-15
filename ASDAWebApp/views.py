@@ -14,7 +14,8 @@ class Index(CreateView):
 
     def get_context_data(self, **kwargs):
         context = super(Index, self).get_context_data(**kwargs)
-        context['recentPosts'] = BlogPost.objects.filter(approved=True).order_by('-date')[:4]
+        context['recentPosts'] = BlogPost.objects.filter(
+                                 approved=True).order_by('-date')[:4]
         return context
 
     def form_valid(self, form):
@@ -88,4 +89,11 @@ class SustainabilityView(ListView):
     model = BlogPost
     template_name = "ASDAWebApp/Committees/SustainabilityCommittee.html"
     queryset = BlogPost.objects.filter(tags__name='Sustainability',
+                                       approved=True).order_by("-date")[:4]
+
+
+class PreDentalView(ListView):
+    model = BlogPost
+    template_name = "ASDAWebApp/Committees/PreDental.html"
+    queryset = BlogPost.objects.filter(tags__name='PreDental',
                                        approved=True).order_by("-date")[:4]

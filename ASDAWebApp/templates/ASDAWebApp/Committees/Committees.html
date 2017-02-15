@@ -17,7 +17,7 @@
 </div>
 
 <div id="fh5co-main">
-  
+
   <div class="container-fluid white-background">
     <br>
     <div class="row" id="fh5co-works">
@@ -96,9 +96,9 @@
     <div class="animate-box fh5co-product-2">
       <div class="fh5co-half img" style="background-image: url({% static 'img/PedoCommittee.jpeg' %});"></div>
       <div class="fh5co-half">
-        <h3>Pediatric Committee</h3>
-        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. </p>
-        <p><a href="{% url 'PrediatricView' %}" class="btn btn-outline btn-md">Learn More</a></p>
+        <h3>Specialty Committee</h3>
+        <p>To infinity and beyond! Specialty Committee takes a look towards our future and organizes events that focus on life post-graduation. We organize lunch and learns on AEGDs vs. GPRs, Interviewing for Post-Graduate Programs, and the PASS applications to better prepare Marquette students for the world after dentals school. Additionally, this committee has worked to organize clubs for each specialty including Pediatrics, Endodontics, and Oral Surgery. </p>
+        <p><a href="{% url 'specialtyView' %}" class="btn btn-outline btn-md">Learn More</a></p>
       </div>
     </div>
 
@@ -126,7 +126,24 @@
         <p><a href="{% url 'SustainabilityView' %}" class="btn btn-outline btn-md">Learn More</a></p>
       </div>
     </div>
+		<div class="animate-box fh5co-product-2">
+      <div class="fh5co-half img" style="background-image: url({% static 'img/preDentalPeople.jpg' %});"></div>
+      <div class="fh5co-half">
+        <h3>Pre-Dental Committee</h3>
+        <p>Real advice from real dental students at Marquette.  We’ve got tips for acing that interview—what not to say, outfit do’s and don’ts, and how to maximize your experience on the Big Day.  We’ve got a glimpse into a “day-in-the-life” once you join us here at MU.  There’s plenty for #marquetteasda to share with you!</p>
+        <p><a href="{% url 'PreDentalView' %}" class="btn btn-outline btn-md">Learn More</a></p>
+      </div>
+    </div>
+		<div class="animate-box fh5co-product-2 fh5co-reverse">
+			<div class="fh5co-half img" style="background-image: url({% static 'img/VendorRelations2.jpg' %});"></div>
+			<div class="fh5co-half">
+				<h3>Vendor Relations Committee</h3>
+				<p>ASDA’s Vendor Relations Committee is in charge of organizing and facilitating events sponsored by local dental vendors. It is this committee’s job to develop and maintain relationships with various local dental vendors by introducing students to the many options available in the market today.</p>
+				<p><a href="{% url 'VendorRelationsView' %}" class="btn btn-outline btn-md">Learn More</a></p>
+			</div>
+		</div>
   </div>
+
 </div>
 {% include "ASDAWebApp/Generic/smallFooter.html" %}
 {% endblock %}
