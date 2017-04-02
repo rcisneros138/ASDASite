@@ -146,7 +146,7 @@ CKEDITOR_CONFIGS = {
             ['NumberedList', 'BulletedList', "Indent", "Outdent", 'JustifyLeft',
                         'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
             ["HorizontalRule",],
-            ["Image", "Table", "Link", "Unlink", "Anchor", "SectionLink",],
+            ["Image", "Table", "Link", "Unlink", "Anchor", "SectionLink", "iframe"],
             ['Undo', 'Redo'], ["Source"],
             ["Maximize"]],
         'extraAllowedContent': 'iframe[*]',
