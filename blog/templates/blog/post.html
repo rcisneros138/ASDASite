@@ -1,34 +1,38 @@
 {% extends "ASDAWebApp/Generic/navBar.html" %}
+{% block content %}
 {% load staticfiles %}
-{% block body %}
 
+	{% if object.headerImage %}
+		<div id="fh5co-hero"  class="container"  style="background-image: url({{object.headerImage.url}});">
+	{% else %}
+		<div id="fh5co-hero"  class="container"  style="background-image: url({% static 'img/dentistmeetup.jpg' %});">
+	{% endif %}
+	<div class="overlay"></div>
 
-			</header>
-			{% if object.headerImage %}
-				<div id="fh5co-hero"  class="container"  style="background-image: url({{object.headerImage.url}});">
-			{% else %}
-				<div id="fh5co-hero"  class="container"  style="background-image: url({% static 'img/dentistmeetup.jpg' %});">
-			{% endif %}
-			<div class="overlay"></div>
-
-
-				<div class="row">
-					<div class="col-md-12">
-						<div class="fh5co-hero-wrap">
-							<div class="fh5co-hero-intro">
-								<h1 class="to-animate hero-animate-1"><span class="gold bold">{{object.title}}</span></h1>
-								<p class="to-animate hero-animate-2">{{object.date.date}}</p>
-							</div>
-						</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="fh5co-hero-wrap">
+					<div class="fh5co-hero-intro">
+						<h1 class="to-animate hero-animate-1"><span class="gold bold">{{object.title}}</span></h1>
+						<p class="to-animate hero-animate-2">{{object.date.date}}</p>
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
+
 <div id="fh5co-main">
 </br>
 {% block blog %}
-<body>
 
-<div class="container">
+<div class="container-fluid white-background">
+
+</br>
+	</br>
+<!--    <div class="row">
+      <div class="col-sm-12 heading text-center"><h2>Blog</h2></div>
+    </div> -->
+
 <div class="row">
 	<!-- Start Slider -->
 {% if object.blogImages.all %}
@@ -37,40 +41,20 @@
 
 				 <div class="row">
 					<div class="col-md-12">
-						<div class="owl-carousel owl-carousel-fullwidth animate-box">
+						<div class="owl-carousel owl-theme owl-centered  animate-box">
 							{% for image in object.blogImages.all %}
 								<div class="item"><a href="{{image.Image.url}}" class="image-popup"><img src="{{image.Image.url}}" alt="image"></a></div>
 							{% endfor %}
 				 </div>
 			 </div>
-
-
-				<!-- End Slider -->
-
-				<div class="fh5co-spacer fh5co-spacer-lg"></div>
-
-				<!-- Start Slider Testimonial -->
-				<!-- <h2 class="fh5co-uppercase-heading-sm text-center animate-box">Customer Says...</h2>
-				<div class="fh5co-spacer fh5co-spacer-xs"></div>
-				<div class="owl-carousel-fullwidth animate-box">
-				<div class="item">
-					<p class="text-center quote">&ldquo;Design must be functional and functionality must be translated into visual aesthetics, without any reliance on gimmicks that have to be explained. &rdquo; <cite class="author">&mdash; Ferdinand A. Porsche</cite></p>
-				</div>
-				<div class="item">
-					<p class="text-center quote">&ldquo;Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn’t really do it, they just saw something. It seemed obvious to them after a while. &rdquo;<cite class="author">&mdash; Steve Jobs</cite></p>
-				</div>
-				<div class="item">
-					<p class="text-center quote">&ldquo;I think design would be better if designers were much more skeptical about its applications. If you believe in the potency of your craft, where you choose to dole it out is not something to take lightly. &rdquo;<cite class="author">&mdash; Frank Chimero</cite></p>
-				</div>
-			</div> -->
-			<div class="fh5co-spacer fh5co-spacer-lg"></div>
-			 <!-- End Slider Testimonial -->
 	</div>
+</br>
+</br>
 	{% endif %}
 </div>
     <div class="container">
       <div class="row">
-              <div class="col-md-8 col-md-push-4" id="fh5co-content">
+              <div class="col-md-8 col-md-push-4">
 								<div class="content-box animate-box">
 									<h2>{{object.title|striptags}}</h2>
                 	{{ object.body|safe|linebreaks }}
@@ -81,7 +65,9 @@
                 </a>
 							</div>
             </div>
+
 						<div class="col-md-2 col-md-pull-8 left-sidebar" id="fh5co-sidebar">
+							{% if relatedPosts.count > 0 %}
 							<div class="sidebar-box animate-box">
 								<h3 class="sidebar-heading"><span class="border"></span>Simmilar Posts</h3>
 								<ul class="sidebar-links">
@@ -90,18 +76,43 @@
 	                {% endfor %}
 								</ul>
 							</div>
-	            <div class="sidebar-box animate-box">
-								<h3 class="sidebar-heading"><span class="border"></span>Pargraph</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, aperiam placeat deserunt ullam magnam repudiandae reprehenderit animi aliquid odio ratione.</p>
-								<p><a href="#" class="btn btn-outline btn-sm">Button</a></p>
-							</div>
+							{% endif %}
+							<div class="sidebar-box animate-box">
+								 <h3 class="sidebar-heading"><span class="border"></span>Stay Tuned!</h3>
+								 <p>Check out what MarquetteASDA as been up to! This is the prime location to see what awesome things we're going to do, as well as a prime location to checkout what we've done in the past!</p>
+								 <!--	<p><a href="" class="btn btn-outline btn-sm">Events</a></p> -->
+							 </div>
 						</div>
       </div>
     </div>
+</div>
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
 
+<script>
+$('.owl-carousel').owlCarousel({
+    items:1,
+		loop:true,
+    margin:10,
+    autoHeight:true,
+		navigationText: [
+	   "<i class='owl-next'></i>",
+	   "<i class='owl-next'></i>"
+	 ],
+
+		responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+});
+</script>
 	{% endblock %}
 </div>
-</div>
-</body>
-{% include "ASDAWebApp/Generic/genericFooter.html" %}
+{% include "ASDAWebApp/Generic/smallFooter.html" %}
 {% endblock %}

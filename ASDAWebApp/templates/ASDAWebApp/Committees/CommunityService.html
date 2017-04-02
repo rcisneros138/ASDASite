@@ -1,11 +1,9 @@
 {% extends "ASDAWebApp/Generic/navBar.html" %}
 {% load staticfiles %}
-{% block body %}
+{% block content %}
 
 			<div id="fh5co-hero"  class="container"  style="background-image: url({% static 'img/CommunityService.jpeg' %});">
 				<div class="overlay"></div>
-
-
 				<div class="row">
 					<div class="col-md-12">
 						<div class="fh5co-hero-wrap">
@@ -20,16 +18,14 @@
 			</div>
 
 <div id="fh5co-main">
-{% if object_list.count > 1 %}
+
+	  <div class="container-fluid white-background">
+{% if object_list.count > 0 %}
 <div class="fh5co-cards" >
-  <div class="container-fluid">
     <br>
     <div class="row">
-
       <h2 class="fh5co-uppercase-heading-sm text-center">Community Service Latest</h2>
     </div>
-
-
     <div class="row blogRow">
       {% for post in  object_list %}
         <div class="col-md-3 animate-box">
@@ -52,7 +48,6 @@
       {% endfor %}
     </div>
   </div>
-</div>
 {% endif %}
 <div class="animate-box fh5co-product-2">
   <div class="fh5co-half img" style="background-image: url({% static 'img/Sara2.jpg' %});"></div>
@@ -119,10 +114,10 @@
 							</div>
 						</div>
 					</div>
-
-</div>
+				</div>
+			</div>
 <hr class="fh5co-spacer fh5co-spacer-sm">
 <hr class="fh5co-spacer fh5co-spacer-sm">
-{% include "ASDAWebApp/Generic/genericFooter.html" %}
 </div>
+{% include "ASDAWebApp/Generic/smallFooter.html" %}
 {% endblock %}

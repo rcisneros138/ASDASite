@@ -1,6 +1,6 @@
 {% extends "ASDAWebApp/Generic/navBar.html" %}
 {% load staticfiles %}
-{% block body %}
+{% block content %}
 
 			<div id="fh5co-hero"  class="container"  style="background-image: url({% static 'img/PediatricsBanner.jpeg' %});">
 				<div class="overlay"></div>
@@ -11,7 +11,7 @@
 						<div class="fh5co-hero-wrap">
 							<div class="fh5co-hero-intro">
 								<h1 class="to-animate hero-animate-1">Marquette <span class="gold bold">ASDA</span></h1>
-								<p class="to-animate hero-animate-2">Pediatrics</p>
+								<p class="to-animate hero-animate-2">Specialty Committee</p>
                 <p class="to-animate hero-animate-3"><button href="#" type="button" class="btn btn-outline btn-md">Learn More</button></p>
 							</div>
 						</div>
@@ -20,13 +20,14 @@
 			</div>
 
 <div id="fh5co-main">
-{% if object_list.count > 1 %}
+
+	  <div class="container-fluid white-background">
+{% if object_list.count > 0 %}
 <div class="fh5co-cards" >
-  <div class="container-fluid">
     <br>
     <div class="row">
 
-      <h2 class="fh5co-uppercase-heading-sm text-center"> Pediatrics Latest</h2>
+      <h2 class="fh5co-uppercase-heading-sm text-center"> Latest With Us</h2>
     </div>
 
 
@@ -53,20 +54,19 @@
       {% endfor %}
     </div>
   </div>
-</div>
 {% endif %}
 <div class="animate-box fh5co-product-2">
-  <div class="fh5co-half img" style="background-image: url({% static 'img/PediatricsDeer.jpeg' %});"></div>
+  <div class="fh5co-half img" style="background-image: url({% static 'img/Rebecca.jpeg' %});"></div>
   <div class="fh5co-half">
-    <h3>Jonathan Hanna(D4)</h3>
-    <p>ASDA's very own Pediatrics club is dedicated to serving the kids of the future!</p>
+    <h3>Rebecca Monticello (D2)</h3>
+    <p>This committee is dedicated to those individuals who are interested in pursuing specialties in the dental field, or furthering their education in general dentistry through a GPR or AEGD.  The specialty committee is currently under a reconstruction phase and in the process of planning great new things.  A goal for this year is to provide exposure, information and contact opportunities within the various specialties, as well as tools for the application process into these programs.	</p>
   </div>
 </div>
   <hr class="fh5co-spacer fh5co-spacer-sm">
 </br>
 <div class="container second">
   <div class="col-md-12 animate-box">
-						<h2 class="fh5co-uppercase-heading-sm text-center">About Pediatrics Club</h2>
+						<h2 class="fh5co-uppercase-heading-sm text-center">About Specialty Committee</h2>
 
 						<div class="fh5co-spacer fh5co-spacer-sm"></div>
 
@@ -120,9 +120,10 @@
 						</div>
 					</div>
 
-</div>
+				</div>
+			</div>
+		</div>
 <hr class="fh5co-spacer fh5co-spacer-sm">
 <hr class="fh5co-spacer fh5co-spacer-sm">
-{% include "ASDAWebApp/Generic/genericFooter.html" %}
-</div>
+{% include "ASDAWebApp/Generic/smallFooter.html" %}
 {% endblock %}

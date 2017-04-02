@@ -27,12 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
-# Application definition
-
 INSTALLED_APPS = [
     'forms',
     'ASDAWebApp',
+    'taggit',
     'blog',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,8 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
     'ckeditor_uploader',
-    'taggit',
-
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -150,7 +146,7 @@ CKEDITOR_CONFIGS = {
             ['NumberedList', 'BulletedList', "Indent", "Outdent", 'JustifyLeft',
                         'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
             ["HorizontalRule",],
-            ["Image", "Table", "Link", "Unlink", "Anchor", "SectionLink",],
+            ["Image", "Table", "Link", "Unlink", "Anchor", "SectionLink", "iframe"],
             ['Undo', 'Redo'], ["Source"],
             ["Maximize"]],
         'extraAllowedContent': 'iframe[*]',

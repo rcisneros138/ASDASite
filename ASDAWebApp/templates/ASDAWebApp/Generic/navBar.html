@@ -3,14 +3,21 @@
 
 <head>
 	<title>Marquete ASDA</title>
-	<meta charset="utf-8" />
+  <meta charset="utf-8">
+	<meta name="fb_admins_meta_tag" content="MarquetteASDA"/>
+	<meta name="keywords" content="ASDA, Dental, MUSOD, Marquette, Marquette ASDA, MarquetteASDA"/>
+	<meta name="description" content="Marquette ASDA Chapter at Marquette University School of Dentistry"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 	{% load staticfiles %}
     <link rel="icon" type="image/png" href="{% static 'img/icon.ico' %}"/>
+	<link rel="stylesheet" href="{% static 'css/fullcalendar.min.css' %}" type="text/css"/>
 	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type = "text/css"/>
 	<link rel="stylesheet" href="{% static 'css/clean-blog.min.css' %}" type="text/css"/>
 	<link rel="stylesheet" href="{% static 'css/site.css' %}" type="text/css"/>
+  <link rel="stylesheet" href="{% static 'css/fullcalendar.min.css' %}" type="text/css"/>
 
-	<!-- these are the import js files from the valet site -->
+
 	<link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
 	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
 	<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
@@ -19,98 +26,123 @@
 	<link rel="stylesheet" href="{% static 'css/easy-responsive-tabs.css' %}">
 	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
-	<link rel="stylesheet" href="{% static 'css/fullcalendar.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/site.css' %}" type="text/css"/>
 
-
-
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-
-	<!-- this is an import js files from the valet site -->
 	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/handlers.js' %}"></script>
 	<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 
+	<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+
 </head>
+<header id="fh5co-header-section" role="header" class="" >
+	<div class="container">
 
-		<header id="fh5co-header-section" role="header" class="" >
-				<div class="container">
+		<!-- START #fh5co-logo-->
+		<h1 id="fh5co-logo" class="pull-left"><a href="">MarquetteASDA</a></h1>
 
-					<!-- START #fh5co-logo-->
-					<h1 id="fh5co-logo" class="pull-left"><a href="#">Logo</a></h1>
+		<!-- START #fh5co-menu-wrap -->
+		<nav id="fh5co-menu-wrap" role="navigation">
+			<ul class="sf-menu" id="fh5co-primary-menu">
+				<li id="homelink">
+					<a href="/">Home</a>
+				</li>
+				<li id="committeeslink">
+					<a href="{% url 'Committees' %}">Committees</a>
+							 <ul class="fh5co-sub-menu">
+								<li id="bookclublink"><a href="{% url 'BookClubView' %}">Book Club</a></li>
+ 								<li id="communityservicelink"><a href="{% url 'CommunityServiceView' %}">Community Service</a></li>
+ 								<li id="fundraisinglink"><a href="{% url 'FundraisingView' %}">Fundraising Committee</a></li>
+								<li id="predentallink"><a href="{% url 'PreDentalView' %}">Pre-Dental Committee</a></li>
+								<li id="vendorrelationslink"><a href="{% url 'VendorRelationsView' %}">Vendor Relations Committee</a></li>
+ 								<li id="healthlink"><a href="{% url 'HealthView' %}">Health and Wellness Club</a></li>
+ 								<li id="lunchlink"><a href="{% url 'LunchView' %}">Lunch Club</a></li>
+ 								<li id="pediatriclink"><a href="{% url 'specialtyView' %}">Specialty Committee</a></li>
+ 								<li id="sociallink"><a href="{% url 'SocialView' %}">Social Committee</a></li>
+ 								<li id="sustainabilitylink"><a href="{% url 'SustainabilityView' %}">Sustainability Committee</a></li>
+							</ul>
+				</li>
+				<li id="bloglink">
+					<a href="{% url 'blogPostList' %}">Blog</a>
+				</li>
+				<li id="calendarlink">
+					<a href="{% url 'Calendar' %}">Calendar</a>
+				</li>
+				<li id="pictureslink">
+					<a href="{% url 'Pictures' %}">Pictures</a>
+				</li>
 
-					<!-- START #fh5co-menu-wrap -->
-					<nav id="fh5co-menu-wrap" role="navigation">
-						<ul class="sf-menu" id="fh5co-primary-menu">
-							<li class="active">
-								<a href="/">Home</a>
-							</li>
-							<li>
-								<a href="{% url 'Committees' %}">Committees</a>
-							</li>
-							<li>
-								<a href="{% url 'blogPostList' %}">Blog</a>
-							</li>
-							<li>
-								<a href="{% url 'Calendar' %}">Calendar</a>
-							</li>
+			<!--	<li>
+					<a href="#" class="fh5co-sub-ddown">Advocacy</a>
+					 <ul class="fh5co-sub-menu">
+						<li><a href="#">Issues</a></li>
+						<li><a href="#">Events</a></li>
+						<li><a href="#">Advocacy Media</a></li>
+						<li><a href="#">Write to Congress</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="fh5co-sub-ddown">Predental</a>
+					 <ul class="fh5co-sub-menu">
+						<li><a href="#">Membership</a></li>
+						<li><a href="#">Predental Weekend</a></li>
+						<li><a href="#">Resources</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="fh5co-sub-ddown">Media</a>
+					 <ul class="fh5co-sub-menu">
+						<li><a href="#">Videos</a></li>
+							<li><a href="#">Vewsletters</a></li>
+							<li><a href="#">Marquette ASDA Leader Resources</a></li>
+							<li><a href="#">Request Funds Form</a></li>
+							<li><a href="#">Event Write Up Form</a></li>
+							<li><a href="#">Lunch &amp; Learn</a></li>
+							<li><a href="#">ASDA Logo?</a></li>
+							<li><a href="#">Plan &amp; Goals</a></li>
+					</ul>
+				</li> -->
+				<!-- </li>
+				<li>
+					<a href="#" class="fh5co-sub-ddown">Dropdown</a>
+					 <ul class="fh5co-sub-menu">
+					 	<li><a href="left-sidebar.html">Left Sidebar</a></li>
+					 	<li><a href="right-sidebar.html">Right Sidebar</a></li>
+						<li><a href="#">HTML5</a></li>
+						<li>
+							<a href="#" class="fh5co-sub-ddown">JavaScript</a>
+							<ul class="fh5co-sub-menu">
+								<li><a href="#">jQuery</a></li>
+								<li><a href="#">Zipto</a></li>
+								<li><a href="#">Node.js</a></li>
+								<li><a href="#">AngularJS</a></li>
+							</ul>
+						</li>
+						<li><a href="#">CSS3</a></li>
+					</ul>
+				</li> -->
+			</ul>
+		</nav>
 
-						<!--	<li>
-								<a href="#" class="fh5co-sub-ddown">Advocacy</a>
-								 <ul class="fh5co-sub-menu">
-									<li><a href="#">Issues</a></li>
-									<li><a href="#">Events</a></li>
-									<li><a href="#">Advocacy Media</a></li>
-									<li><a href="#">Write to Congress</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="#" class="fh5co-sub-ddown">Predental</a>
-								 <ul class="fh5co-sub-menu">
-									<li><a href="#">Membership</a></li>
-									<li><a href="#">Predental Weekend</a></li>
-									<li><a href="#">Resources</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="#" class="fh5co-sub-ddown">Media</a>
-								 <ul class="fh5co-sub-menu">
-									<li><a href="#">Videos</a></li>
- 									<li><a href="#">Vewsletters</a></li>
- 									<li><a href="#">Marquette ASDA Leader Resources</a></li>
- 									<li><a href="#">Request Funds Form</a></li>
- 									<li><a href="#">Event Write Up Form</a></li>
- 									<li><a href="#">Lunch &amp; Learn</a></li>
- 									<li><a href="#">ASDA Logo?</a></li>
- 									<li><a href="#">Plan &amp; Goals</a></li>
-								</ul>
-							</li> -->
-							<!-- </li>
-							<li>
-								<a href="#" class="fh5co-sub-ddown">Dropdown</a>
-								 <ul class="fh5co-sub-menu">
-								 	<li><a href="left-sidebar.html">Left Sidebar</a></li>
-								 	<li><a href="right-sidebar.html">Right Sidebar</a></li>
-									<li><a href="#">HTML5</a></li>
-									<li>
-										<a href="#" class="fh5co-sub-ddown">JavaScript</a>
-										<ul class="fh5co-sub-menu">
-											<li><a href="#">jQuery</a></li>
-											<li><a href="#">Zipto</a></li>
-											<li><a href="#">Node.js</a></li>
-											<li><a href="#">AngularJS</a></li>
-										</ul>
-									</li>
-									<li><a href="#">CSS3</a></li>
-								</ul>
-							</li> -->
-						</ul>
-					</nav>
-
-				</div>
-			</header>
-			{% block body %}
-			{% endblock %}
+	</div>
+</header>
+<script  type="text/javascript">
+	$( document ).ready(function() {
+		//  $("<link rel='stylesheet' href='{% static 'css/fullCalendar.min.css' %}' type='text/css'/>").appendTo("head");
+			pathname = window.location.pathname;
+			pathname = pathname.split("/")
+			if(pathname[1]){
+				$("#" + pathname[1] + "link").addClass("active");
+			}
+			else{
+				$("#homelink").addClass("active");
+			}
+			if(pathname[2]){
+				$("#" + pathname[2] + "link").addClass("active");
+			}
+	});
+</script>
+{% block content %}
+{% endblock %}

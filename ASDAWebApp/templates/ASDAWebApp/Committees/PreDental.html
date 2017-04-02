@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% block content %}
 
-			<div id="fh5co-hero"  class="container"  style="background-image: url({% static 'img/choppin.jpeg' %});">
+			<div id="fh5co-hero"  class="container"  style="background-image: url({% static 'img/preDentalSmile.jpg' %});">
 				<div class="overlay"></div>
 
 
@@ -11,7 +11,7 @@
 						<div class="fh5co-hero-wrap">
 							<div class="fh5co-hero-intro">
 								<h1 class="to-animate hero-animate-1">Marquette <span class="gold bold">ASDA</span></h1>
-								<p class="to-animate hero-animate-2">Lunch Club</p>
+								<p class="to-animate hero-animate-2">Pre-Dental Committee</p>
                 <p class="to-animate hero-animate-3"><button href="#" type="button" class="btn btn-outline btn-md">More About Us</button></p>
 							</div>
 						</div>
@@ -56,41 +56,41 @@
   </div>
 {% endif %}
 <div class="animate-box fh5co-product-2">
-  <div class="fh5co-half img" style="background-image: url({% static 'img/Karin2.jpg' %});"></div>
+  <div class="fh5co-half img" style="background-image: url({% static 'img/preDentalChairs.jpg' %});"></div>
   <div class="fh5co-half">
-    <h3>Karin Clemens (D2)</h3>
-    <p>The wonderful members of lunch club come together to share in the love of great food and great friends! Every Monday a few of the members take turns cooking for the rest of the group and get the week off to an amazing start!</p>
+    <h3>Cassandra Hainer (D2)| Elizabeth Schoenfeldt (D2) | Marwan Ibrahem (D3)</h3>
+    <p>The Pre-dental Committee strives to reach out to and engage with our prospective dental students. Our largest planned event is the Annual Pre-Dental Weekend held here at MUSoD every summer. This weekend brings prospective students from all over the Midwest to experience fantastic opportunities including networking with students and faculty, getting your hands busy in the sim lab, and discussing the dental application process -- we even hold mock interviews! It's a great way to get to know other pre-dental students and be taken in by our Marquette family for a couple of days! The New MUSoD Mentor Program works to pair current dental students with pre-dental students and hopes to build positive relationships along the way!</p>
   </div>
 </div>
   <hr class="fh5co-spacer fh5co-spacer-sm">
 </br>
 <div class="container second">
   <div class="col-md-12 animate-box">
-						<h2 class="fh5co-uppercase-heading-sm text-center">About Social Committee</h2>
+						<h2 class="fh5co-uppercase-heading-sm text-center">About Pre-Dental Committee</h2>
 
 						<div class="fh5co-spacer fh5co-spacer-sm"></div>
 
 						<div id="fh5co-tab-feature-center" class="fh5co-tab text-center">
 							<ul class="resp-tabs-list hor_1">
-								<li><i class="fh5co-tab-menu-icon ti-shopping-cart"></i> What We Do</li>
-								<li><i class="fh5co-tab-menu-icon ti-comments"></i>Meet Up</li>
+								<li><i class="fh5co-tab-menu-icon ti-light-bulb"></i> What We Do</li>
+								<!--<li><i class="fh5co-tab-menu-icon ti-comments"></i>Meet Up</li> -->
 								<li><i class="fh5co-tab-menu-icon ti-thumb-up"></i>Get Involved</li>
 							</ul>
 							<div class="resp-tabs-container hor_1">
 								<div>
 									<div class="row">
 										<div class="col-md-12">
-											<h2 class="h3">Let's Cook</h2>
+											<h2 class="h3">Pre-Dental Weekend</h2>
 										</div>
 										<div class="col-md-6">
-											<p>Monday’s got you down? Wish you didn’t have to pack those sack lunches? Have no fear… lunch club is here! Every week five of your classmates will bring delicious home cooked meals right to school, all you have to do is return the favor once every few months! Join now for a full belly and full heart as you gather with your fellow classmates for delightful food and conversation!</p>
+											<p>Marquette School of Dentistry opens its lab and school to predental students one weekend in the summer to drill, fill, impress, cast, and learn about the field of dentistry. </p>
 										</div>
-										<!--<div class="col-md-6">
-											<p>3. Food will be set up in the student lounge during the lunch hour so you can serve yourself! </br> 4. Don't worry if you aren't a gourmet chef! Slow cooker dishes and salads are quick, easy and work great!</p>
-										</div> -->
+										<div class="col-md-6">
+											<p>The opportunity to meet with Marquette Dental School faculty and students presents great benefits to these students in giving them a first hand experience of what dental school is like, especially in Marquette country! </p>
+										</div>
 									</div>
 								</div>
-								<div>
+								<!--<div>
 									<div class="row">
 										<div class="col-md-12">
 											<h2 class="h3">Lets Get Together</h2>
@@ -99,11 +99,11 @@
 											<p>Join us for lunch sometime!</p>
 											<p>To get in touch, Contact <a href="mailto:karin.clemens@marquette.edu">Karin</a>.</p>
 										</div>
-									<!--	<div class="col-md-6">
+										<div class="col-md-6">
 											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio voluptatem, vitae nesciunt ad hic quam quisquam sit possimus officia ratione. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, ex. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex fuga illum necessitatibus consequuntur aspernatur omnis quidem ut, similique esse assumenda.</p>
-										</div>-->
+										</div>
 									</div>
-								</div>
+								</div>-->
 
 								<div>
 									<div class="row">
@@ -111,11 +111,11 @@
 											<h2 class="h3">How It Works</h2>
 										</div>
 										<div class="col-md-6">
-											<p>1. What a better way to start your week than not having to cook! Lunch Club happens on Mondays. If there is no school on a Monday, "Lunch" will happen on Tuesday that week only. </br> 2. You cook lunch once every 6-7 weeks or so for our group of about 10 people and then enjoy lunch on your off weeks!</p>
+											<p>Check out our <a href="{% url 'Calendar' %}">calendar</a> or our <a href="/blog"> Blog </a> for upcoming announcements!</p>
 										</div>
-										<div class="col-md-6">
+										<!-- <div class="col-md-6">
 											<p>3. Food will be set up in the student lounge during the lunch hour so you can serve yourself! </br> 4. Don't worry if you aren't a gourmet chef! Slow cooker dishes and salads are quick, easy and work great!</p>
-										</div>
+										</div> -->
 									</div>
 								</div>
 							</div>

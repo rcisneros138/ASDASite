@@ -1,7 +1,9 @@
-from forms import views
+from .views import contactUsView, PreDentalRegisterWizard
+from .AsdaForms import PreDentalForm1, PreDentalForm2
 from django.conf.urls import url
 
 
-urlpatterns = [url(r'^$', views.signUp, name='signUp'),
-               url(r'^PreDentalWeekendSignup/', views.AddPreDentalWeekendSignup,
-                   name='PreDentalWeekendSignup')]
+urlpatterns = [
+               url(r'^register/$', PreDentalRegisterWizard,
+                   name='PreDentalRegisterWizard')
+             ]

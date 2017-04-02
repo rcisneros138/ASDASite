@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
-from ckeditor_uploader.fields import RichTextUploadingField
+from django.core.validators import URLValidator
 from taggit.managers import TaggableManager
 from taggit.models import Tag
 
@@ -21,6 +21,8 @@ class BlogPost(models.Model):
     approved = models.BooleanField(default=False)
     tags = TaggableManager(blank=True, help_text=tag_helptext())
     headerImage = models.ImageField(null=True, blank=True)
+    videoUrlLink = models.CharField(null=True, blank=True, max_length=2000,
+                                    validators=[URLValidator()])
 
     def __str__(self):
         return self.title
