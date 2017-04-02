@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
     'ckeditor_uploader',
+    'paypal.standard.ipn'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -136,7 +137,7 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_IMAGE_BACKEND = 'pillow'
 CKEDITOR_BROWSE_SHOW_DIRS = True
 STATICFILES_LOCATION = 'static'
-
+PAYPAL_TEST = True
 
 CKEDITOR_CONFIGS = {
     'default': {
