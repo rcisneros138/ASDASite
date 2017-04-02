@@ -1,6 +1,7 @@
-from .AsdaForms import ContactUsForm
+from .AsdaForms import ContactUsForm, PreDentalForm1, PreDentalForm2
 from django.views.generic import FormView, CreateView
 from formtools.wizard.views import SessionWizardView
+from paypal.standard.forms import PayPalPaymentsForm
 
 
 class contactUsView(CreateView):
@@ -14,6 +15,7 @@ class contactUsView(CreateView):
 
 class PreDentalRegisterWizard(SessionWizardView):
     template_name = "forms/Register.html"
+    form_list = PreDentalForm1, PreDentalForm2
 
     def done(self, form_list, **kwargs):
         print("worked")
