@@ -59,20 +59,13 @@
 <script type="text/javascript" src="{% static 'js/jquery.parallax-scroll.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/jquery.waypoints.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/handlers.js' %}"></script>
 
 <script>
-// $("button").click(function() {
-// 	page = $(event.target).attr('id');
-// 	if (page){
-// 		// do nothing
-// 	}
-// 	else{
-// 		$('html,body').animate({
-// 			scrollTop: $(".second").offset().top},
-// 			'slow');
-// 	}
-// });
+$("button").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".second").offset().top},
+        'slow');
+});
 </script>
 
 </html>

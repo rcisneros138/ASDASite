@@ -1295,7 +1295,7 @@ Components
 */
 /* Buttons */
 .btn {
-  /*border-bottom: none !important;*/
+  border-bottom: none !important;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 20px;
