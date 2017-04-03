@@ -98,16 +98,58 @@ class PreDentalView(ListView):
     queryset = BlogPost.objects.filter(tags__name='PreDental',
                                        approved=True).order_by("-date")[:4]
 
+
 class multiPageView(ListView):
     model = BlogPost
     template_name = "ASDAWebApp/Generic/signuppage.html"
 
+
 def submitPredentalForm(request):
-    name = str(request.POST.get('FirstName'))
-    phone = str(request.POST.get('PhoneNumber'))
-    month = str(request.POST.get('BirthdayMonth'))
-    print(name)
-    print(phone)
-    print(month)
+    # Page 1
+    name = str(request.POST.get('Name'))
+    phone = str(request.POST.get('Phone'))
+    month = str(request.POST.get('Address1'))
+    month = str(request.POST.get('Address2'))
+    phone = str(request.POST.get('Email'))
+    phone = str(request.POST.get('Gender'))
+
+    phone = str(request.POST.get('Birthdate'))
+    phone = str(request.POST.get('School'))
+    phone = str(request.POST.get('Year'))
+
+    phone = str(request.POST.get('EmergName'))
+    phone = str(request.POST.get('EmergPhone'))
+    phone = str(request.POST.get('EmergEmail'))
+    # Page 2
+    phone = str(request.POST.get('SocialEvent'))
+    phone = str(request.POST.get('DietaryNeeds'))
+    phone = str(request.POST.get('NeedHotel'))
+
+    # Page 3
+    # Credit Card
+    phone = str(request.POST.get('card-holder-name'))
+    phone = str(request.POST.get('card-number'))
+    phone = str(request.POST.get('expiry-month'))
+    phone = str(request.POST.get('expiry-year'))
+    phone = str(request.POST.get('cvv'))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     return HttpResponse("response")
