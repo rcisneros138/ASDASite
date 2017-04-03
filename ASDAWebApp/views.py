@@ -97,3 +97,17 @@ class PreDentalView(ListView):
     template_name = "ASDAWebApp/Committees/PreDental.html"
     queryset = BlogPost.objects.filter(tags__name='PreDental',
                                        approved=True).order_by("-date")[:4]
+
+class multiPageView(ListView):
+    model = BlogPost
+    template_name = "ASDAWebApp/Generic/signuppage.html"
+
+def submitPredentalForm(request):
+    name = str(request.POST.get('FirstName'))
+    phone = str(request.POST.get('PhoneNumber'))
+    month = str(request.POST.get('BirthdayMonth'))
+    print(name)
+    print(phone)
+    print(month)
+
+    return HttpResponse("response")
