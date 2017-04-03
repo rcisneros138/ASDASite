@@ -1,5 +1,7 @@
 from django import forms
 from .models import contactUs
+from paypal.standard.forms import PayPalPaymentsForm
+
 
 
 class ContactUsForm(forms.ModelForm):
@@ -14,7 +16,19 @@ Gender_Choices = (
     ('male', 'Male'),
     ('female', 'Female')
 )
+paypal_dict = {
+    "business": "rcisneros138@gmail.com",
+    "amount": "10.00",
+    "item_name": "Pre-Dental Weekend",
+    "invoice": "unique-invoice-id",
+    "notify_url": "https://www.example.com" + ('paypal-ipn'),
+    "return_url": "https://www.example.com/your-return-location/",
+    "cancel_return": "https://www.example.com/your-cancel-location/",
+    "custom": "preDentalWeekendgit "
+}
 
+class PaymentForm(PayPalPaymentsForm):
+    initial_dict = paypal_dict
 
 class PreDentalForm1(forms.Form):
     FirstName = forms.CharField(max_length=50)

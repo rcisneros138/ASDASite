@@ -1,4 +1,4 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
 from ASDA import settings
@@ -33,5 +33,6 @@ urlpatterns = [
     url(r'^committees/vendorrelations/$', VendorRelationsView.as_view(),
         name='VendorRelationsView'),
     url(r'^committees/predental/$', PreDentalView.as_view(),
-        name='PreDentalView')
+        name='PreDentalView'),
+    url(r'^paypal/', include('paypal.standard.ipn.urls')),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

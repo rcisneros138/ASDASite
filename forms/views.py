@@ -15,7 +15,6 @@ class contactUsView(CreateView):
 
 class PreDentalRegisterWizard(SessionWizardView):
     template_name = "forms/Register.html"
-    form_list = PreDentalForm1, PreDentalForm2
 
     def done(self, form_list, **kwargs):
         print("worked")
