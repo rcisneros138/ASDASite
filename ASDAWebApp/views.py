@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from blog.models import BlogPost, BlogImage
-from forms.models import contactUs
-from django.http import HttpResponse
+from forms.models import contactUs, PreDentalSignUp
+from django.http import HttpResponse, JsonResponse
 from django.views.generic import ListView, CreateView
 from forms.AsdaForms import ContactUsForm
+import json
+from datetime import datetime
 
 
 class Index(CreateView):
@@ -105,51 +107,66 @@ class multiPageView(ListView):
 
 
 def submitPredentalForm(request):
-    # Page 1
-    name = str(request.POST.get('Name'))
-    phone = str(request.POST.get('Phone'))
-    month = str(request.POST.get('Address1'))
-    month = str(request.POST.get('Address2'))
-    phone = str(request.POST.get('Email'))
-    phone = str(request.POST.get('Gender'))
+    predentalinfo = {
+        # Page 1
+        "Name" : str(request.POST.get('Name')),
+        "Phone" : str(request.POST.get('Phone')),
+        "Address1" : str(request.POST.get('Address1')),
+        "Address2" : str(request.POST.get('Address2')),
+        "Email" : str(request.POST.get('Email')),
+        "Gender" : str(request.POST.get('Gender')),
+        "Birthdate" : str(request.POST.get('Birthdate')),
 
-    phone = str(request.POST.get('Birthdate'))
-    phone = str(request.POST.get('School'))
-    phone = str(request.POST.get('Year'))
+        "School" : str(request.POST.get('School')),
+        "Year" : str(request.POST.get('Year')),
 
-    phone = str(request.POST.get('EmergName'))
-    phone = str(request.POST.get('EmergPhone'))
-    phone = str(request.POST.get('EmergEmail'))
-    # Page 2
-    phone = str(request.POST.get('SocialEvent'))
-    phone = str(request.POST.get('DietaryNeeds'))
-    phone = str(request.POST.get('NeedHotel'))
+        "EmergName" : str(request.POST.get('EmergName')),
+        "EmergPhone" : str(request.POST.get('EmergPhone')),
+        "EmergEmail" : str(request.POST.get('EmergEmail')),
+        # Page 2
+        "SocialEvent" : str(request.POST.get('SocialEvent')),
+        "DietaryNeeds" : str(request.POST.get('DietaryNeeds')),
+        "NeedHotel" : str(request.POST.get('NeedHotel')),
+        # Page 3
+        # Credit Card
+        "CardHolderName" : str(request.POST.get('card-holder-name')),
+        "CardNumber" : str(request.POST.get('card-number')),
+        "ExpiryMonth" : str(request.POST.get('expiry-month')),
+        "ExpiryYear" : str(request.POST.get('expiry-year')),
+        "CVV" : str(request.POST.get('cvv'))
+    }
 
-    # Page 3
-    # Credit Card
-    phone = str(request.POST.get('card-holder-name'))
-    phone = str(request.POST.get('card-number'))
-    phone = str(request.POST.get('expiry-month'))
-    phone = str(request.POST.get('expiry-year'))
-    phone = str(request.POST.get('cvv'))
+    print(predentalinfo)
+    form = PreDentalSignUp(
+        name = str(request.POST.get('Name')),
+        Phone = str(request.POST.get('Phone')),
+        Address1 = str(request.POST.get('Address1')),
+        Address2 = str(request.POST.get('Address2')),
+        Email = str(request.POST.get('Email')),
+        Gender = str(request.POST.get('Gender')),
+        # BirthDate = datetime.strptime(request.POST.get('BirthDate'), '%m-%d-%Y'),
 
+        School = str(request.POST.get('School')),
+        Year = str(request.POST.get('Year')),
 
+        EmergName = str(request.POST.get('EmergName')),
+        EmergPhone = str(request.POST.get('EmergPhone')),
+        EmergEmail = str(request.POST.get('EmergEmail')),
 
+        SocialEvent = str(request.POST.get('SocialEvent')),
+        DietaryNeeds = str(request.POST.get('DietaryNeeds')),
+        NeedHotel = str(request.POST.get('NeedHotel'))
+    )
+    response = form.save()
+    return HttpResponse(response)
 
+    # form = PreDentalSignUpForm()
+    # print(predentalinfo)
+    # if request.POST:
+    #     form = PreDentalSignUpForm(request.POST)
+    #     print(form)
+    #     if form.is_valid():
+    #         response = form.save()
+    #         return HttpResponse(response)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    return HttpResponse("response")
+    # return JsonResponse(predentalinfo)
