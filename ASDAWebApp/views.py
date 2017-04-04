@@ -107,36 +107,6 @@ class multiPageView(ListView):
 
 
 def submitPredentalForm(request):
-    predentalinfo = {
-        # Page 1
-        "Name" : str(request.POST.get('Name')),
-        "Phone" : str(request.POST.get('Phone')),
-        "Address1" : str(request.POST.get('Address1')),
-        "Address2" : str(request.POST.get('Address2')),
-        "Email" : str(request.POST.get('Email')),
-        "Gender" : str(request.POST.get('Gender')),
-        "Birthdate" : str(request.POST.get('Birthdate')),
-
-        "School" : str(request.POST.get('School')),
-        "Year" : str(request.POST.get('Year')),
-
-        "EmergName" : str(request.POST.get('EmergName')),
-        "EmergPhone" : str(request.POST.get('EmergPhone')),
-        "EmergEmail" : str(request.POST.get('EmergEmail')),
-        # Page 2
-        "SocialEvent" : str(request.POST.get('SocialEvent')),
-        "DietaryNeeds" : str(request.POST.get('DietaryNeeds')),
-        "NeedHotel" : str(request.POST.get('NeedHotel')),
-        # Page 3
-        # Credit Card
-        "CardHolderName" : str(request.POST.get('card-holder-name')),
-        "CardNumber" : str(request.POST.get('card-number')),
-        "ExpiryMonth" : str(request.POST.get('expiry-month')),
-        "ExpiryYear" : str(request.POST.get('expiry-year')),
-        "CVV" : str(request.POST.get('cvv'))
-    }
-
-    print(predentalinfo)
     form = PreDentalSignUp(
         name = str(request.POST.get('Name')),
         Phone = str(request.POST.get('Phone')),
@@ -144,7 +114,7 @@ def submitPredentalForm(request):
         Address2 = str(request.POST.get('Address2')),
         Email = str(request.POST.get('Email')),
         Gender = str(request.POST.get('Gender')),
-        # BirthDate = datetime.strptime(request.POST.get('BirthDate'), '%m-%d-%Y'),
+        BirthDate = str(request.POST.get('BirthDate')),
 
         School = str(request.POST.get('School')),
         Year = str(request.POST.get('Year')),
@@ -157,8 +127,24 @@ def submitPredentalForm(request):
         DietaryNeeds = str(request.POST.get('DietaryNeeds')),
         NeedHotel = str(request.POST.get('NeedHotel'))
     )
-    response = form.save()
-    return HttpResponse(response)
+
+    # paypal = paypalform(
+    #     cardHolderName = str(request.POST.get('cardHolderName')),
+    #     cardNumber = str(request.POST.get('cardNumber')),
+    #     expiryMonth = str(request.POST.get('expiryMonth')),
+    #     expiryMonth = str(request.POST.get('expiryMonth')),
+    #     cvv = str(request.POST.get('cvv'))
+    # )
+
+    try:
+        if str(request.POST.get('Name')) == "":
+            response = {"response" : "Incomplete Parameters"}
+            return JsonResponse(response)
+        else:
+            form.save()
+            return HttpResponse("Successful")
+    except Exception as e:
+        return HttpResponse(e)
 
     # form = PreDentalSignUpForm()
     # print(predentalinfo)

@@ -9,17 +9,46 @@ function trimInput(body) {
   var x = 100;
 }
 
+
 $("#submitSignUp").click(function(e){
-    page = $(event.target).attr('id');
-    console.log(page)
+  requiredList = ["Name", "Phone", "Address1", "Email", "BirthDate", "School", "Year",
+  "EmergName", "EmergPhone", "EmergEmail",
+  "SocialEvent", "DietaryNeeds",
+  "cardHolderName", "cardNumber", "cvv"];
+
+  failedInputs = []
+  for(item in requiredList){
+    element = requiredList[item];
+    elementSelector = $("input[name=" + element + "]");
+    $(elementSelector).parent().removeClass("has-error");
+    if(elementSelector.val() == ""){
+      failedInputs.push(element);
+      // focusPage(elementSelector, 1);
+      $(elementSelector).parent().addClass("has-error");
+    }
+  }
+  if(failedInputs.length == 0){
+    console.log("POST sent");
+    $("#inputFailure").addClass("hidden");
     $('#signUpForm').submit(function(e){
+      console.log("submitted");
         e.preventDefault();
         $.post('/submitPredentalForm/', $(this).serialize(), function(data){
-          var html = ""
-          html += data
-          $("#return").html(html);
+          if(data == "Successful"){
+            location.reload();
+          }
+          else{
+            console.log(data);
+          }
+          console.log(data);
         });
     });
+  }
+  else{
+    $("#inputFailure").removeClass("hidden");
+    console.log("Inputs not ready for POST...");
+    console.log(failedInputs);
+  }
 });
 
 $(".formNext").click(function() {
@@ -32,7 +61,6 @@ $(".formNext").click(function() {
     $("#PreDentalpage2").addClass("hidden");
     $("#PreDentalpage3").removeClass("hidden");
   }
-
 });
 
 $(".formBack").click(function() {
@@ -46,3 +74,27 @@ $(".formBack").click(function() {
     $("#PreDentalpage3").addClass("hidden");
   }
 });
+
+function pageChange(targetPage) {
+  if(targetPage == "1" ||targetPage == 1){
+    $("#PreDentalpage1").removeClass("hidden");
+    $("#PreDentalpage2").addClass("hidden");
+    $("#PreDentalpage3").addClass("hidden");
+  }
+  else if(targetPage == "2" ||targetPage == 2){
+    $("#PreDentalpage1").addClass("hidden");
+    $("#PreDentalpage2").removeClass("hidden");
+    $("#PreDentalpage3").addClass("hidden");
+  }
+  else if(targetPage == "3" ||targetPage == 3){
+    $("#PreDentalpage1").addClass("hidden");
+    $("#PreDentalpage2").addClass("hidden");
+    $("#PreDentalpage3").removeClass("hidden");
+  }
+
+}
+
+function focusPage(input, pageNumber) {
+  pageChange(pageNumber);
+
+}

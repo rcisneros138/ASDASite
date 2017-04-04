@@ -23,7 +23,7 @@ class PreDentalSignUp(models.Model):
     Address2 = models.CharField(max_length=140)
     Email = models.CharField(max_length=70)
     Gender = models.CharField(max_length=20)
-    BirthDate = models.DateTimeField
+    BirthDate = models.CharField(max_length=20)
 
     School = models.CharField(max_length=140)
     Year = models.CharField(max_length=140)

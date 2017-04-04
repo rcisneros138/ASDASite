@@ -147,3 +147,11 @@ a:active {
   padding-left: 15px;
   padding-right: 15px;
 }
+
+#inputFailure{
+  padding:10px;
+  border-radius: 5px;
+}
+#inputFailure p{
+  margin:0;
+}

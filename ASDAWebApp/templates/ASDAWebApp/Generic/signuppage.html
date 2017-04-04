@@ -20,7 +20,7 @@
 <div id="fh5co-main">
 	  <div class="container-fluid white-background second">
 			<h2 class="text-center">Pre Dental Sign Up: </h2>
-        <form id="signUpForm" action="/submitPredentalForm/" method="post">
+        <form id="signUpForm" method="post">
           <div class="row">
             {% csrf_token %}
             <div class="formPages" id="PreDentalpage1">
@@ -70,7 +70,7 @@
 									<h3>Emergency Contact Information:</h3>
 		              <div class="form-group">
 		                  <label for="EmergName">Relation:</label>
-		                  <input type="text" class="form-control" name="EmergName" placeholder="Kelly - Mother"/>
+		                  <input type="text" class="form-control" name="EmergName" placeholder="Sue - Mother"/>
 		              </div>
 		              <div class="form-group">
 		                  <label for="EmergPhone">Phone:</label>
@@ -118,20 +118,20 @@
 						<div class="col-md-10 col-md-offset-1">
 							<h3>Emergency Contact Information:</h3>
 				      <div class="form-group">
-				        <label class="control-label" for="card-holder-name">Name on Card</label>
-				        <input type="text" class="form-control" name="card-holder-name" placeholder="Card Holder's Name">
+				        <label class="control-label" for="cardHolderName">Name on Card</label>
+				        <input type="text" class="form-control" name="cardHolderName" placeholder="Card Holder's Name">
 				      </div>
 
 				      <div class="form-group">
-				        <label class="control-label" for="card-number">Card Number</label>
-				        <input type="text" class="form-control" name="card-number" placeholder="Debit/Credit Card Number">
+				        <label class="control-label" for="cardNumber">Card Number</label>
+				        <input type="text" class="form-control" name="cardNumber" placeholder="Debit/Credit Card Number">
 				      </div>
 
 				      <div class="form-group">
-				        <label class="control-label" for="expiry-month">Expiration Date</label>
+				        <label class="control-label" for="expiryMonth">Expiration Date</label>
 				          <div class="row">
 				            <div class="col-xs-3">
-				              <select class="form-control col-sm-2" name="expiry-month">
+				              <select class="form-control col-sm-2" name="expiryMonth">
 				                <option>Month</option>
 				                <option value="01">Jan (01)</option>
 				                <option value="02">Feb (02)</option>
@@ -148,11 +148,8 @@
 				              </select>
 				            </div>
 				            <div class="col-xs-3">
-				              <select class="form-control" name="expiry-year">
-				                <option value="13">2013</option>
-				                <option value="14">2014</option>
-				                <option value="15">2015</option>
-				                <option value="16">2016</option>
+				              <select class="form-control" name="expiryYear">
+				                <option>Year</option>
 				                <option value="17">2017</option>
 				                <option value="18">2018</option>
 				                <option value="19">2019</option>
@@ -172,13 +169,17 @@
 
 							<button type="button" id="backpage3" class="btn btn-default formBack">Previous</button>
 							<button type="submit" id="submitSignUp" class="btn btn-default">Submit</button>
+
+							<div id="inputFailure" class="bg-danger hidden">
+								<p>Check your inputs again.</p>
+							</div>
 						</div>
             </div>
             <br>
           </div>
         </form>
         <br>
-        <p id="return">return</p>
+        <p id="return"></p>
 		</div>
 </div>
 <hr class="fh5co-spacer fh5co-spacer-sm">
