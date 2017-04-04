@@ -136,23 +136,17 @@ def submitPredentalForm(request):
     #     cvv = str(request.POST.get('cvv'))
     # )
 
+    # Handle the user save to the database first.
+    response = {}
     try:
         if str(request.POST.get('Name')) == "":
-            response = {"response" : "Incomplete Parameters"}
-            return JsonResponse(response)
+            response["response"] = "Incomplete Parameters"
         else:
             form.save()
-            return HttpResponse("Successful")
+            response["response"] = "Successful"
     except Exception as e:
-        return HttpResponse(e)
+        response["exceptions"] = e
 
-    # form = PreDentalSignUpForm()
-    # print(predentalinfo)
-    # if request.POST:
-    #     form = PreDentalSignUpForm(request.POST)
-    #     print(form)
-    #     if form.is_valid():
-    #         response = form.save()
-    #         return HttpResponse(response)
+    # Handle the paypal stuff second, that way if paypal fails, their info is saved..?
 
-    # return JsonResponse(predentalinfo)
+    return JsonResponse(response)

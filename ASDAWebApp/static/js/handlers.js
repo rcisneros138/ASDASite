@@ -30,18 +30,23 @@ $("#submitSignUp").click(function(e){
   if(failedInputs.length == 0){
     console.log("POST sent");
     $("#inputFailure").addClass("hidden");
-    $('#signUpForm').submit(function(e){
-      console.log("submitted");
-        e.preventDefault();
-        $.post('/submitPredentalForm/', $(this).serialize(), function(data){
-          if(data == "Successful"){
-            location.reload();
+    $.ajax({
+        url : "/submitPredentalForm/",
+        type: "POST",
+        data : $('#preDentalSignUpForm').serialize() + "&csrfmiddlewaretoken=" + document.getElementsByName('csrfmiddlewaretoken')[0].value,
+        dataType : "json",
+        success: function( data ){
+          if(data["response"] == "Successful"){
+              // location.reload();
+                console.log("Successful");
           }
           else{
             console.log(data);
           }
-          console.log(data);
-        });
+        }
+        error: function( data ){
+            console.log(data);
+        }
     });
   }
   else{

@@ -20,7 +20,7 @@
 <div id="fh5co-main">
 	  <div class="container-fluid white-background second">
 			<h2 class="text-center">Pre Dental Sign Up: </h2>
-        <form id="signUpForm" method="post">
+        <form id="preDentalSignUpForm">
           <div class="row">
             {% csrf_token %}
             <div class="formPages" id="PreDentalpage1">
@@ -168,7 +168,7 @@
 				      </div>
 
 							<button type="button" id="backpage3" class="btn btn-default formBack">Previous</button>
-							<button type="submit" id="submitSignUp" class="btn btn-default">Submit</button>
+							<button type="button" id="submitSignUp" class="btn btn-default">Submit</button>
 
 							<div id="inputFailure" class="bg-danger hidden">
 								<p>Check your inputs again.</p>
