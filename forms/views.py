@@ -30,7 +30,8 @@ class PreDentalRegisterWizard(SessionWizardView):
 
 class signUp(ListView):
     model = BlogPost
-    template_name = "ASDAWebApp/Generic/signuppage.html"
+    success_url = '/'
+    template_name = "forms/signuppage.html"
 
 
 def submitPredentalForm(request):
