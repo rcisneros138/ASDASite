@@ -2,7 +2,7 @@ from django.conf.urls import url
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
 from ASDA import settings
-from ASDAWebApp.views import Index, BookClubView, CommunityServiceView, HealthView, FundraisingView, PrediatricView, SocialView, LunchView, SustainabilityView, VendorRelationsView, GalleryView, PreDentalView, signUp, submitPredentalForm
+from ASDAWebApp.views import Index, BookClubView, CommunityServiceView, HealthView, FundraisingView, PrediatricView, SocialView, LunchView, SustainabilityView, VendorRelationsView, GalleryView, PreDentalView
 
 urlpatterns = [
     url(r'^$', Index.as_view(), name='Index'),
@@ -34,10 +34,4 @@ urlpatterns = [
         name='VendorRelationsView'),
     url(r'^committees/predental/$', PreDentalView.as_view(),
         name='PreDentalView'),
-
-
-    url(r'^(?i)forms/signUp/$', signUp.as_view(),
-        name='multiPageView'),
-
-    url(r'^(?i)submitPredentalForm/$', submitPredentalForm),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

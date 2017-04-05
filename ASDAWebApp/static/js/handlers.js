@@ -13,8 +13,9 @@ function trimInput(body) {
 $("#submitSignUp").click(function(e){
   requiredList = ["Name", "Phone", "Address1", "Email", "BirthDate", "School", "Year",
   "EmergName", "EmergPhone", "EmergEmail",
-  "SocialEvent", "DietaryNeeds",
-  "cardHolderName", "cardNumber", "cvv"];
+  "SocialEvent", "DietaryNeeds"
+  //this is needed as a requirement for credit cards ,"cardHolderName", "cardNumber", "cvv"
+];
 
   failedInputs = []
   for(item in requiredList){
@@ -23,7 +24,6 @@ $("#submitSignUp").click(function(e){
     $(elementSelector).parent().removeClass("has-error");
     if(elementSelector.val() == ""){
       failedInputs.push(element);
-      // focusPage(elementSelector, 1);
       $(elementSelector).parent().addClass("has-error");
     }
   }
@@ -31,7 +31,7 @@ $("#submitSignUp").click(function(e){
     console.log("POST sent");
     $("#inputFailure").addClass("hidden");
     $.ajax({
-        url : "/submitPredentalForm/",
+        url : "/forms/submitPredentalForm/",
         type: "POST",
         data : $('#preDentalSignUpForm').serialize() + "&csrfmiddlewaretoken=" + document.getElementsByName('csrfmiddlewaretoken')[0].value,
         dataType : "json",
@@ -77,6 +77,7 @@ $(".formBack").click(function() {
   }
 });
 
+// not used at the moment
 function pageChange(targetPage) {
   if(targetPage == "1" ||targetPage == 1){
     $("#PreDentalpage1").removeClass("hidden");
@@ -93,10 +94,5 @@ function pageChange(targetPage) {
     $("#PreDentalpage2").addClass("hidden");
     $("#PreDentalpage3").removeClass("hidden");
   }
-
-}
-
-function focusPage(input, pageNumber) {
-  pageChange(pageNumber);
 
 }
