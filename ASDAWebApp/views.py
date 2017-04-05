@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from blog.models import BlogPost, BlogImage
-from forms.models import contactUs
-from django.http import HttpResponse
+from forms.models import contactUs, PreDentalSignUp
+from django.http import HttpResponse, JsonResponse
 from django.views.generic import ListView, CreateView
 from forms.AsdaForms import ContactUsForm
+import json
+from datetime import datetime
 
 
 class Index(CreateView):
@@ -97,3 +99,54 @@ class PreDentalView(ListView):
     template_name = "ASDAWebApp/Committees/PreDental.html"
     queryset = BlogPost.objects.filter(tags__name='PreDental',
                                        approved=True).order_by("-date")[:4]
+
+
+class signUp(ListView):
+    model = BlogPost
+    template_name = "ASDAWebApp/Generic/signuppage.html"
+
+
+def submitPredentalForm(request):
+    form = PreDentalSignUp(
+        name = str(request.POST.get('Name')),
+        Phone = str(request.POST.get('Phone')),
+        Address1 = str(request.POST.get('Address1')),
+        Address2 = str(request.POST.get('Address2')),
+        Email = str(request.POST.get('Email')),
+        Gender = str(request.POST.get('Gender')),
+        BirthDate = str(request.POST.get('BirthDate')),
+
+        School = str(request.POST.get('School')),
+        Year = str(request.POST.get('Year')),
+
+        EmergName = str(request.POST.get('EmergName')),
+        EmergPhone = str(request.POST.get('EmergPhone')),
+        EmergEmail = str(request.POST.get('EmergEmail')),
+
+        SocialEvent = str(request.POST.get('SocialEvent')),
+        DietaryNeeds = str(request.POST.get('DietaryNeeds')),
+        NeedHotel = str(request.POST.get('NeedHotel'))
+    )
+
+    # paypal = paypalform(
+    #     cardHolderName = str(request.POST.get('cardHolderName')),
+    #     cardNumber = str(request.POST.get('cardNumber')),
+    #     expiryMonth = str(request.POST.get('expiryMonth')),
+    #     expiryMonth = str(request.POST.get('expiryMonth')),
+    #     cvv = str(request.POST.get('cvv'))
+    # )
+
+    # Handle the user save to the database first.
+    response = {}
+    try:
+        if str(request.POST.get('Name')) == "":
+            response["response"] = "Incomplete Parameters"
+        else:
+            form.save()
+            response["response"] = "Successful"
+    except Exception as e:
+        response["exceptions"] = e
+
+    # Handle the paypal stuff second, that way if paypal fails, their info is saved..?
+
+    return JsonResponse(response)
