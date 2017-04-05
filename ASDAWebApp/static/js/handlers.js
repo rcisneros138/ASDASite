@@ -44,9 +44,6 @@ $("#submitSignUp").click(function(e){
             console.log(data);
           }
         }
-        error: function( data ){
-            console.log(data);
-        }
     });
   }
   else{

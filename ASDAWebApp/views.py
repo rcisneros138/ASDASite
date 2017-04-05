@@ -101,7 +101,7 @@ class PreDentalView(ListView):
                                        approved=True).order_by("-date")[:4]
 
 
-class multiPageView(ListView):
+class signUp(ListView):
     model = BlogPost
     template_name = "ASDAWebApp/Generic/signuppage.html"
 
