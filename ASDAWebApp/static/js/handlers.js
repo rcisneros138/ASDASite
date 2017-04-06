@@ -35,14 +35,9 @@ $("#submitSignUp").click(function(e){
         type: "POST",
         data : $('#preDentalSignUpForm').serialize() + "&csrfmiddlewaretoken=" + document.getElementsByName('csrfmiddlewaretoken')[0].value,
         dataType : "json",
-        success: function( data ){
-          if(data["response"] == "Successful"){
-              // location.reload();
-                console.log("Successful");
-          }
-          else{
-            console.log(data);
-          }
+        complete: function( data ){
+          $("#mainSignUpForm").html("");
+          $("#mainSignUpForm").html(data.responseText);
         }
     });
   }

@@ -3,9 +3,9 @@ from django.views.generic import FormView, CreateView, ListView
 from blog.models import BlogPost, BlogImage
 from formtools.wizard.views import SessionWizardView
 from paypal.standard.forms import PayPalPaymentsForm
-from django.http import JsonResponse, HttpResponseRedirect
+from django.http import JsonResponse, HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import json
 from datetime import datetime
 from forms.models import contactUs, PreDentalSignUp
@@ -21,7 +21,8 @@ class contactUsView(CreateView):
         return super(ContactUsForm, self).form_valid(form)
 
 
-def payment_page(request):
+def payment_page(request, userInfo=None):
+    print(userInfo)
     signupFormPost = request.session.get('signUpForm')
     amount = "10.00"   #set_payment()
     paypal_dict = {
@@ -93,17 +94,16 @@ def submitPredentalForm(request):
             response["response"] = "Incomplete Parameters"
         else:
             form.save()
-            response["response"] = "Successful"
-            request.session['signUpForm'] = request.POST
-            HttpResponseRedirect('payment_page')
+            return HttpResponseRedirect('/forms/register/payment')
     except Exception as e:
         response["exceptions"] = e
 
-    # Handle the paypal stuff second, that way if paypal fails, their info is saved..?
+    return JsonResponse(response)
 
-    return HttpResponseRedirect('payment_page')
+    # return HttpResponseRedirect('/forms/register/payment')
 
-
+# This was the beginning of csv files.
+# for large files, it said it was good to stream the file, that way if the page refreshed or cancelled, the connection would not be lost I think.
 
 # class Echo(object):
 #     """An object that implements just the write method of the file-like
