@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
     'ckeditor_uploader',
-    'paypal.standard.ipn'
+    'paypal.standard.ipn',
+    'ASDA.apps.ASDAMainConfig'
 ]
 
 MIDDLEWARE_CLASSES = [

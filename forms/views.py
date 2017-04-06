@@ -3,8 +3,9 @@ from django.views.generic import FormView, CreateView, ListView
 from blog.models import BlogPost, BlogImage
 from formtools.wizard.views import SessionWizardView
 from paypal.standard.forms import PayPalPaymentsForm
-from django.http import HttpResponse, JsonResponse, StreamingHttpResponse
-
+from django.http import JsonResponse, HttpResponseRedirect
+from django.core.urlresolvers import reverse
+from django.shortcuts import render
 import json
 from datetime import datetime
 from forms.models import contactUs, PreDentalSignUp
@@ -20,12 +21,33 @@ class contactUsView(CreateView):
         return super(ContactUsForm, self).form_valid(form)
 
 
+def payment_page(request):
+    signupFormPost = request.session.get('signUpForm')
+    amount = "10.00"   #set_payment()
+    paypal_dict = {
+        "business": "crimson.fiend138-facilitator@gmail.com",
+        "amount": str(amount),
+        "item_name": "2018 ASDA Pre-Dental Weekend",
+        "notify_url": "http://a7014cf5.ngrok.io" + reverse('paypal-ipn'),
+        "return_url": "http://a7014cf5.ngrok.io",
+        "cancel_return": "https://3562ed89.ngrok.io/forms/signup",
+        }
+    form = PayPalPaymentsForm(initial=paypal_dict)
+    context = {"form": form}
+
+    return render(request, "forms/payment.html", context)
+
+
 class PreDentalRegisterWizard(SessionWizardView):
     template_name = "forms/Register.html"
-    form_list = PreDentalForm1, PreDentalForm2
 
     def done(self, form_list, **kwargs):
-        print("worked")
+        self.request.session['signUpForm'] = self.request.POST
+        print(self.request.POST)
+        print(self.get_all_cleaned_data())
+        print("worked~~!!!!!")
+        print(form.cleaned_data for form in form_list)
+        return HttpResponseRedirect('payment')
 
 
 class signUp(ListView):
@@ -36,24 +58,24 @@ class signUp(ListView):
 
 def submitPredentalForm(request):
     form = PreDentalSignUp(
-        name = str(request.POST.get('Name')),
-        Phone = str(request.POST.get('Phone')),
-        Address1 = str(request.POST.get('Address1')),
-        Address2 = str(request.POST.get('Address2')),
-        Email = str(request.POST.get('Email')),
-        Gender = str(request.POST.get('Gender')),
-        BirthDate = str(request.POST.get('BirthDate')),
+        name=str(request.POST.get('Name')),
+        Phone=str(request.POST.get('Phone')),
+        Address1=str(request.POST.get('Address1')),
+        Address2=str(request.POST.get('Address2')),
+        Email=str(request.POST.get('Email')),
+        Gender=str(request.POST.get('Gender')),
+        BirthDate=str(request.POST.get('BirthDate')),
 
-        School = str(request.POST.get('School')),
-        Year = str(request.POST.get('Year')),
+        School=str(request.POST.get('School')),
+        Year=str(request.POST.get('Year')),
 
-        EmergName = str(request.POST.get('EmergName')),
-        EmergPhone = str(request.POST.get('EmergPhone')),
-        EmergEmail = str(request.POST.get('EmergEmail')),
+        EmergName=str(request.POST.get('EmergName')),
+        EmergPhone=str(request.POST.get('EmergPhone')),
+        EmergEmail=str(request.POST.get('EmergEmail')),
 
-        SocialEvent = str(request.POST.get('SocialEvent')),
-        DietaryNeeds = str(request.POST.get('DietaryNeeds')),
-        NeedHotel = str(request.POST.get('NeedHotel'))
+        SocialEvent=str(request.POST.get('SocialEvent')),
+        DietaryNeeds=str(request.POST.get('DietaryNeeds')),
+        NeedHotel=str(request.POST.get('NeedHotel'))
     )
 
     # paypal = paypalform(
@@ -72,12 +94,14 @@ def submitPredentalForm(request):
         else:
             form.save()
             response["response"] = "Successful"
+            request.session['signUpForm'] = request.POST
+            HttpResponseRedirect('payment_page')
     except Exception as e:
         response["exceptions"] = e
 
     # Handle the paypal stuff second, that way if paypal fails, their info is saved..?
 
-    return JsonResponse(response)
+    return HttpResponseRedirect('payment_page')
 
 
 

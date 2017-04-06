@@ -10,5 +10,7 @@ urlpatterns = [
     url(r'^forms/', include('forms.urls')),
     url(r'^tinymce/', include('tinymce.urls')),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    url(r'^paypal/', include('paypal.standard.ipn.urls')),
+
     # url(r'^forms/', include('forms.urls'))
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
