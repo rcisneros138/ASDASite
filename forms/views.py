@@ -34,6 +34,12 @@ class signUp(ListView):
     template_name = "forms/signuppage.html"
 
 
+class signUpSuccess(ListView):
+    model = BlogPost
+    success_url = '/'
+    template_name = "forms/signupsuccess.html"
+
+
 def submitPredentalForm(request):
     form = PreDentalSignUp(
         name = str(request.POST.get('Name')),

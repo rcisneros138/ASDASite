@@ -38,7 +38,9 @@ $("#submitSignUp").click(function(e){
         success: function( data ){
           if(data["response"] == "Successful"){
               // location.reload();
-                console.log("Successful");
+              // location.href = "/forms/signupsuccess";
+              $('#preDentalSignUpForm')[0].reset();
+              $("#formSuccess").removeClass("hidden");
           }
           else{
             console.log(data);
