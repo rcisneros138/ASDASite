@@ -1,6 +1,6 @@
 from .views import contactUsView, PreDentalRegisterWizard, payment_page
 from .AsdaForms import PreDentalForm1, PreDentalForm2
-from django.conf.urls import url
+from django.conf.urls import url, include
 
 from forms.views import signUp, submitPredentalForm
 
@@ -12,4 +12,6 @@ urlpatterns = [
         url(r'^(?i)signUp/$', signUp.as_view(),
             name='multiPageView'),
         url(r'^(?i)submitPredentalForm/$', submitPredentalForm),
+        url(r'^paypal/', include('paypal.standard.ipn.urls')),
+
              ]
