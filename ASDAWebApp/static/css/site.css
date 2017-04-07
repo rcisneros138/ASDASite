@@ -148,6 +148,11 @@ a:active {
   padding-right: 15px;
 }
 
+.formPages{
+  padding:15px;
+  margin:5px;
+}
+
 #inputFailure{
   padding:10px;
   border-radius: 5px;

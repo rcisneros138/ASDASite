@@ -1,3 +1,21 @@
-<h1>Show me the money!</h1>
-<!-- writes out the form tag automatically -->
-{{ form.render }}
+<br>
+<div class="container-fluid white-background second">
+  <div class="row">
+    <br>
+    <div class="col-md-4 col-md-offset-1">
+      <h1>Thank you{{ userInfo.name }}!</h1>
+
+      <h3>Your form was submitted successfully</h3>
+      {{ userInfo }}
+		</div>
+
+    <div class="col-md-6 col-md-offset-1">
+      <h1>PayPal</h1>
+      <!-- writes out the form tag automatically -->
+      {{ form.render }}
+		</div>
+    <br>
+    <br>
+  </div>
+</div>
+<br>
