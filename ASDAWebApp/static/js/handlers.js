@@ -23,7 +23,10 @@ $("#submitSignUp").click(function(e){
     elementSelector = $("input[name=" + element + "]");
     $(elementSelector).parent().removeClass("has-error");
     if(elementSelector.val() == ""){
-      failedInputs.push(element);
+      element = element.replace(/([a-zA-Z])(?=[A-Z])/g, '$1 ');
+      element = element.replace("Address1", "Address");
+      element = element.replace("Emerg", "Emergency");
+      failedInputs.push(" " + element);
       $(elementSelector).parent().addClass("has-error");
     }
   }
@@ -43,6 +46,7 @@ $("#submitSignUp").click(function(e){
   }
   else{
     $("#inputFailure").removeClass("hidden");
+    $("#inputFailure").text("Check your inputs again. (" + failedInputs + " )")
     console.log("Inputs not ready for POST...");
     console.log(failedInputs);
   }
