@@ -12,6 +12,5 @@ urlpatterns = [
         url(r'^(?i)signUp/$', signUp.as_view(),
             name='multiPageView'),
         url(r'^(?i)submitPredentalForm/$', submitPredentalForm),
-        url(r'^paypal/', include('paypal.standard.ipn.urls')),
 
              ]

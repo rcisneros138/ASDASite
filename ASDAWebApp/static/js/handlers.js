@@ -48,8 +48,8 @@ $("#submitSignUp").click(function(e){
   }
 });
 
-$(".formNext").click(function() {
-  page = $(event.target).attr('id');
+$(".formNext").click(function(e) {
+  page = $(e.target).attr('id');
   if(page == "submitpage1"){
     $("#PreDentalpage1").addClass("hidden");
     $("#PreDentalpage2").removeClass("hidden");
@@ -60,8 +60,8 @@ $(".formNext").click(function() {
   }
 });
 
-$(".formBack").click(function() {
-  page = $(event.target).attr('id');
+$(".formBack").click(function(e) {
+  page = $(e.target).attr('id');
   if(page == "backpage2"){
     $("#PreDentalpage1").removeClass("hidden");
     $("#PreDentalpage2").addClass("hidden");

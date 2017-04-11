@@ -2,6 +2,7 @@ from django.conf.urls import url
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
 from ASDA import settings
+from django.views.decorators.csrf import csrf_exempt
 from ASDAWebApp.views import Index, BookClubView, CommunityServiceView, HealthView, FundraisingView, PrediatricView, SocialView, LunchView, SustainabilityView, VendorRelationsView, GalleryView, PreDentalView
 
 urlpatterns = [

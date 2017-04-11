@@ -22,15 +22,18 @@ class contactUsView(CreateView):
 
 
 def payment_page(request, userInfo=None):
-    print(userInfo)
-    signupFormPost = request.session.get('signUpForm')
-    amount = "10.00"   #set_payment()
+    print(request)
+    if str(request.session.get('needsHotel')) == "True":
+        amount = "425.00"
+    else:
+        amount = "325.00"
+    print(amount)
     paypal_dict = {
         "business": "crimson.fiend138-facilitator@gmail.com",
         "amount": str(amount),
         "item_name": "2018 ASDA Pre-Dental Weekend",
         "notify_url": "http://a7014cf5.ngrok.io" + reverse('paypal-ipn'),
-        "return_url": "http://a7014cf5.ngrok.io",
+        "return_url": "http://a7014cf5.ngrok.io/my_",
         "cancel_return": "https://3562ed89.ngrok.io/forms/signup",
         }
     form = PayPalPaymentsForm(initial=paypal_dict)
@@ -94,6 +97,8 @@ def submitPredentalForm(request):
             response["response"] = "Incomplete Parameters"
         else:
             form.save()
+            request.session['needsHotel'] = request.POST['NeedHotel']
+
             return HttpResponseRedirect('/forms/register/payment')
     except Exception as e:
         response["exceptions"] = e

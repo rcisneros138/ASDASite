@@ -5,7 +5,7 @@ from django.views.generic import ListView, CreateView
 from forms.AsdaForms import ContactUsForm
 import json
 from datetime import datetime
-
+from django.views.decorators.csrf import csrf_exempt
 import csv
 
 
@@ -36,7 +36,7 @@ class BookClubView(ListView):
 class GalleryView(ListView):
     model = BlogImage
     template_name = "ASDAWebApp/Pictures.html"
-    queryset = BlogImage.objects.filter(blogPost__approved=True)
+    queryset = reversed(BlogImage.objects.filter(blogPost__approved=True))
 
 
 class CommunityServiceView(ListView):
