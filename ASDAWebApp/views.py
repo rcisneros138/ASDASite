@@ -36,7 +36,8 @@ class BookClubView(ListView):
 class GalleryView(ListView):
     model = BlogImage
     template_name = "ASDAWebApp/Pictures.html"
-    queryset = reversed(BlogImage.objects.filter(blogPost__approved=True))
+    images = BlogImage.objects.filter(blogPost__approved=True).order_by('-id')
+    queryset = images
 
 
 class CommunityServiceView(ListView):

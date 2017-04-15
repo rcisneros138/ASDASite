@@ -2,7 +2,7 @@ from .views import contactUsView, PreDentalRegisterWizard, payment_page
 from .AsdaForms import PreDentalForm1, PreDentalForm2
 from django.conf.urls import url, include
 
-from forms.views import signUp, submitPredentalForm
+from forms.views import signUp, submitPredentalForm, signUpSuccess
 
 
 urlpatterns = [
@@ -11,6 +11,7 @@ urlpatterns = [
         url(r'^(?i)register/payment/', payment_page, name='payment_page'),
         url(r'^(?i)signUp/$', signUp.as_view(),
             name='multiPageView'),
+        url(r'^(?i)signupsuccess/$', signUpSuccess),
         url(r'^(?i)submitPredentalForm/$', submitPredentalForm),
 
              ]

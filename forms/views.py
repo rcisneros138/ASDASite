@@ -29,11 +29,11 @@ def payment_page(request, userInfo=None):
         amount = "325.00"
     print(amount)
     paypal_dict = {
-        "business": "crimson.fiend138-facilitator@gmail.com",
+        "business": "marquetteasda@gmail.com",
         "amount": str(amount),
         "item_name": "2018 ASDA Pre-Dental Weekend",
         "notify_url": "http://a7014cf5.ngrok.io" + reverse('paypal-ipn'),
-        "return_url": "http://a7014cf5.ngrok.io/my_",
+        "return_url": "http://a7014cf5.ngrok.io",
         "cancel_return": "https://3562ed89.ngrok.io/forms/signup",
         }
     form = PayPalPaymentsForm(initial=paypal_dict)
@@ -58,6 +58,12 @@ class signUp(ListView):
     model = BlogPost
     success_url = '/'
     template_name = "forms/signuppage.html"
+
+
+class signUpSuccess(ListView):
+    model = BlogPost
+    success_url = '/'
+    template_name = "forms/signupsuccess.html"
 
 
 def submitPredentalForm(request):
