@@ -1,0 +1,136 @@
+{% extends "ASDAWebApp/Generic/navBar.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<div id="fh5co-hero"  class="container"  style="background-image: url({% static 'img/LegislativeHeader.jpg' %});">
+	<div class="overlay"></div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="fh5co-hero-wrap">
+				<div class="fh5co-hero-intro">
+					<h1 class="to-animate hero-animate-1">Marquette <span class="gold bold">ASDA</span></h1>
+					<p class="to-animate hero-animate-2">Legislative Committee</p>
+          <p class="to-animate hero-animate-3"><button href="#" type="button" class="btn btn-outline btn-md">Learn About Us</button></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="fh5co-main">
+	  <div class="container-fluid white-background">
+{% if object_list.count > 0 %}
+<div class="fh5co-cards" >
+    <br>
+    <div class="row">
+      <h2 class="fh5co-uppercase-heading-sm text-center">Legislative Committee Latest</h2>
+    </div>
+    <div class="row blogRow">
+      {% for post in  object_list %}
+        <div class="col-md-3 animate-box">
+            <a class="fh5co-card" href="/blog/{{post.id}}">
+              {% if post.headerImage %}
+              <img src="{{post.headerImage.url}}" class="img-responsive">
+              {% else %}
+               <img src="{% static 'img/dentistmeetup.jpg' %}" class="img-responsive">
+               {% endif %}
+
+                <div class="fh5co-card-body">
+                  <h3 class="post-title">{{post.title|truncatewords:9}}</h3>
+                  <div class="blogBody">
+                    <span>{{post.body|safe|truncatewords:10}}</span>
+                  </div>
+									{{post.date.date}}
+
+                </div>
+            </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% else %}
+	<div class="visible-xs-block mobilespacer"></div>
+{% endif %}
+
+<div class="animate-box fh5co-product-2">
+  <div class="fh5co-half img" style="background-image: url({% static 'img/LegislativeHeader.jpg' %});"></div>
+  <div class="fh5co-half">
+    <h3>Miranda Brown (D3) | Ryan Twaddle (D3) | Drew TeDuits(D2) | Pat
+        Campbell (D2)</h3>
+    <p>The Marquette ASDA legislative committee has two main goals: Advocacy and
+        Education. First, our committee advocates and encourages others to advocate for the rights of
+        dental students and the dental profession.  The practice of dentistry and the welfare of our
+        patients can be greatly affected by decisions made by our state and local government.
+        Therefore, we advocate because we want to ensure that the voice of dental students and
+        dentists is heard when those decisions are being made  We advocate and encourage advocacy
+        through methods such as emails to legislators, &quot;Teach Me How To Lobby&quot; lunch and
+        learns, Lobby days, and supporting ADPAC &amp; WIDPAC. Second, we strive to find interesting and
+        innovative ways to help our peers stay informed on legislative matters that are relevant to
+        dentistry, such as midlevel providers, access to care, student debt etc., through events and
+        programs including Lunch and Learns, Advocacy Academy and Advocacy Minute videos.</p>
+  </div>
+</div>
+</br>
+<div class="container second">
+  <div class="col-md-12 animate-box">
+						<h2 class="fh5co-uppercase-heading-sm text-center">About Legislative Committee</h2>
+
+						<div class="fh5co-spacer fh5co-spacer-sm"></div>
+
+						<div id="fh5co-tab-feature-center" class="fh5co-tab text-center">
+							<ul class="resp-tabs-list hor_1">
+								<li><i class="fh5co-tab-menu-icon ti-briefcase"></i> What We Do</li>
+								<li><i class="fh5co-tab-menu-icon ti-clipboard"></i>Meet Up</li>
+
+							</ul>
+							<div class="resp-tabs-container hor_1">
+								<div>
+									<div class="row">
+										<div class="col-md-12">
+											<h2 class="h3">Legislation</h2>
+										</div>
+										<div class="col-md-6">
+											<p></p>
+										</div>
+										<div class="col-md-6">
+											<p></p>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="row">
+										<div class="col-md-12">
+											<h2 class="h3">Lets Get Together</h2>
+										</div>
+										<div class="col-md-6">
+											<p></p>
+										</div>
+										<div class="col-md-6">
+											<p> </p>
+										</div>
+									</div>
+								</div>
+
+								<div>
+									<div class="row">
+										<div class="col-md-12">
+											<h2 class="h3">We Love Suggestions</h2>
+										</div>
+										<div class="col-md-6">
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda quis deserunt dolorem, debitis cupiditate nihil velit dolores, inventore voluptatem delectus quos atque similique natus eaque qui, nisi repudiandae dolore sit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum aut maxime eius magnam.</p>
+										</div>
+										<div class="col-md-6">
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio voluptatem, vitae nesciunt ad hic quam quisquam sit possimus officia ratione. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, ex. Lorem ipsum dolor sit amet.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+<hr class="fh5co-spacer fh5co-spacer-sm">
+<hr class="fh5co-spacer fh5co-spacer-sm">
+{% include "ASDAWebApp/Generic/smallFooter.html" %}
+{% endblock %}

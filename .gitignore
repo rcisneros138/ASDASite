@@ -10,7 +10,6 @@ lib
 lib64
 *.pyc
 *.pyo
-secrets.py
 db.sqlite3
 .vscode/*
 ApiKeys.json
